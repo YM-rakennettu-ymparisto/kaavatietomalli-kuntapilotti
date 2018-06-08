@@ -5,7 +5,7 @@ Huomaa, että esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutte
 
 ## Tietomallin yleiskuvaus
 
-![Kuva 1: Tietomallin keskeiset käsiteet](images/tietomallin-keskeiset-kasitteet.png)
+![Kuva 1: Kaavatietomallin keskeiset käsiteet](images/tietomalli-keskeiset-kasitteet.png)
 
 Tietomallin luonnoksen keskeiset käsitteet ja niiden suomenkieliset vastineet on esitetty kuvassa 1. *SpatialPlan*-luokan mukainen paikkatietokohde sisältää koko asemakaavalle yhteiset ominaisuudet, sekä kaavan ulkorajan geometrian. SpatialPlan-kohteeseen liittyy kiinteästi nolla tai useampi *PlanningElement*-luokan mukainen paikkatietokohde, joiden geometriat kattavat yhdessä koko asemakaavan. Kukin PlanningElement kuvaa mahdollisesti moniosaisen 2D- tai 3D-geometrian rajaaman alueen kaavan sisällä. PlanningElement-kohde voi sisältää hierakisen alirakenteen subdivision-suhteen avulla. Asemakaavoituksessa PlanningElement-kohde voi olla tyypiltään esimerkiksi käyttötarkoitusalue, kortteli, ohjeellinen tontti, yleinen alue tai rakennusala. PlanningElement-kohteella on tyypillisesti nimi, jota käytetään esimerkiksi karttavisualisoinnissa.
 
