@@ -28,7 +28,7 @@ Kaavan laatimisen lähtöaineistoihin viitataan tietomallissa ReferencedDataset-
 
 Tietomallissa on hyödynnetty laajasti koodilistoja kohteiden ja lisätietojen tyypitykseen, ja jätetty monet luokat nimiltään melko yleisiksi. Tavoitteena on ollut luoda luokkarakenne, jonka avulla voidaan mallintaa tulevaisuuden kaavoitusta eri tasoilla ja sopeutua tuleviin laki- ja kaavoituskäytäntömuutoksiin. Ulkoisten koodilistojen käyttö mahdollistaa kaavoituksen yksityiskohtien määrittelyn sekä niiden rajoitetun ja hallitun muuttamisen tulevaisuuden tarpeita vastaavaksi: Halutusta koodilistasta voidaan julkaista uusi korjattu tai täydennetty versio, jota käyttäen uudet kaavat voivat hyödyntää tietomallin laajennettuja tai korjattuja ominaisuuksia, kuten uutta rajoittavaa ominaisuutta. Aiemmin laaditut kaavat viittaavat edelleen ko. koodilista laadintahetkellä käytössä olleeseen koodilistaan.
 
-![Kuva 3: Kaavatietomallin koodilistat](images/tietomalli-koodilistat-kaikki.png)
+![Kuva 3: Kaavatietomallin koodilistat](images/tietomallin-koodilistat-kaikki.png)
 
 Tietomallin luonnoksessa ei ole laadittu sisältöä käytetyille koodilistoille, vaan ne määritellään ja dokumentoidaan Kuntapilotti-projektin toteutuksen aikana.
 
