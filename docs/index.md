@@ -6,6 +6,7 @@ Huomaa, että esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutte
 ## Tietomallin yleiskuvaus
 
 ![Kuva 1: Kaavatietomallin keskeiset käsiteet](images/tietomalli-keskeiset-kasitteet.png)
+*Kuva 1: Kaavatietomallin keskeiset käsiteet*
 
 Tietomallin luonnoksen keskeiset käsitteet ja niiden suomenkieliset vastineet on esitetty kuvassa 1. *SpatialPlan*-luokan mukainen paikkatietokohde sisältää koko asemakaavalle yhteiset ominaisuudet, sekä kaavan ulkorajan geometrian. SpatialPlan-kohteeseen liittyy kiinteästi nolla tai useampi *PlanningElement*-luokan mukainen paikkatietokohde, joiden geometriat kattavat yhdessä koko asemakaavan. Kukin PlanningElement kuvaa mahdollisesti moniosaisen 2D- tai 3D-geometrian rajaaman alueen kaavan sisällä. PlanningElement-kohde voi sisältää hierakisen alirakenteen subdivision-suhteen avulla. Asemakaavoituksessa PlanningElement-kohde voi olla tyypiltään esimerkiksi käyttötarkoitusalue, kortteli, ohjeellinen tontti, yleinen alue tai rakennusala. PlanningElement-kohteella on tyypillisesti nimi, jota käytetään esimerkiksi karttavisualisoinnissa.
 
@@ -16,7 +17,8 @@ PlanningElement-kohteen sisällä tai reunalla voi sijaita kaavoitusyksityiskoht
 
 PlanningElement- ja PlanningDetail-kohteisiin voi liittyä eri tyyppisiä suunniteltua maankäyttöä ja rakentamista rajoittavia ominaisuuksia, jotka mallinnetaan *Restriction*-luokan avulla. Esimerkkejä asemakaavan Restriction-luokan instansseista ovat tehokkuusluku, rakennusten harjasuunta ja suurin mahdollinen kerrosluku. SpatialPlan- ja PlanningElement-kohteisiin voi liittyä myös sanallisesti kuvattuja kaavamääräyksiä (*RegulativeText*), joita ei ole ollut mahdollista tai käytännöllistä kuvata koneluettavaan muotoon käyttäen Restriction-luokan instanssien avulla, tai jotka SpatialPlan-luokan tapauksessa koskevat koko asemakaavaa. Näiden luonnollisella kielellä kuvattujen määräystekstien käyttämistä tulisi kuitenkin mahdollisuuksien mukaan välttää, sillä ne heikentävät kaavan koneellista tulkintakelpoisuutta.
 
-![Kuva2: UML-tietomalli](images/tietomalli-uml-no-comments.png)
+![Kuva 2: UML-tietomalli](images/tietomalli-uml-no-comments.png)
+*Kuva 2: UML-tietomalli*
 
 Joitakin kaavan määräyksiä voidaan perustella olemassa olevilla paikkatietokohteilla, joista esimerkkejä ovat suojellut alueet tai olemassa olevan tie- ja rautatieverkoston kaavan suhteen relevantit osat. Ensisijaisesti nämä perustelevat kohteet pyritään liittämään kaavaan ulkoisten viittausten avulla (kuvan 2 UML-luokkakaavion ReferencedFeature-luokka). Mikäli viittausta ei voida tehdä käyttäen pysyväksi tiedettyä tunnusta viitattavan kohteen muuttumattomaan versioon, tulee kohteen perusteella luoda uusi kaavan tietomalliin sisällytettävä InformativeFeature-luokan mukainen paikkatietokohde.
 
@@ -29,6 +31,7 @@ Kaavan laatimisen lähtöaineistoihin viitataan tietomallissa ReferencedDataset-
 Tietomallissa on hyödynnetty laajasti koodilistoja kohteiden ja lisätietojen tyypitykseen, ja jätetty monet luokat nimiltään melko yleisiksi. Tavoitteena on ollut luoda luokkarakenne, jonka avulla voidaan mallintaa tulevaisuuden kaavoitusta eri tasoilla ja sopeutua tuleviin laki- ja kaavoituskäytäntömuutoksiin. Ulkoisten koodilistojen käyttö mahdollistaa kaavoituksen yksityiskohtien määrittelyn sekä niiden rajoitetun ja hallitun muuttamisen tulevaisuuden tarpeita vastaavaksi: Halutusta koodilistasta voidaan julkaista uusi korjattu tai täydennetty versio, jota käyttäen uudet kaavat voivat hyödyntää tietomallin laajennettuja tai korjattuja ominaisuuksia, kuten uutta rajoittavaa ominaisuutta. Aiemmin laaditut kaavat viittaavat edelleen ko. koodilista laadintahetkellä käytössä olleeseen koodilistaan.
 
 ![Kuva 3: Kaavatietomallin koodilistat](images/tietomallin-koodilistat-kaikki.png)
+*Kuva 3: Kaavatietomallin koodilistat*
 
 Tietomallin luonnoksessa ei ole laadittu sisältöä käytetyille koodilistoille, vaan ne määritellään ja dokumentoidaan Kuntapilotti-projektin toteutuksen aikana.
 
