@@ -1,0 +1,1 @@
+# Tietomallin koodilistat

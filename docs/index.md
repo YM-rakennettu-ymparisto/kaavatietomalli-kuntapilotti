@@ -1,4 +1,8 @@
-# Kaavoituksen kansallinen tietomalli
+---
+title: Kaavoituksen kansallinen tietomalli
+layout: post
+---
+
 Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseksi tietomalliksi. Tietomallin laatimisen lähtökohtana on ollut asemakaavoituksen tarpeet, mutta se on tarkoitus olla sovellettavissa myös muuntasoisen kaavoituksen tarpeisiin sopivilla koodilistojen valinnoilla.
 
 Huomaa, että esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutteellinen.
