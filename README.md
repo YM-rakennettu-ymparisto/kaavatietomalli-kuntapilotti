@@ -8,4 +8,8 @@ Kaavoituksen kansallisen tietomallin määrittelytyö on osa Paikkatietoalusta-h
 
 Maankäyttöpäätökset-hanke edistää alueidenkäytön suunnittelujärjestelmän eli kaavoitusjärjestelmän digitalisaatiota. Hankkeessa tuotetaan muun muassa määritelmä tietomallipohjaiselle asemakaavalle ja rajapintajakelulle sekä tutkitaan erilaisten digitaalisten lähtötietoaineistojen käyttömahdollisuuksia digikaavan laatimisessa. Tavoitteena on auttaa erikokoisia kuntia kaavoituksen digiloikan ottamisessa.
 
-Maankäyttöpäätökset-hanke kytkeytyy keskeisesti ympäristöministeriön maankäyttö- ja rakennuslain kokonaisuudistukseen. Hanketta koordinoi [ympräristöministerö](http://www.ym.fi/), ja sitä toteutetaan yhdessä kuntien ja muiden sidosryhmien kanssa.
+Maankäyttöpäätökset-hanke kytkeytyy keskeisesti ympäristöministeriön maankäyttö- ja rakennuslain kokonaisuudistukseen. Hanketta koordinoi [ympäristöministerö](http://www.ym.fi/), ja sitä toteutetaan yhdessä kuntien ja muiden sidosryhmien kanssa.
+
+## UML-tietomalli
+
+Tietomallin [UML-malli](uml/kaavoituksen_kansallinen_tietomalli.eap) on laadittu [Enterprise Architect](http://sparxsystems.com/products/ea/) -sovelluksella (versio 13), ja se pohjautuu osittain yleiseen INSPIRE-tietomalliin, joka on julkaistu [INSPIRE Data Specifications](https://inspire.ec.europa.eu/Data-Models/Data-Specifications/2892)-sivustolla.
