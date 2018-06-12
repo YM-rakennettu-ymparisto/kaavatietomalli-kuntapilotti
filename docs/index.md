@@ -1,13 +1,8 @@
----
-title: Kaavoituksen kansallinen tietomalli
-layout: post
----
-
 Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseksi tietomalliksi. Tietomallin laatimisen lähtökohtana on ollut asemakaavoituksen tarpeet, mutta se on tarkoitus olla sovellettavissa myös muuntasoisen kaavoituksen tarpeisiin sopivilla koodilistojen valinnoilla.
 
 Huomaa, että esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutteellinen.
 
-## Tietomallin yleiskuvaus
+# Tietomallin yleiskuvaus
 
 ![Kuva 1: Kaavatietomallin keskeiset käsiteet](images/tietomalli-keskeiset-kasitteet.png)
 *Kuva 1: Kaavatietomallin keskeiset käsiteet*
@@ -30,7 +25,7 @@ Kaavoitusprosessiin kuuluu joukko tapahtumia, joista voidaan koostaa kaavan synt
 
 Kaavan laatimisen lähtöaineistoihin viitataan tietomallissa ReferencedDataset-luokan instansseilla (ks. kuva 2). Lähtöaineistoviittaus voi koskea esimerkiksi kaavoituksessa käytettyä pohjakartta-aineistoa, kaupunkimallin versiota tai nimettyä pistepilviaineistoa. Aineiston tunnuksen ja ulkoisen viittauksen lisäksi voidaan antaa rooli, jossa ko. aineistoa on kaavoituksessa hyödynnetty.
 
-## Koodilistat ja kohteiden pehmeä tyypitys
+# Koodilistat ja kohteiden pehmeä tyypitys
 
 Tietomallissa on hyödynnetty laajasti koodilistoja kohteiden ja lisätietojen tyypitykseen, ja jätetty monet luokat nimiltään melko yleisiksi. Tavoitteena on ollut luoda luokkarakenne, jonka avulla voidaan mallintaa tulevaisuuden kaavoitusta eri tasoilla ja sopeutua tuleviin laki- ja kaavoituskäytäntömuutoksiin. Ulkoisten koodilistojen käyttö mahdollistaa kaavoituksen yksityiskohtien määrittelyn sekä niiden rajoitetun ja hallitun muuttamisen tulevaisuuden tarpeita vastaavaksi: Halutusta koodilistasta voidaan julkaista uusi korjattu tai täydennetty versio, jota käyttäen uudet kaavat voivat hyödyntää tietomallin laajennettuja tai korjattuja ominaisuuksia, kuten uutta rajoittavaa ominaisuutta. Aiemmin laaditut kaavat viittaavat edelleen ko. koodilista laadintahetkellä käytössä olleeseen koodilistaan.
 
@@ -39,6 +34,6 @@ Tietomallissa on hyödynnetty laajasti koodilistoja kohteiden ja lisätietojen t
 
 Tietomallin luonnoksessa ei ole laadittu sisältöä käytetyille koodilistoille, vaan ne määritellään ja dokumentoidaan Kuntapilotti-projektin toteutuksen aikana.
 
-## Tietomallin GML-realisaatio
+# Tietomallin GML-realisaatio
 
 Tietomallin mukainen Geography Markup Language (GML) -sovellusskeema toteutetaan osana Kuntapilotti-projektia. GML-sovellusskeeman tulee olla Geometry Markup Language (GML) Simple Features –profiilin version 2.0 compliance level SF-1 –mukainen. Sovellusskeeman tulee perustua GML-versioon 3.2 tai uudempaan. Simple Features –profiilin käytöllä pyritään pitämään tietomallin tekninen käyttöönottokynnys ja digitaalisen kaavoituksen sovelluskehityskustannukset kohtuullisina, ja samaan aikaan saavuttamaan GML-tason yhteensopivuus kansainvälisten kaavatiedon julkaisun sovellusskeemojen, erityisesti INSPIRE-direktiivin Planned Land Use –skeeman, kanssa.
