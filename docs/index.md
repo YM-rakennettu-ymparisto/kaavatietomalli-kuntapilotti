@@ -1,6 +1,6 @@
 ![Maankäyttöpäätökset-logo](images/maankayttopaatokset_logo_small.png)
 
-Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseksi tietomalliksi. Tietomallin laatimisen lähtökohtana on ollut asemakaavoituksen tarpeet, mutta se on tarkoitus olla sovellettavissa myös muuntasoisen kaavoituksen tarpeisiin sopivilla koodilistojen valinnoilla.
+Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseksi tietomalliksi. Tietomallin laatimisen lähtökohtana ovat olleet asemakaavoituksen tarpeet, mutta se on tarkoitus olla sovellettavissa myös muuntasoisen kaavoituksen tarpeisiin sopivilla koodilistojen valinnoilla.
 
 Kaavoituksen kansallisen tietomallin määrittelytyö on osa Paikkatietoalusta-hankkeen [Maankäyttöpäätökset-osahanketta](http://maankaytto.paikkatietoalusta.fi/), ja sen ensimmäisen version määrittely toteutetaan osahankkeeseen sisältyvän [Kuntapilotti-projektin](http://maankaytto.paikkatietoalusta.fi/kuntapilotti) yhteydessä. Tässä esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutteellinen.
 
