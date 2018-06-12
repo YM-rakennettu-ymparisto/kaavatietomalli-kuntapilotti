@@ -4,10 +4,6 @@ Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseks
 
 Kaavoituksen kansallisen tietomallin määrittelytyö on osa Paikkatietoalusta-hankkeen [Maankäyttöpäätökset-osahanketta](http://maankaytto.paikkatietoalusta.fi/), ja sen ensimmäisen version määrittely toteutetaan osahankkeeseen sisältyvän [Kuntapilotti-projektin](http://maankaytto.paikkatietoalusta.fi/kuntapilotti) yhteydessä. Tässä esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutteellinen.
 
-Maankäyttöpäätökset-hanke edistää alueidenkäytön suunnittelujärjestelmän eli kaavoitusjärjestelmän digitalisaatiota. Hankkeessa tuotetaan muun muassa määritelmä tietomallipohjaiselle asemakaavalle ja rajapintajakelulle sekä tutkitaan erilaisten digitaalisten lähtötietoaineistojen käyttömahdollisuuksia digikaavan laatimisessa. Tavoitteena on auttaa erikokoisia kuntia kaavoituksen digiloikan ottamisessa.
-
-Maankäyttöpäätökset-hanke kytkeytyy keskeisesti ympäristöministeriön maankäyttö- ja rakennuslain kokonaisuudistukseen. Hanketta koordinoi ympäristöministeriö, ja sitä toteutetaan yhdessä kuntien ja muiden sidosryhmien kanssa.
-
 
 # Tietomallin yleiskuvaus
 
