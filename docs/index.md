@@ -1,4 +1,4 @@
-<img src="images/maankayttopaatokset.png" alt="Maankäyttöpäätökset-logo" align="left"/>
+![Maankäyttöpäätökset-logo](images/maankayttopaatokset.png)
 
 Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseksi tietomalliksi. Tietomallin laatimisen lähtökohtana on ollut asemakaavoituksen tarpeet, mutta se on tarkoitus olla sovellettavissa myös muuntasoisen kaavoituksen tarpeisiin sopivilla koodilistojen valinnoilla.
 
