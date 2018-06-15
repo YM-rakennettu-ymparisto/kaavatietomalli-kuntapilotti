@@ -4,6 +4,7 @@ Tässä dokumentissa esitellään luonnos digitaalisen kaavoituksen kansalliseks
 
 Kaavoituksen kansallisen tietomallin määrittelytyö on osa Paikkatietoalusta-hankkeen [Maankäyttöpäätökset-osahanketta](http://maankaytto.paikkatietoalusta.fi/), ja sen ensimmäisen version määrittely toteutetaan osahankkeeseen sisältyvän [Kuntapilotti-projektin](http://maankaytto.paikkatietoalusta.fi/kuntapilotti) yhteydessä. Tässä esitetty tietomalli on vielä luonnos ja mahdollisesti osin puutteellinen.
 
+Kaavatietomallin kehitysversion UML-malli on saatavilla sekä [Enterprise Architect -muodossa](https://github.com/YM-rakennettu-ymparisto/kaavatietomalli/blob/master/uml/kaavoituksen_kansallinen_tietomalli.eap) että [HTML-raporttina](./uml_model/).
 
 # Tietomallin yleiskuvaus
 

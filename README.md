@@ -12,4 +12,5 @@ Maankäyttöpäätökset-hanke kytkeytyy keskeisesti ympäristöministeriön maa
 
 ## UML-tietomalli
 
-Tietomallin [UML-malli](uml/kaavoituksen_kansallinen_tietomalli.eap) on laadittu [Enterprise Architect](http://sparxsystems.com/products/ea/) -sovelluksella (versio 13), ja se pohjautuu osittain yleiseen INSPIRE-tietomalliin, joka on julkaistu [INSPIRE Data Specifications](https://inspire.ec.europa.eu/Data-Models/Data-Specifications/2892)-sivustolla.
+Kaavatietomallin UML-malli on saatavilla sekä [ Enterprise Architect -muodossa](uml/kaavoituksen_kansallinen_tietomalli.eap) että [HTML-raporttina](https://ym-rakennettu-ymparisto.github.io/kaavatietomalli/uml_model/).
+Tietomallin on laadittu [Enterprise Architect](http://sparxsystems.com/products/ea/) -sovelluksella (versio 13), ja se pohjautuu osittain yleiseen INSPIRE-tietomalliin, joka on julkaistu [INSPIRE Data Specifications](https://inspire.ec.europa.eu/Data-Models/Data-Specifications/2892)-sivustolla.
