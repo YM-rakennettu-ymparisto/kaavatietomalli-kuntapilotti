@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue
 
-**Käyttötarkoitus**: Kaavoituksen maankäyttötyppiluokitus, käytetään sekä kuvaamaan suunniteltua että olemassaolevaa (toteutunutta) maankäyttöä kaavoituksen yhteydessä.
+**Käyttötarkoitus**: Kaavoituksen maankäyttötyyppiluokitus, käytetään sekä kuvaamaan suunniteltua että olemassaolevaa (toteutunutta) maankäyttöä kaavoituksen yhteydessä.
 
 **Laajentaa koodilistaa**: AbstractLandUseKind
 
@@ -18,7 +18,7 @@
 
 ## Koodilistan arvot
 
-Pääluokka         | Koodi     | Nimike           | Kuvaus
+Pääluokka         | Koodi     | Nimike           | Tunniste
 ------------------|-----------|------------------|------------
-A1 Asuinalueet    | A11       | Kerrostaloalue   |
-A1 Asuinalueet    | A12       | Pientaloalue     |
+A1 Asuinalueet    | A11       | Kerrostaloalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A11
+A1 Asuinalueet    | A12       | Pientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A12
