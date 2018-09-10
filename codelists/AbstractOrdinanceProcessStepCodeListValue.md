@@ -1,15 +1,19 @@
-#AbstractOrdinanceProcessStep
-Nimi: AbstractOrdinanceProcessStep
+# AbstractOrdinanceProcessStep
+**Nimi**: AbstractOrdinanceProcessStep
 
-Abstrakti: Kyllä
+**Abstrakti**: Kyllä
 
-Yksilöivä tunniste: -
+**Yksilöivä tunniste**: -
 
-Käyttötarkoitus: Käytetään jotain laajentavista konkreettisista listoista
+**Käyttötarkoitus**: Käytetään jotain laajentavista
+konkreettisista listoista
 
-Laajentaa koodilistaa:
+**Laajentaa koodilistaa**:
 
-Laajennettavissa: Kyllä
+**Laajennettavissa**: Kyllä
 
-Koodilistan arvot
-Koodi	Selite	URI
+## Koodilistan arvot
+
+Koodi     | Selite                         | URI
+----------|--------------------------------|----------------------------------------
+
