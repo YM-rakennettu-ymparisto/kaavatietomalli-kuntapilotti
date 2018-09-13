@@ -20,15 +20,18 @@
 
 Pääluokka         | Koodi     | Nimike           | Tunniste
 ------------------|-----------|------------------|------------
-A1 Asuinalue    | A11       | Kerrostaloalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A11
-A1 Asuinalue   | A12       | Pientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A12
-A1 Asuinalue   | A13       | Rivitaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A13
-A1 Asuinalue   | A14       | Erillispientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A14
-A1 Asuinalue   | A15       | Asuin-, liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A15
-A2 Palvelutoiminnot       | A21       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A21
-A2 Palvelutoiminnot       | A22       | Huvi- ja viihdepalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A22
-A2 Palvelutoiminnot       | A23       | Yleiset rakennukset  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A23
-A2 Palvelutoiminnot       | A24       | Julkiset lähipalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A24
+Asuinalue    | A       | Asuinalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A0
+Asuinalue    | AK       | Kerrostaloalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A1
+Asuinalue   | AP       | Pientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A2
+Asuinalue   | AR       | Rivitaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A3
+Asuinalue   | AO       | Erillispientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A4
+Asuinalue   | AH       | Asuin-, liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A5
+A Asuinalue   | AM       | Maatilojen talouskeskusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A6
+P Palvelutoiminnot       | P0       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0
+P Palvelutoiminnot       | P1       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P1
+A2 Palvelutoiminnot       | A22       | Huvi- ja viihdepalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P2
+A2 Palvelutoiminnot       | A23       | Yleiset rakennukset  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P3
+A2 Palvelutoiminnot       | A24       | Julkiset lähipalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P4
 A2 Palvelutoiminnot       | A25       | Hallinto- ja virastopalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A25
 A2 Palvelutoiminnot       | A26       | Opetustoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A26
 A2 Palvelutoiminnot       | A27       | Sosiaalitoimi ja terveydenhuolto  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A27
