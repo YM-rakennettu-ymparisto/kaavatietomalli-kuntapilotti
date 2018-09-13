@@ -1,5 +1,6 @@
 # AbstractOrdinanceProcessStep
-**Nimi**: AbstractOrdinanceProcessStep
+
+**Nimi**: Abstract Ordinance Process Step
 
 **Abstrakti**: Kyllä
 
