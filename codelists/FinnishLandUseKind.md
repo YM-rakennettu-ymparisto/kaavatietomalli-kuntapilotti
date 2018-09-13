@@ -36,12 +36,13 @@ Palvelutoiminnot       | YH       | Hallinto- ja virastopalvelut  | http://paikk
 Palvelutoiminnot       | YO       | Opetustoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P6
 Palvelutoiminnot       | YS       | Sosiaalitoimi ja terveydenhuolto  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P7
 Palvelutoiminnot       | YK       | Kirkot ja seurakuntatoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P8
+Palvelutoiminnot       | YU       |  Urheilutoimintaa palvelevien rakennusten alue | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P9
 Keskustatoiminnot  | C       | Keskustatoiminnot     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/C0
-Liike- ja toimistorakennusalue  | K       | Liike- ja toimistorakennusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K0
-Liike- ja toimistorakennusalue  | KL       | Liikerakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K1
-Liike- ja toimistorakennusalue   | KM      | Vähittäiskaupan suuryksikkö    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K2
-Liike- ja toimistorakennusalue   | KT      | Toimistorakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K3
-Liike- ja toimistorakennusalue   | KTY       | Toimitilarakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K4
+Liike- ja toimistorakennusten alue  | K       |Liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K0
+Liike- ja toimistorakennusten alue  | KL       | Liikerakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K1
+Liike- ja toimistorakennusten alue   | KM      | Vähittäiskaupan suuryksikkö    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K2
+Liike- ja toimistorakennusten alue  | KT      | Toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K3
+Liike- ja toimistorakennusten alue   | KTY       | Toimitilarakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K4
 Teollisuuusalue    | T      | Teollisuuusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/T0
 Teollisuuusalue    | TV       | Varastorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/T1
 Teollisuuusalue    | TY       | Teollisuusalue, jolla ympäristö asettaa toiminnan laadulle erityisiä vaatimuksia.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/T2
@@ -53,6 +54,12 @@ Virkistysalue    | VK       | Leikkipuisto     | http://paikkatiedot.fi/registry
 Virkistysalue    | VU       | Urheilu- ja virkistyspalvelualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/V4
 Virkistysalue    | VR       | Retkeily- ja ulkoilualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/V5
 Virkistysalue    | VV       | Uimaranta    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/V6
+Loma- ja matkailualue    | R       | Loma- ja matkailualue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R0
+Loma- ja matkailualue    | RA       | Lomarakennusten alue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R1
+Loma- ja matkailualue    | RM       | Matkailua palvelevien rakennusten alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R2
+Loma- ja matkailualue    | RL       | Leirintäalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R3
+Loma- ja matkailualue    | RV       | Asuntovaunualue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R4
+Loma- ja matkailualue    | RP       | Siirtolapuutarha- ja palstaviljelyalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R5
 Liikennealue    | L       | Liikennealue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L0
 Liikennealue    | LT       | Yleisen tien alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L1
 Liikennealue    | LR       | Rautatie     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L2
