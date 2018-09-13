@@ -26,21 +26,22 @@ Asuinalue   | AP       | Pientaloalue     | http://paikkatiedot.fi/registry/code
 Asuinalue   | AR       | Rivitaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A3
 Asuinalue   | AO       | Erillispientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A4
 Asuinalue   | AH       | Asuin-, liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A5
-A Asuinalue   | AM       | Maatilojen talouskeskusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A6
-P Palvelutoiminnot       | P0       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0
-P Palvelutoiminnot       | P1       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P1
-A2 Palvelutoiminnot       | A22       | Huvi- ja viihdepalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P2
-A2 Palvelutoiminnot       | A23       | Yleiset rakennukset  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P3
-A2 Palvelutoiminnot       | A24       | Julkiset lähipalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P4
-A2 Palvelutoiminnot       | A25       | Hallinto- ja virastopalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A25
-A2 Palvelutoiminnot       | A26       | Opetustoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A26
-A2 Palvelutoiminnot       | A27       | Sosiaalitoimi ja terveydenhuolto  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A27
-A2 Palvelutoiminnot       | A28       | Kulttuuritoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A28
-A2 Palvelutoiminnot       | A29       | Museot  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A29
-A2 Palvelutoiminnot       | A210       | Kirkot ja seurakuntatoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A210
-A3 Liiketoiminta-alue  | A31       | Liikerakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A31
-A3 Liiketoiminta-alue  | A32       | Toimistorakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A32
-A3 Liiketoiminta-alue  | A33       | Toimitilarakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A33
+Asuinalue   | AM       | Maatilojen talouskeskusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A6
+Palvelutoiminnot       | P       | Palvelutoiminnot     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0
+Palvelutoiminnot       | PL       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P1
+Palvelutoiminnot       | PV       | Kulttuuri- ja viihdepalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P2
+Palvelutoiminnot       | Y       | Yleiset rakennukset  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P3
+Palvelutoiminnot       | YL       | Julkiset lähipalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P4
+Palvelutoiminnot       | YH       | Hallinto- ja virastopalvelut  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P5
+Palvelutoiminnot       | YO       | Opetustoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P6
+Palvelutoiminnot       | YS       | Sosiaalitoimi ja terveydenhuolto  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P7
+Palvelutoiminnot       | YK       | Kirkot ja seurakuntatoiminta  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P8
+Keskustatoiminnot  | C       | Keskustatoiminnot     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/C0
+Liike- ja toimistorakennusalue  | K       | Liike- ja toimistorakennusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K0
+Liike- ja toimistorakennusalue  | KL       | Liikerakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K1
+Liike- ja toimistorakennusalue   | KM      | Vähittäiskaupan suuryksikkö    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K2
+Liike- ja toimistorakennusalue   | KT      | Toimistorakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K3
+Liike- ja toimistorakennusalue   | KTY       | Toimitilarakennusten korttelialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K4
 A4 Teollisuuusalue    | A41       | Teollisuuusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A41
 A4 Teollisuuusalue    | A42       | Varastorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A42
 A4 Teollisuuusalue    | A43       | Teollisuuusalue, jolla ympärsistö asettaa toiminnan laadulle erityisiä vaatumuksia.     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A43
