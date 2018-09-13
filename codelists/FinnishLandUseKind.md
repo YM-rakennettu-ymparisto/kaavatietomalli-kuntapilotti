@@ -68,4 +68,11 @@ A7 Erityisalue    | A75       | Kaivosalue    | http://paikkatiedot.fi/registry/
 A7 Erityisalue    | A76       | Puollustusvoimienalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A76
 A7 Erityisalue    | A77       | Mastoalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A77
 A7 Erityisalue    | A78       | Ampumarata     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A78
-
+A7 Erityisalue    | A79       | Hautausmaa     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A79
+A8 Suojelualue    | A81       | Luonnonsuojelualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A81
+A8 Suojelualue    | A82       | Muinaismuistoalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A82
+A8 Suojelualue    | A83       | Rakennussuojelualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A83
+A9 Maa- ja metsätalousalue    | A91       | Maatalousalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A91
+A9 Maa- ja metsätalousalue    | A92       | Kotieläintalouden suuryksikkö     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A92
+A9 Maa- ja metsätalousalue    | A93       | Puutarha- ja kasvihuone     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A93
+A10 Maa- ja metsätalousalue    | A101       | Vesialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A101
