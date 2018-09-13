@@ -22,7 +22,7 @@ Pääluokka         | Koodi     | Nimike           | Tunniste
 ------------------|-----------|------------------|------------
 A1 Asuinalue    | A11       | Kerrostaloalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A11
 A1 Asuinalue   | A12       | Pientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A12
-A1 Asuinalue   | A13       | Rivitalojen ja muiden kytkettyjen rakennusten asuinalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A13
+A1 Asuinalue   | A13       | Rivitaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A13
 A1 Asuinalue   | A14       | Erillispientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A14
 A1 Asuinalue   | A15       | Asuin-, liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A15
 A2 Palvelutoiminnot       | A21       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A21
