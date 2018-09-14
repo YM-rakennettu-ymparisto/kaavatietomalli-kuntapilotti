@@ -1,6 +1,6 @@
-# ReferenceDataRole
+# AbstractReferenceDataRole
 
-**Nimi**: Reference Data Role
+**Nimi**: Abstract Reference Data Role
 
 **Abstrakti**: Kyllä
 
