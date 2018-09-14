@@ -25,7 +25,7 @@ Asuinalue    | AK       | Kerrostaloalue   | http://paikkatiedot.fi/registry/cod
 Asuinalue   | AP       | Pientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A2
 Asuinalue   | AR       | Rivitaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A3
 Asuinalue   | AO       | Erillispientaloalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A4
-Asuinalue   | AH       | Asuin-, liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A5
+Asuinalue   | AL       | Asuin-, liike- ja toimistorakennusten alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A5
 Asuinalue   | AM       | Maatilojen talouskeskusalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A6
 Palvelutoiminnot       | P       | Palvelutoiminnot     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0
 Palvelutoiminnot       | PL       | Lähipalvelut     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P1
