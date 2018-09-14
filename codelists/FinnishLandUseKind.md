@@ -61,18 +61,19 @@ Loma- ja matkailualue    | RL       | Leirintäalue    | http://paikkatiedot.fi/
 Loma- ja matkailualue    | RV       | Asuntovaunualue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R4
 Loma- ja matkailualue    | RP       | Siirtolapuutarha- ja palstaviljelyalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R5
 Liikennealue    | L       | Liikennealue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L0
-Liikennealue    | LT       | Yleisen tien alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L1
-Liikennealue    | LR       | Rautatie     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L2
-Liikennealue    | LL       | Lentokenttä     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L3
-Liikennealue    | LS       | Satama     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L4
-Liikennealue    | LK       | Kanava     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L5
-Liikennealue    | LV       | Venesatama ja -valkama    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L6
-Liikennealue    | LH       | Yleinen pysäköintialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L7
-Liikennealue    | LPY       | Yleinen pysäköintilaitos     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L8
-Liikennealue    | LPA       | Autopaikka-alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L9
-Liikennealue    | LH       | Huoltoasema     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L10
-Liikennealue    | LHA       | Henkilöliikenneterminaali     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L11
-Liikennealue    | LTA       | Tavaraliikenneterminaali     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L12
+Liikennealue    | KATU       | Katu     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L1
+Liikennealue    | LT       | Yleisen tien alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L2
+Liikennealue    | LR       | Rautatie     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L3
+Liikennealue    | LL       | Lentokenttä     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L4
+Liikennealue    | LS       | Satama     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L5
+Liikennealue    | LK       | Kanava     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L6
+Liikennealue    | LV       | Venesatama ja -valkama    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L7
+Liikennealue    | LP       | Yleinen pysäköintialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L8
+Liikennealue    | LPY       | Yleinen pysäköintilaitos     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L9
+Liikennealue    | LPA       | Autopaikka-alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L10
+Liikennealue    | LH       | Huoltoasema     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L11
+Liikennealue    | LHA       | Henkilöliikenneterminaali     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L12
+Liikennealue    | LTA       | Tavaraliikenneterminaali     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L13
 Erityisalue    | E       | Erityisalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E0
 Erityisalue    | ET       | Yhdyskuntatekninen huolto     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E1
 Erityisalue    | EN       | Energiahuolto     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E1
