@@ -1,6 +1,6 @@
-# DocumentRole
+# AbstractDocumentRole
 
-**Nimi**: Document Role
+**Nimi**: Abstract Document Role
 
 **Abstrakti**: Kyllä
 
