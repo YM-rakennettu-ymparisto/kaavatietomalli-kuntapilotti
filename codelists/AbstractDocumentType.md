@@ -1,6 +1,6 @@
-# DocumentType
+# AbstractDocumentType
 
-**Nimi**: Document Type
+**Nimi**: Abstract Document Type
 
 **Abstrakti**: Kyllä
 
