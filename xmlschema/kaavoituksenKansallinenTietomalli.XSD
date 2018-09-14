@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml">
+	<xs:include/> <!-- muut xsd-tiedostot, jos määrittely jakautunut eri tiedostoihin -->
+	<xs:include/>
+
+<!-- koodilistoja-->
+	<xs:element name="AbstractBuildingGuidancePropertyCodeListValue" type="AbstractBuildingGuidancePropertyCodeListValue"/>
+	<xs:complexType name="AbstractBuildingGuidancePropertyCodeListValue" abstract="true">
+		<xs:sequence /><!-- sequencen sisään listat -->
+	</xs:complexType>
+	<xs:element name="AbstractLandUseKindCodeListValue" type="AbstractLandUseKindCodeListValue"/>
+	<xs:complexType name="AbstractLandUseKindCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="AbstractOrdinanceProcessCodeListValue" type="AbstractOrdinanceProcessCodeListValue"/>
+	<xs:complexType name="AbstractOrdinanceProcessCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="AbstractOrdnanceProcessStepCodeListValue" type="AbstractOrdnanceProcessStepCodeListValue"/>
+	<xs:complexType name="AbstractOrdnanceProcessStepCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="AbstractPlanningDetailTypeCodeListValue" type="AbstractPlanningDetailTypeCodeListValue"/>
+	<xs:complexType name="AbstractPlanningDetailTypeCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+
+	<xs:element name="AbstractPlanningObject" type="AbstractPlanningObject"/>
+
+	<xs:complexType name="AbstractPlanningObject" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="AbstractFeature">
+				<xs:sequence>
+					<xs:element name="created" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="identifier" type="xs:string" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>codeSpace</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="planningObjectIdentifier" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="obsoletes" type="AbstractPlanningObject" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ReferencedDocument" type="ReferencedDocument" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="AbstractPlanningUnitTypeCodeListValue" type="AbstractPlanningUnitTypeCodeListValue"/>
+	<xs:complexType name="AbstractPlanningUnitTypeCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+
+	<xs:element name="AbstractReferencedResource" type="AbstractReferencedResource"/>
+
+	<xs:complexType name="AbstractReferencedResource" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="AbstractGML">
+				<xs:sequence>
+					<xs:element name="identifier" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reference" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="referencedOn" type="xs:date" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- koodilistoja-->
+	
+	<xs:element name="AbstractRegulativeTextTypeCodeListValue" type="AbstractRegulativeTextTypeCodeListValue"/>
+	<xs:complexType name="AbstractRegulativeTextTypeCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="AbstractSpatialPlanLevelCodeListValue" type="AbstractSpatialPlanLevelCodeListValue"/>
+	<xs:complexType name="AbstractSpatialPlanLevelCodeListValue" abstract="true">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="AsemakaavaBuildingGuidancePropertyCodeListValue" type="AsemakaavaBuildingGuidancePropertyCodeListValue"/>
+	<xs:complexType name="AsemakaavaBuildingGuidancePropertyCodeListValue">
+		<xs:complexContent>
+			<xs:extension base="AbstractBuildingGuidancePropertyCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AsemakaavaOrdinanceProcessCodeListValue" type="AsemakaavaOrdinanceProcessCodeListValue"/>
+	<xs:complexType name="AsemakaavaOrdinanceProcessCodeListValue">
+		<xs:complexContent>
+			<xs:extension base="AbstractOrdinanceProcessCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AsemakaavaPlanningDetailTypeCodeListValue" type="AsemakaavaPlanningDetailTypeCodeListValue"/>
+	<xs:complexType name="AsemakaavaPlanningDetailTypeCodeListValue">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningDetailTypeCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AsemakaavaPlanningUnitTypeCodeListValue" type="AsemakaavaPlanningUnitTypeCodeListValue"/>
+	<xs:complexType name="AsemakaavaPlanningUnitTypeCodeListValue">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningUnitTypeCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AsemakaavaProcessStepCodeListValue" type="AsemakaavaProcessStepCodeListValue"/>
+	<xs:complexType name="AsemakaavaProcessStepCodeListValue">
+		<xs:annotation>
+			<xs:documentation>Do we want to model the steps per Asemakaava process, or have all the steps of all processes here (valitus etc.)?</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AbstractOrdnanceProcessStepCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+<!-- ???? -->
+<!--	<xs:element name="Class1" type="Class1"/>
+	<xs:complexType name="Class1">
+		<xs:sequence/>
+	</xs:complexType>
+	-->
+	
+<!-- koodilistoja, viittauksella-->
+	<xs:element name="DocumentRoleCodeListValue" type="DocumentRoleCodeListValue"/>
+	<xs:complexType name="DocumentRoleCodeListValue">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="DocumentTypeCodeListValue" type="DocumentTypeCodeListValue"/>
+	<xs:complexType name="DocumentTypeCodeListValue">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="FinnishLandUseKindCodeListValue" type="FinnishLandUseKindCodeListValue"/>
+	<xs:complexType name="FinnishLandUseKindCodeListValue">
+		<xs:annotation>
+			<xs:documentation>Should include all the HILUCS codes that we want to use in Finland + others that can be mapped to a HILUCS code list values</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AbstractLandUseKindCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FinnishRegulativeTextTypeCodeListValue" type="FinnishRegulativeTextTypeCodeListValue"/>
+	<xs:complexType name="FinnishRegulativeTextTypeCodeListValue">
+		<xs:complexContent>
+			<xs:extension base="AbstractRegulativeTextTypeCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FinnishSpatialPlanLevelCodeListValue" type="FinnishSpatialPlanLevelCodeListValue"/>
+	<xs:complexType name="FinnishSpatialPlanLevelCodeListValue">
+		<xs:complexContent>
+			<xs:extension base="AbstractSpatialPlanLevelCodeListValue">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="InformativeFeature" type="InformativeFeature"/>
+
+	<xs:complexType name="InformativeFeature">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningObject">
+				<xs:sequence>
+					<xs:element name="geometry" type="gml:MultiSurface" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="type" type="InformativeFeatureTypeCodeListValue" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="InformativeFeatureTypeCodeListValue" type="InformativeFeatureTypeCodeListValue"/>
+	<xs:complexType name="InformativeFeatureTypeCodeListValue">
+		<xs:sequence/>
+	</xs:complexType>
+
+	<xs:element name="OrdinanceProcessEvent" type="OrdinanceProcessEvent"/>
+
+	<xs:complexType name="OrdinanceProcessEvent">
+		<xs:complexContent>
+			<xs:extension base="AbstractGML">
+				<xs:sequence>
+					<xs:element name="actor" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="documentReference" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="process" type="AbstractOrdinanceProcessCodeListValue" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="processingAuthority" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="processStep" type="AbstractOrdnanceProcessStepCodeListValue" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="AbstractPlanningObject" type="AbstractPlanningObject" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PlanningDetail" type="PlanningDetail"/>
+
+	<xs:complexType name="PlanningDetail">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningObject">
+				<xs:sequence>
+					<xs:element name="geometry" type="gml:Point" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="type" type="AbstractPlanningDetailTypeCodeListValue" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="PropertyRestriction" type="PropertyRestriction" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PlanningUnit" type="PlanningUnit"/>
+
+	<xs:complexType name="PlanningUnit">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningObject">
+				<xs:sequence>
+					<xs:element name="geometry" type="gml:MultiSurface" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="landUseKind" type="AbstractLandUseKindCodeListValue" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Overrides the possible landUseKind of the connected ZoningElement</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="type" type="AbstractPlanningUnitTypeCodeListValue" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="containedArea" type="PlanningDetail" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="PlanningUnit" type="PlanningUnit" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="PropertyRestriction" type="PropertyRestriction" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="planningUnit" type="RegulativeText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="PropertyRestriction" type="PropertyRestriction"/>
+
+	<xs:complexType name="PropertyRestriction" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="AbstractGML">
+				<xs:sequence>
+					<xs:element name="propertyName" type="AbstractBuildingGuidancePropertyCodeListValue" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ReferenceDataRoleCodeListValue" type="ReferenceDataRoleCodeListValue"/>
+	<xs:complexType name="ReferenceDataRoleCodeListValue">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="ReferenceDataTypeCodeListValue" type="ReferenceDataTypeCodeListValue"/>
+	<xs:complexType name="ReferenceDataTypeCodeListValue">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="ReferencedDataset" type="ReferencedDataset"/>
+	<xs:complexType name="ReferencedDataset">
+		<xs:complexContent>
+			<xs:extension base="AbstractReferencedResource">
+				<xs:sequence>
+					<xs:element name="role" type="ReferenceDataRoleCodeListValue" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Codelist value for the role of this reference data in the planning process </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="ReferenceDataTypeCodeListValue" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ReferencedDocument" type="ReferencedDocument"/>
+
+	<xs:complexType name="ReferencedDocument">
+		<xs:complexContent>
+			<xs:extension base="AbstractReferencedResource">
+				<xs:sequence>
+					<xs:element name="language" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="role" type="DocumentRoleCodeListValue" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="type" type="DocumentTypeCodeListValue" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ReferencedFeature" type="ReferencedFeature"/>
+
+	<xs:complexType name="ReferencedFeature">
+		<xs:complexContent>
+			<xs:extension base="AbstractReferencedResource">
+				<xs:sequence>
+					<xs:element name="type" type="InformativeFeatureTypeCodeListValue" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="RegulativeText" type="RegulativeText"/>
+
+	<xs:complexType name="RegulativeText">
+		<xs:complexContent>
+			<xs:extension base="AbstractGML">
+				<xs:sequence>
+					<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="type" type="AbstractRegulativeTextTypeCodeListValue" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="SpatialPlan" type="SpatialPlan"/>
+
+	<xs:complexType name="SpatialPlan">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningObject">
+				<xs:sequence>
+					<xs:element name="extent" type="gml:MultiSurface" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="landAdminstrationAuthority" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="planningLevel" type="AbstractSpatialPlanLevelCodeListValue" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>National, regional etc. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="planType" type="xs:string" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>maakuntakaava, yleiskaava,  osayleiskaava, asemakaava, rantakaava etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="validFrom" type="xs:date" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="validTo" type="xs:date" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="plan" type="InformativeFeature" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ReferencedDataset" type="ReferencedDataset" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ReferencedFeature" type="ReferencedFeature" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="plan" type="RegulativeText" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="SpatialPlan" type="SpatialPlan" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="plan" type="ZoningElement" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="ZoningElement" type="ZoningElement"/>
+	
+	<xs:complexType name="ZoningElement">
+		<xs:complexContent>
+			<xs:extension base="AbstractPlanningObject">
+				<xs:sequence>
+					<xs:element name="geometry" type="gml:MultiSurface" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="landUseKind" type="AbstractLandUseKindCodeListValue" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="previousLandUseKind" type="AbstractLandUseKindCodeListValue" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="verticallyConstrainedAbove" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="verticallyConstrainedBelow" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="zoningElement" type="PlanningUnit" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="PropertyRestriction" type="PropertyRestriction" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="zoningElement" type="RegulativeText" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	</xs:schema>
