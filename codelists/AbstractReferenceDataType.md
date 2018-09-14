@@ -1,6 +1,6 @@
-# ReferenceDataType
+# AbstractReferenceDataType
 
-**Nimi**: Reference Data Type
+**Nimi**: Abstract Reference Data Type
 
 **Abstrakti**: Kyllä
 
