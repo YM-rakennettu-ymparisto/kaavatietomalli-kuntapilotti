@@ -1,6 +1,6 @@
-# InformativeFeatureType
+# AbstractInformativeFeatureType
 
-**Nimi**: Informative Feature Type
+**Nimi**: Abstract Informative Feature Type
 
 **Abstrakti**: Kyllä
 
