@@ -8,7 +8,7 @@
 
 **Käyttötarkoitus**: Kaavatyyppi
 
-**Laajentaa koodilistaa**: AbstractFinnishSpatialPlanType
+**Laajentaa koodilistaa**: AbstractSpatialPlanType
 
 **Laajennettavissa**: Ei
 
