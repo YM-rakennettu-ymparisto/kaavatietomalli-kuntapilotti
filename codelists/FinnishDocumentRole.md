@@ -20,7 +20,6 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | lausunto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
- 2       | mielipide   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
- 3       | paatos   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
- 4       | vastine   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
+ 1       | lahtotieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
+ 2       | lisatieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
+ 3       | perustelu   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
