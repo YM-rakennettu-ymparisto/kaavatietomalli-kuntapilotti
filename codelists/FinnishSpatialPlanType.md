@@ -1,4 +1,4 @@
-# FinnishSpatialPlanTypeCodeListValue
+# FinnishSpatialPlanType
 
 **Nimi**: Finnish Spatial Plan Type
 
