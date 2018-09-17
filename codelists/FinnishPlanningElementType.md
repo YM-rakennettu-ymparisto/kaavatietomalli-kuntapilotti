@@ -20,5 +20,9 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | kohde1   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/1
- 2       | kohde2   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/2
+ 1       | Kortteli   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/1
+ 2       | Yleinen alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/2
+ 3       | Tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/3
+ 4       | Rakennusala   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/4
+ 5       | Osa-alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/5
+ 6       | Muu alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/6
