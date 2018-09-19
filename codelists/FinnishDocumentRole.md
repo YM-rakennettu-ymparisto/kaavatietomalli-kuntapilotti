@@ -22,4 +22,3 @@ Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
  1       | lahtotieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
  2       | lisatieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
- 3       | perustelu   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
