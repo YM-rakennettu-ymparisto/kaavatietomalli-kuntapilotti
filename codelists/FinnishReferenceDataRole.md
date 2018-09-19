@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataRoleCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien dokumenttien rooli.
+**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien viiteaineistojen rooli.
 
 **Laajentaa koodilistaa**: AbstractReferenceDataRole
 
@@ -20,6 +20,5 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | nykytilanne   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataRoleCodeListValue/1
+ 1       | lisätieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataRoleCodeListValue/1
  2       | rajoite   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataRoleCodeListValue/2
- 3       | strategia   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataRoleCodeListValue/3
