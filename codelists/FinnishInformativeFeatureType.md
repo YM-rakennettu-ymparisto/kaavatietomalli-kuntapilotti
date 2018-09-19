@@ -20,6 +20,6 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | rajoite   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/1
- 2       | lisatieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/2
+ 1       | maastotieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/1
+ 2       | suojelukohde   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/2
 
