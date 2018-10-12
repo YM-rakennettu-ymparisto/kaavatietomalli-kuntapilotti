@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+	
+	<!-- koodilistoja-->
+	<xs:complexType name="FinnishSpatialPlanLevelCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="Maakuntakaava"/>
+			<xs:enumeration value="Yleiskaava"/>
+			<xs:enumeration value="Asemakaava"/>
+		    <xs:enumeration value="Kuntien yhteinen kaava"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishSpatialPlanTypeCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="3_1_asemakaava"/>
+		   <xs:enumeration value="3_2_vaiheasemakaava"/>
+		   <xs:enumeration value="3_3_ranta-asemakaava"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishSpatialPlanStatusCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="ohjelmoitu kaavamuutos"/>
+			<xs:enumeration value="muutoksen alla (rakennuskiellossa)"/>
+			<xs:enumeration value="vireillä"/>
+		    <xs:enumeration value="kaavaehdotus (nähtäville asetettu)"/>
+			<xs:enumeration value="valtuuston hyväksymä"/>
+			<xs:enumeration value="lainvoimaisen kaavan alue (muutoksenhaun jälkeen)"/>
+			<xs:enumeration value="väistynyt kaava"/>
+			<xs:enumeration value="keskeytetty kaava"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- TODO: check values -->
+				<!-- suomeksi kommenteilla seuraavat
+				1_1_suunnitteilla, 1_2_vireilla
+				2_1_luonnos
+				3_1_ehdotus, 3_2_tarkistettu_ehdotus
+				4_1_hyväksytty, 4_2_oikaisukehotus, 4_3_valitus
+				5_1_voimassa, 5_2_osittain_voimassa, 5_3_lainvoimainen
+				6_1_kumottu
+				7_1_rauennut
+				-->
+	
+	<xs:complexType name="FinnishLandUseKindCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration key="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A0" value="Asuinalue"/>
+			<xs:enumeration key="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0" value="Palvelutoiminnot"/>
+			<xs:enumeration value="Liike- ja toimistorakennusten alue"/>
+		    <xs:enumeration value="Teollisuuusalue"/>
+		    <xs:enumeration value="Virkistysalue"/>
+		    <xs:enumeration value="Liikennealue"/>
+		    <xs:enumeration value="Erityisalue"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishOrdinanceProcessCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="uusi"/>
+		    <xs:enumeration value="kaavamuutos"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishOrdnanceProcessStepCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="aloitusvaihe"/>
+		    <xs:enumeration value="valmisteluvaihe"/>
+		    <xs:enumeration value="ehdotusvaihe"/>
+		    <xs:enumeration value="hyväksymisvaihe"/>
+		    <xs:enumeration value="voimaantulo"/>
+		    <xs:enumeration value="kumoaminen"/>
+		    <xs:enumeration value="raukeaminen"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- TODO: check values -->
+				<!-- suomeksi kommenteilla seuraavat
+				1_1_suunnitteilla, 1_2_vireilla
+				2_1_luonnos
+				3_1_ehdotus, 3_2_tarkistettu_ehdotus
+				4_1_hyväksytty, 4_2_oikaisukehotus, 4_3_valitus
+				5_1_voimassa, 5_2_osittain_voimassa, 5_3_lainvoimainen
+				6_1_kumottu
+				7_1_rauennut
+				-->
+		
+	<xs:complexType name="FinnishPlanningElementTypeCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="pääkäyttötarkoitusalue"/>
+		    <xs:enumeration value="tontti"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishPlanningDetailTypeCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="Melusuojaus"/>
+		    <xs:enumeration value="Liittymäkielto"/>
+		    <xs:enumeration value="Ajoneuvoliittymän likimääräinen sijainti"/>
+		    <xs:enumeration value="Rakennuksen sivu, johon rakennus on rakennettava kiinni"/>
+		    <xs:enumeration value="Harjasuunta"/>
+		    <xs:enumeration value="Ulkoilureitti"/>
+		    <xs:enumeration value="Ikkunaton seinusta"/>
+		    <xs:enumeration value="Suojeltava puu"/>
+		    <xs:enumeration value="Maanpinnan likimääräinen korkeusasema"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishRestrictionTypeCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="Rakennusoikeus kerrosalaneliömetreinä."/>
+		    <xs:enumeration value="Rakennusoikeus murtolukuna."/>
+		    <xs:enumeration value="Tehokkuusluku"/>
+		    <xs:enumeration value="Kerrosluku"/>
+		    <xs:enumeration value="Kattokaltevuus"/>
+		    <xs:enumeration value="Sallittu asuinhuoneistojen osuus rakennusalasta."/>
+		    <xs:enumeration value="Sallittu myymälätilojen osuus rakennusalasta."/>
+		    <xs:enumeration value="Osuus, jonka rakennuksen suurimman kerroksen alasta saa kellarikerroksessa käyttää kerrosalaan luettavaksi tilaksi."/>
+		    <xs:enumeration value="Osuus, jonka rakennuksen suurimman kerroksen alasta saa käyttää ullakon tasolla kerrosalaan luettavaksi tilaksi."/>
+			<xs:enumeration value="Luku osoittaa neliömetreinä, kuinka suuren osan rakennuksen alimmasta kerroksesta (I) saa kerrosalaneliömetreinä ilmoitetun kerrosalan lisäksi käyttää asukkaiden yhteistiloihin."/>
+		    <xs:enumeration value="Velvoitettu päiväkotitilojen osuus alimman kerroksen rakennusalasta."/>
+		    <xs:enumeration value="Maanpinnan likimääräinen korkeusasema."/>
+		    <xs:enumeration value="Rakennuksen vesikaton ylimmän kohdan korkeusasema."/>
+		    <xs:enumeration value="Rakennuksen julkisivupinnan ja vesikaton leikkauskohdan ylin korkeusasema."/>
+		    <xs:enumeration value="Rakennuksen julkisivun enimmäiskorkeus metreinä."/>
+		    <xs:enumeration value="Rakennuksen, rakenteiden ja laitteiden ylin korkeusasema."/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishRequlativeTextCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<xs:enumeration value="Istutettava alueen osa."/>
+		    <xs:enumeration value="Rakennukseen jätettävä kulkuaukko."/>
+		    <xs:enumeration value="Maanalaisiin tiloihin johtava ajoluiska."/>
+			<!-- Tahan lisaa koodeja, jos tyypitetaan valmiiksi-->
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FinnishDocumentRoleCodeListValue" Finnish="true">
+		<xs:sequence /><!-- sequencen sisään listat -->
+	</xs:complexType>
+
+	<xs:complexType name="FinnishDocumentTypeCodeListValue" Finnish="true">
+		<xs:sequence /><!-- sequencen sisään listat -->
+	</xs:complexType>
+
+	<xs:complexType name="FinnishReferenceDataRoleCodeListValue" Finnish="true">
+		<xs:sequence /><!-- sequencen sisään listat -->
+	</xs:complexType>
+
+	<xs:complexType name="FinnishReferenceDataTypeCodeListValue" Finnish="true">
+		<xs:sequence /><!-- sequencen sisään listat -->
+	</xs:complexType>
+
+	<xs:complexType name="FinnishInformativeFeatureTypeCodeListValue" Finnish="true">
+		<xs:sequence /><!-- sequencen sisään listat -->
+	</xs:complexType>
+
+</xs:schema>
