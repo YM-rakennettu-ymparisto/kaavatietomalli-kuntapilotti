@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue
 
-**Käyttötarkoitus**: Kaavoituksen kohteet
+**Käyttötarkoitus**: Kaavoituksen osa-aluekohteet
 
 **Laajentaa koodilistaa**: AbstractPlanningElementType
 
@@ -20,5 +20,6 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | Pääkäyttötarkoitusalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/1
- 2       | Tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/2
+ 1       | Tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/1
+ 2       | Rakennusala   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/2
+ 3       | Osa-alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/3
