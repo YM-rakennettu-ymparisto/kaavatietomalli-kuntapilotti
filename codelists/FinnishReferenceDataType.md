@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien kohteiden tyyppi.
+**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien viiteaineistojen tyyppi.
 
 **Laajentaa koodilistaa**: AbstractReferenceDataType
 
@@ -20,6 +20,8 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | nykytilanne   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/1
- 2       | rajoite   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/2
- 3       | strateginen   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/3
+ 1       | rakennetieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/1
+ 2       | maaperätieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/2
+ 3       | maastotieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/3
+ 4       | temaattinen tieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/4
+ 5       | viiteaineisto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue/5
