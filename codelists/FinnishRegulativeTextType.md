@@ -20,6 +20,9 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | Istutettava alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/1
- 2       | Rakennukseen jätettävä kulkuaukko.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/2
- 3       | Maanalaisiin tiloihin johtava ajoluiska.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/3
+ 1       | Tekstimääräys   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/1
+ 2       | Rakennusalan tarkenne.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/2
+ 3       | Osa-alueen tarkenne.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/3
+ 4       | Istutettava alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/4
+ 5       | Rakennukseen jätettävä kulkuaukko.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/5
+ 6       | Maanalaisiin tiloihin johtava ajoluiska.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/6
