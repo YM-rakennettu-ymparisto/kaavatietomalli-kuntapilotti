@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosesissa syntyvät dokumentit, dokumenttien suhde kaava-aineistoon.
+**Käyttötarkoitus**: Kaavoitusprosessissa syntyvät dokumentit, dokumenttien suhde kaava-aineistoon.
 
 **Laajentaa koodilistaa**: AbstractDocumentRole
 
@@ -20,10 +20,8 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | selostus   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
- 2       | selvitys   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
- 3       | vaikutusten arviointi   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
- 4       | lausunto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
- 5       | muistutus   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/5
- 6       | mielipide   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/6
- 7       | paatos   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/7
+ 1       | kaavatieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
+ 2       | taustatieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
+ 3       | perustelu   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
+ 4       | paatos   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
+ 
