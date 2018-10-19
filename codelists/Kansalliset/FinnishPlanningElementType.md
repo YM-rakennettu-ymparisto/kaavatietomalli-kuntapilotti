@@ -20,6 +20,5 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | Tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/1
- 2       | Rakennusala   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/2
- 3       | Osa-alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/3
+ 1       | Rakennusala   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/1
+ 2       | Osa-alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/2
