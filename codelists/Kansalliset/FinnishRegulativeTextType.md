@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue
 
-**Käyttötarkoitus**: Kaavakohteiden tekstimuotoiset tarkenteet.
+**Käyttötarkoitus**: Kaavakohteiden tekstimuotoiset tarkenteet. Kohteen RegulativeText avulla voidaan tallentaa tiettyyn kohteeseen linkitetty perinteisen kaavamääräystekstin osa (koodi tekstimääräys ja teksti ominaisuudessa description) taikka valita rakennusalan tai osa-alueen tarkenne koodilistalta.
 
 **Laajentaa koodilistaa**: AbstractRegulativeTextType
 
