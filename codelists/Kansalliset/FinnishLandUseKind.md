@@ -74,6 +74,10 @@ Liikennealue    | LPA       | Autopaikka-alue     | http://paikkatiedot.fi/regis
 Liikennealue    | LH       | Huoltoasema     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L11
 Liikennealue    | LHA       | Henkilöliikenneterminaali     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L12
 Liikennealue    | LTA       | Tavaraliikenneterminaali     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L13
+Liikennealue    | L       | Katuaukio/tori     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L14
+Liikennealue    | L       | Jalankululle varattu katu/tie     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L15
+Liikennealue    | L       | Pihakatu     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L16
+Liikennealue    | L       | Hidaskatu     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L17
 Erityisalue    | E       | Erityisalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E0
 Erityisalue    | ET       | Yhdyskuntatekninen huolto     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E1
 Erityisalue    | EN       | Energiahuolto     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E1
@@ -95,7 +99,3 @@ Maa- ja metsätalousalue    | ME       | Kotieläintalouden suuryksikkö     | h
 Maa- ja metsätalousalue    | MP       | Puutarha- ja kasvihuone     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/M3
 Maa- ja metsätalousalue    | MA       | Maisemallisesti arvokas peltoalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/M4
 Vesialue    | W       | Vesialue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/W0
-Liikennealue    | L       | Katuaukio/tori     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L14
-Liikennealue    | L       | Jalankululle varattu katu/tie     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L15
-Liikennealue    | L       | Pihakatu     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L16
-Liikennealue    | L       | Hidaskatu     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L17
