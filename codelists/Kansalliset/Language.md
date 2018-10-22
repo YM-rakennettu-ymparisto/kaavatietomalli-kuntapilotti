@@ -20,6 +20,6 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | suomi   | http://paikkatiedot.fi/registry/codelist/fin_lu/LanguageCodeListValue/1
- 2       | ruotsi   | http://paikkatiedot.fi/registry/codelist/fin_lu/LanguageCodeListValue/2
- 3       | suomi ja ruotsi   | http://paikkatiedot.fi/registry/codelist/fin_lu/LanguageCodeListValue/3
+ 1       | Suomi   | http://paikkatiedot.fi/registry/codelist/fin_lu/LanguageCodeListValue/1
+ 2       | Ruotsi   | http://paikkatiedot.fi/registry/codelist/fin_lu/LanguageCodeListValue/2
+ 3       | Suomi ja ruotsi   | http://paikkatiedot.fi/registry/codelist/fin_lu/LanguageCodeListValue/3
