@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataRoleCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien viiteaineistojen rooli.
+**Käyttötarkoitus**: POISTETAAN - Kaavoitusprosessiin liittyvien viiteaineistojen rooli. Tähän sopivat samat roolit kuin paikkatietomuotoiselle aineistolle.
 
 **Laajentaa koodilistaa**: AbstractReferenceDataRole
 
