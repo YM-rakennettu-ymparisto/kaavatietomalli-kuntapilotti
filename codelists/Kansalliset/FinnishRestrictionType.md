@@ -36,5 +36,5 @@ Koodi     | Nimike           | Tunniste
  14       | Rakennuksen julkisivupinnan ja vesikaton leikkauskohdan ylin korkeusasema. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/14
  15       | Rakennuksen julkisivun enimmäiskorkeus metreinä. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/15
  16       | Rakennuksen, rakenteiden ja laitteiden ylin korkeusasema. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/16
-
- 
+ 17       | Kerrosalaneliömetrimäärä, jota kohti on rakennettava yksi autopaikka. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/17
+ 18       | Autopaikkojen lukumäärä asuntoa kohti. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/18
