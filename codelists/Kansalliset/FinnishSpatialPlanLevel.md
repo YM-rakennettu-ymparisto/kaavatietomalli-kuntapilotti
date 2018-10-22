@@ -22,5 +22,6 @@ Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
  1       | Maakuntakaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/1
  2       | Yleiskaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/2
- 3       | Asemakaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/3
- 4       | Kuntien yhteinen kaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/4
+ 3       | Ranta-asemakaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/3
+ 4       | Asemakaava (ohjeellinen tonttijako)   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/4
+ 5       | Asemakaava (sitova tonttijako)   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/5
