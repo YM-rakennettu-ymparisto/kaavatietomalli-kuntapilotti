@@ -38,3 +38,4 @@ Koodi     | Nimike           | Tunniste
  16       | Rakennuksen, rakenteiden ja laitteiden ylin korkeusasema. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/16
  17       | Kerrosalaneliömetrimäärä, jota kohti on rakennettava yksi autopaikka. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/17
  18       | Autopaikkojen lukumäärä asuntoa kohti. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/18
+ 19       | Desibeliraja. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue/19
