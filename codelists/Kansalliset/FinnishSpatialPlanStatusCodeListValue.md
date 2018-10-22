@@ -21,10 +21,10 @@
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
  1       | ohjelmoitu kaavamuutos   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/1
- 2       | muutoksen alla (rakennuskiellossa)   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/2
+ 2       | muutoksen alla   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/2
  3       | vireillä   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/3
- 4       | kaavaehdotus (nähtäville asetettu)   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/4
+ 4       | kaavaehdotus   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/4
  5       | valtuuston hyväksymä   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/5
- 6       | lainvoimaisen kaavan alue (muutoksenhaun jälkeen)   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/6
+ 6       | lainvoimaisen kaavan alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/6
  7       | väistynyt kaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/7
  8       | keskeytetty kaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/8
