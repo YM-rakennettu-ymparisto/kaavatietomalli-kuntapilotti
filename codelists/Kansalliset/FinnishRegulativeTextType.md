@@ -54,4 +54,4 @@ Koodi     | Nimike           | Tunniste
  32       |  Suojeltava alueen osa.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/32
  33       |  Alueen osa, jolla sijaitsee luonnonsuojelulain mukainen luonnonsuojelualue tai -kohde.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/33
  34       |   Suojeltava rakennus.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/34
- 
+ 35       |   Rakennussuojelulain nojalla suojeltu rakennus.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/35
