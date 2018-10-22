@@ -21,4 +21,5 @@
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
  1       | Pääkäyttötarkoitusalue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/1
- 2       | Tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/2
+ 2       | Sitova tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/2
+ 3       | Ohjeellinen tontti   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/3
