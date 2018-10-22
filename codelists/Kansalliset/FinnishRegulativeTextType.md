@@ -26,3 +26,8 @@ Koodi     | Nimike           | Tunniste
  4       | Istutettava alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/4
  5       | Rakennukseen jätettävä kulkuaukko.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/5
  6       | Maanalaisiin tiloihin johtava ajoluiska.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/6
+ 7       | Maanalainen tila.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/7
+ 8       | Maanalainen väestönsuojaksi tarkoitettu tila.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/8
+ 9       | Maanalainen yleinen pysäköintilaitos.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/9
+ 10       | Liikennetunneli.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/10
+ 11       | Rakennusala, jolle saa sijoittaa lasten päiväkodin.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/11
