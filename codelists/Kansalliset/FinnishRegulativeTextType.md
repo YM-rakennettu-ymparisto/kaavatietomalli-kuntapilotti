@@ -43,3 +43,15 @@ Koodi     | Nimike           | Tunniste
  21       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla tontille/rakennuspaikalle ajo on sallittu.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21
  22       | Yleiseen tiehen kuuluva jalankulku- ja polkupyörätie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/22
  23       | Joukkoliikenteelle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/23
+ 24       | Ajoyhteys.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/24
+ 25       | Alueen sisäiselle huoltoliikenteelle varattu alueen osa.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/25
+ 26       | Yleisen tien suoja-alueeksi varattu alueen osa.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/26
+ 27       |  Yleisen tien näkemäalueeksi varattu alueen osa.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/27
+ 28       |  Johtoa varten varattu alueen osa.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/28
+ 29       |   Alue on varattu kunnan tarpeisiin.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/29
+ 30       |   Alue on varattu valtion tarpeisiin.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/30
+ 31       |  Yhteiskäyttöalue.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/31
+ 32       |  Suojeltava alueen osa.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/32
+ 33       |  Alueen osa, jolla sijaitsee luonnonsuojelulain mukainen luonnonsuojelualue tai -kohde.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/33
+ 34       |   Suojeltava rakennus.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/34
+ 
