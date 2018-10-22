@@ -31,3 +31,16 @@ Koodi     | Nimike           | Tunniste
  9       | Maanalainen yleinen pysäköintilaitos.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/9
  10       | Liikennetunneli.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/10
  11       | Rakennusala, jolle saa sijoittaa lasten päiväkodin.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/11
+ 12       | Rakennusala, jolle saa sijoittaa myymälän.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/12
+ 13       | Rakennusala, jolle saa sijoittaa maatilan talouskeskuksen.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/13
+ 14       | Rakennusala, jolle saa sijoittaa talousrakennuksen.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/14
+ 15       | Alue, jolle saa sijoittaa polttoaineen jakeluaseman.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/15
+ 16       | Uloke.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/16
+ 17       | Valokatteinen tila.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/17
+ 18       | Leikki- ja oleskelualueeksi varattu alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/18
+ 19       | Jalankululle ja polkupyöräilylle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/19
+ 20       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla huoltoajo on sallittu.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/20
+ 21       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla tontille/rakennus-
+paikalle ajo on sallittu.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21
+ 22       | Yleiseen tiehen kuuluva jalankulku- ja polkupyörätie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/22
+ 23       | Joukkoliikenteelle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/23
