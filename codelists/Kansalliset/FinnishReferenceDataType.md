@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishReferenceDataTypeCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien viiteaineistojen tyyppi.
+**Käyttötarkoitus**: POISTETAAN - Kaavoitusprosessiin liittyvien viiteaineistojen tyyppi. Tähän soveltuvat samat koodilistat kuin paikkatietokohteille.
 
 **Laajentaa koodilistaa**: AbstractReferenceDataType
 
