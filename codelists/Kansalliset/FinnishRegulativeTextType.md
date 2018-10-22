@@ -40,7 +40,6 @@ Koodi     | Nimike           | Tunniste
  18       | Leikki- ja oleskelualueeksi varattu alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/18
  19       | Jalankululle ja polkupyöräilylle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/19
  20       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla huoltoajo on sallittu.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/20
- 21       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla tontille/rakennus-
-paikalle ajo on sallittu.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21
+ 21       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla tontille/rakennuspaikalle ajo on sallittu.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21
  22       | Yleiseen tiehen kuuluva jalankulku- ja polkupyörätie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/22
  23       | Joukkoliikenteelle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/23
