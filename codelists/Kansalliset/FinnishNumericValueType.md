@@ -1,14 +1,14 @@
-# FinnishRestrictionType
+# FinnishNumericValueType
 
-**Nimi**: Finnish Restriction Type
+**Nimi**: Finnish Numeric Value Type
 
 **Abstrakti**: ei
 
-**Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRestrictionTypeCodeListValue
+**Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue
 
 **Käyttötarkoitus**: Kaavakohteita tarkentava numeerinen ominaisuustieto.
 
-**Laajentaa koodilistaa**: AbstractRestrictionType
+**Laajentaa koodilistaa**: AbstractNumericValueType
 
 **Laajennettavissa**: Ei
 
