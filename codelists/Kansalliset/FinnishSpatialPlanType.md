@@ -22,4 +22,4 @@ Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
  1       | Asemakaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/1
  2       | Ranta-asemakaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/2
- 3       | Vaihekaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/3
+ 3       | Vaiheasemakaava   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/3
