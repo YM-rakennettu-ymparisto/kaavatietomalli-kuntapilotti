@@ -20,7 +20,7 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 2       | liiteaineisto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/1
+ 1       | selostus   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/1
  2       | lausunto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/2
  3       | mielipide   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/3
  4       | vastine   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/4
