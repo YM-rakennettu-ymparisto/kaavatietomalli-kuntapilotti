@@ -1,13 +1,12 @@
-# AbstractRestrictionType
+# AbstractNumericValueType
 
-**Nimi**: Abstract Restriction Type
+**Nimi**: Abstract Numeric Value Type
 
 **Abstrakti**: Kyllä
 
 **Yksilöivä tunniste**: -
 
-**Käyttötarkoitus**: Käytetään jotain laajentavista
-konkreettisista listoista
+**Käyttötarkoitus**: Käytetään jotain laajentavista konkreettisista listoista
 
 **Laajentaa koodilistaa**:
 
