@@ -5,10 +5,12 @@
 	<xs:complexType name="FinnishSpatialPlanLevelCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="Maakuntakaava"/>
-			<xs:enumeration value="Yleiskaava"/>
-			<xs:enumeration value="Asemakaava"/>
-		    <xs:enumeration value="Kuntien yhteinen kaava"/>
+		  <!-- 1=Maakuntakaava, 2=Yleiskaava, 3=Ranta-asemakaava, 4=Asemakaava (ohjeellinen tonttijako), 5=Asemakaava (sitova tonttijako) -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanLevelCodeListValue/5"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
@@ -16,9 +18,10 @@
 	<xs:complexType name="FinnishSpatialPlanTypeCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="3_1_asemakaava"/>
-		   <xs:enumeration value="3_2_vaiheasemakaava"/>
-		   <xs:enumeration value="3_3_ranta-asemakaava"/>
+		   <!-- 1=3_1_asemakaava, 2=3_2_vaiheasemakaava, 3=3_3_ranta-asemakaava -->
+		   <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/1"/>
+		   <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/2"/>
+		   <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanTypeCodeListValue/3"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
@@ -26,14 +29,16 @@
 	<xs:complexType name="FinnishSpatialPlanStatusCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="ohjelmoitu kaavamuutos"/>
-			<xs:enumeration value="muutoksen alla (rakennuskiellossa)"/>
-			<xs:enumeration value="vireillä"/>
-		    <xs:enumeration value="kaavaehdotus (nähtäville asetettu)"/>
-			<xs:enumeration value="valtuuston hyväksymä"/>
-			<xs:enumeration value="lainvoimaisen kaavan alue (muutoksenhaun jälkeen)"/>
-			<xs:enumeration value="väistynyt kaava"/>
-			<xs:enumeration value="keskeytetty kaava"/>
+			<!-- 1="ohjelmoitu kaavamuutos", 2="muutoksen alla (rakennuskiellossa)", 3="vireillä", 4="kaavaehdotus (nähtäville asetettu)",
+			5="valtuuston hyväksymä", 6="lainvoimaisen kaavan alue (muutoksenhaun jälkeen)", 7="väistynyt kaava", 8="keskeytetty kaava" -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/5"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/6"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/7"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/8"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
@@ -47,59 +52,48 @@
 				6_1_kumottu
 				7_1_rauennut
 				-->
+	<xs:complexType name="FinnishZoningElementTypeCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<!-- 1=Pääkäyttötarkoitusalue, 2=Sitova tontti, 3=Ohjeellinen tontti -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishZoningElementTypeCodeListValue/3"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
 	
 	<xs:complexType name="FinnishLandUseKindCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration key="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A0" value="Asuinalue"/>
-			<xs:enumeration key="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0" value="Palvelutoiminnot"/>
-			<xs:enumeration value="Liike- ja toimistorakennusten alue"/>
-		    <xs:enumeration value="Teollisuuusalue"/>
-		    <xs:enumeration value="Virkistysalue"/>
-		    <xs:enumeration value="Liikennealue"/>
-		    <xs:enumeration value="Erityisalue"/>
+			<!-- A0=Asuinalue, P0=Palvelutoiminnot, C0=Keskustatoiminnot, K0=Liike- ja toimistorakennusten alue, 
+			T0=Teollisuusalue, V0=Virkistysalue, R0=Loma- ja matkailualue, L0=Liikennealue, E0=Erityisalue, 
+			S0=Suojelualue, M0=Maa- ja metsätalous, W0=Vesialue -->
+			<!-- HUOM: Kayttotarkoituksista on mahdollista käyttää tarkempia alaluokkia, jotka luetellaan Githubissa:
+			https://github.com/YM-rakennettu-ymparisto/kaavatietomalli/blob/master/codelists/Kansalliset/FinnishLandUseKind.md
+			Vielä on auki, lisätäänkö kaikki koodit samaan listaan vai saako listalle alakohdat. -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/P0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/C0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/K0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/T0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/V0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/S0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/M0"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/W0"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="FinnishOrdinanceProcessCodeListValue" Finnish="true">
-		<xs:sequence>
-		  <xs:restriction base="xs:string">
-			<xs:enumeration value="uusi"/>
-		    <xs:enumeration value="kaavamuutos"/>
-		  </xs:restriction>
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="FinnishOrdnanceProcessStepCodeListValue" Finnish="true">
-		<xs:sequence>
-		  <xs:restriction base="xs:string">
-			<xs:enumeration value="aloitusvaihe"/>
-		    <xs:enumeration value="valmisteluvaihe"/>
-		    <xs:enumeration value="ehdotusvaihe"/>
-		    <xs:enumeration value="hyväksymisvaihe"/>
-		    <xs:enumeration value="voimaantulo"/>
-		    <xs:enumeration value="kumoaminen"/>
-		    <xs:enumeration value="raukeaminen"/>
-		  </xs:restriction>
-		</xs:sequence>
-	</xs:complexType>
-	<!-- TODO: check values -->
-				<!-- suomeksi kommenteilla seuraavat
-				1_1_suunnitteilla, 1_2_vireilla
-				2_1_luonnos
-				3_1_ehdotus, 3_2_tarkistettu_ehdotus
-				4_1_hyväksytty, 4_2_oikaisukehotus, 4_3_valitus
-				5_1_voimassa, 5_2_osittain_voimassa, 5_3_lainvoimainen
-				6_1_kumottu
-				7_1_rauennut
-				-->
-		
 	<xs:complexType name="FinnishPlanningElementTypeCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="pääkäyttötarkoitusalue"/>
-		    <xs:enumeration value="tontti"/>
+			<!-- 1=Rakennusala, 2=Osa-alue -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningElementTypeCodeListValue/2"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
@@ -107,71 +101,244 @@
 	<xs:complexType name="FinnishPlanningDetailTypeCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="Melusuojaus"/>
-		    <xs:enumeration value="Liittymäkielto"/>
-		    <xs:enumeration value="Ajoneuvoliittymän likimääräinen sijainti"/>
-		    <xs:enumeration value="Rakennuksen sivu, johon rakennus on rakennettava kiinni"/>
-		    <xs:enumeration value="Harjasuunta"/>
-		    <xs:enumeration value="Ulkoilureitti"/>
-		    <xs:enumeration value="Ikkunaton seinusta"/>
-		    <xs:enumeration value="Suojeltava puu"/>
+			<!-- 1=Melusuojaus, 2="Liittymäkielto", 3="Ajoneuvoliittymän likimääräinen sijainti", 4="Rakennuksen sivu, johon rakennus on rakennettava kiinni",
+			5="Harjasuunta", 6="Ulkoilureitti", 7="Puurivi", 8="Ikkunaton seinusta", 9="Suojeltava puu", 10="Maanpinnan likimääräinen korkeusasema" -->
 		    <xs:enumeration value="Maanpinnan likimääräinen korkeusasema"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/5"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/6"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/7"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/8"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/9"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue/10"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="FinnishRestrictionTypeCodeListValue" Finnish="true">
+	<xs:complexType name="FinnishNumericValueTypeCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="Rakennusoikeus kerrosalaneliömetreinä."/>
-		    <xs:enumeration value="Rakennusoikeus murtolukuna."/>
-		    <xs:enumeration value="Tehokkuusluku"/>
-		    <xs:enumeration value="Kerrosluku"/>
-		    <xs:enumeration value="Kattokaltevuus"/>
-		    <xs:enumeration value="Sallittu asuinhuoneistojen osuus rakennusalasta."/>
-		    <xs:enumeration value="Sallittu myymälätilojen osuus rakennusalasta."/>
-		    <xs:enumeration value="Osuus, jonka rakennuksen suurimman kerroksen alasta saa kellarikerroksessa käyttää kerrosalaan luettavaksi tilaksi."/>
-		    <xs:enumeration value="Osuus, jonka rakennuksen suurimman kerroksen alasta saa käyttää ullakon tasolla kerrosalaan luettavaksi tilaksi."/>
-			<xs:enumeration value="Luku osoittaa neliömetreinä, kuinka suuren osan rakennuksen alimmasta kerroksesta (I) saa kerrosalaneliömetreinä ilmoitetun kerrosalan lisäksi käyttää asukkaiden yhteistiloihin."/>
-		    <xs:enumeration value="Velvoitettu päiväkotitilojen osuus alimman kerroksen rakennusalasta."/>
-		    <xs:enumeration value="Maanpinnan likimääräinen korkeusasema."/>
-		    <xs:enumeration value="Rakennuksen vesikaton ylimmän kohdan korkeusasema."/>
-		    <xs:enumeration value="Rakennuksen julkisivupinnan ja vesikaton leikkauskohdan ylin korkeusasema."/>
-		    <xs:enumeration value="Rakennuksen julkisivun enimmäiskorkeus metreinä."/>
-		    <xs:enumeration value="Rakennuksen, rakenteiden ja laitteiden ylin korkeusasema."/>
+			<!-- 1=Rakennusoikeus kerrosalaneliömetreinä.
+			2="Rakennusoikeus murtolukuna."
+			3="Tehokkuusluku"
+		    4="Kerrosluku"
+		    5="Kattokaltevuus"
+		    6="Sallittu asuinhuoneistojen osuus rakennusalasta."
+		    7="Sallittu myymälätilojen osuus rakennusalasta."
+		    8="Osuus, jonka rakennuksen suurimman kerroksen alasta saa kellarikerroksessa käyttää kerrosalaan luettavaksi tilaksi."
+		    9="Osuus, jonka rakennuksen suurimman kerroksen alasta saa käyttää ullakon tasolla kerrosalaan luettavaksi tilaksi."/>
+			10="Luku osoittaa neliömetreinä, kuinka suuren osan rakennuksen alimmasta kerroksesta (I) saa kerrosalaneliömetreinä ilmoitetun kerrosalan lisäksi käyttää asukkaiden yhteistiloihin."
+		    11="Velvoitettu päiväkotitilojen osuus alimman kerroksen rakennusalasta."
+		    12="Maanpinnan likimääräinen korkeusasema."
+		    13="Rakennuksen vesikaton ylimmän kohdan korkeusasema."
+		    14="Rakennuksen julkisivupinnan ja vesikaton leikkauskohdan ylin korkeusasema."
+		    15="Rakennuksen julkisivun enimmäiskorkeus metreinä."
+		    16="Rakennuksen, rakenteiden ja laitteiden ylin korkeusasema."
+			17="Kerrosalaneliömetrimäärä, jota kohti on rakennettava yksi autopaikka."
+			18="Autopaikkojen lukumäärä asuntoa kohti."
+			19="Desibeliraja."
+			-->
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/1"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/2"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/3"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/4"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/5"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/6"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/7"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/8"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/9"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/10"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/11"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/12"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/13"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/14"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/15"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/16"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/17"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/18"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/19"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="FinnishRequlativeTextCodeListValue" Finnish="true">
+	<xs:complexType name="FinnishRegulativeTextCodeListValue" Finnish="true">
 		<xs:sequence>
 		  <xs:restriction base="xs:string">
-			<xs:enumeration value="Istutettava alueen osa."/>
-		    <xs:enumeration value="Rakennukseen jätettävä kulkuaukko."/>
-		    <xs:enumeration value="Maanalaisiin tiloihin johtava ajoluiska."/>
-			<!-- Tahan lisaa koodeja, jos tyypitetaan valmiiksi-->
+		  <!--
+			1	Tekstimääräys
+			2	Auton säilytyspaikan rakennusala.
+			3	Pysäköimispaikka.
+			4	Istutettava alueen osa.
+			5	Rakennukseen jätettävä kulkuaukko.
+			6	Maanalaisiin tiloihin johtava ajoluiska.
+			7	Maanalainen tila.
+			8	Maanalainen väestönsuojaksi tarkoitettu tila.
+			9	Maanalainen yleinen pysäköintilaitos.
+			10	Liikennetunneli.
+			11	Rakennusala, jolle saa sijoittaa lasten päiväkodin.
+			12	Rakennusala, jolle saa sijoittaa myymälän.
+			13	Rakennusala, jolle saa sijoittaa maatilan talouskeskuksen.
+			14	Rakennusala, jolle saa sijoittaa talousrakennuksen.
+			15	Alue, jolle saa sijoittaa polttoaineen jakeluaseman.
+			16	Uloke.
+			17	Valokatteinen tila.
+			18	Leikki- ja oleskelualueeksi varattu alueen osa.
+			19	Jalankululle ja polkupyöräilylle varattu katu/tie.
+			20	Jalankululle ja polkupyöräilylle varattu katu/tie, jolla huoltoajo on sallittu.
+			21	Jalankululle ja polkupyöräilylle varattu katu/tie, jolla tontille/rakennus-paikalle ajo on sallittu.
+			22	Yleiseen tiehen kuuluva jalankulku- ja polkupyörätie.
+			23	Joukkoliikenteelle varattu katu/tie.
+			24	Ajoyhteys.
+			25	Alueen sisäiselle huoltoliikenteelle varattu alueen osa.
+			26	Yleisen tien suoja-alueeksi varattu alueen osa.
+			27	Yleisen tien näkemäalueeksi varattu alueen osa.
+			28	Johtoa varten varattu alueen osa.
+			29	Alue on varattu kunnan tarpeisiin.
+			30	Alue on varattu valtion tarpeisiin.
+			31	Yhteiskäyttöalue.
+			32	Suojeltava alueen osa.
+			33	Alueen osa, jolla sijaitsee luonnonsuojelulain mukainen luonnonsuojelualue tai -kohde.
+			34	Suojeltava rakennus.
+			35	Rakennussuojelulain nojalla suojeltu rakennus.-->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/5"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/6"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/7"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/8"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/9"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/10"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/11"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/12"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/13"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/14"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/15"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/16"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/17"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/18"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/19"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/20"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/22"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/23"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/24"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/25"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/26"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/27"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/28"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/29"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/30"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/31"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/32"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/33"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/34"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/35"/>
 		  </xs:restriction>
 		</xs:sequence>
 	</xs:complexType>
-
+	
+	<xs:complexType name="FinnishOrdinanceProcessCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<!-- 1=uusi asemakaava
+			2=asemakaavan muutos
+			3=uusi ranta-asemakaava
+			4=ranta-asemakaavan muutos -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue/4"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FinnishOrdnanceProcessStepCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<!-- 1="aloitusvaihe", 2="valmisteluvaihe", 3="ehdotusvaihe", 4="hyväksymisvaihe",
+			5="voimaantulo", 6="kumoaminen", 7="raukeaminen" -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/5"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/6"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessStepCodeListValue/7"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- More specific values, not in use now, needed? -->
+	<!-- suomeksi kommenteilla seuraavat
+			1_1_suunnitteilla, 1_2_vireilla
+			2_1_luonnos
+			3_1_ehdotus, 3_2_tarkistettu_ehdotus
+			4_1_hyväksytty, 4_2_oikaisukehotus, 4_3_valitus
+			5_1_voimassa, 5_2_osittain_voimassa, 5_3_lainvoimainen
+			6_1_kumottu
+			7_1_rauennut
+		-->
+		
 	<xs:complexType name="FinnishDocumentRoleCodeListValue" Finnish="true">
-		<xs:sequence /><!-- sequencen sisään listat -->
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<!-- 1=liiteaineisto, 2=lisatieto, 3=perustelu, 4=paatos-->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3"/>
+		    <xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4"/>
+		  </xs:restriction>
+		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="FinnishDocumentTypeCodeListValue" Finnish="true">
-		<xs:sequence /><!-- sequencen sisään listat -->
-	</xs:complexType>
-
-	<xs:complexType name="FinnishReferenceDataRoleCodeListValue" Finnish="true">
-		<xs:sequence /><!-- sequencen sisään listat -->
-	</xs:complexType>
-
-	<xs:complexType name="FinnishReferenceDataTypeCodeListValue" Finnish="true">
-		<xs:sequence /><!-- sequencen sisään listat -->
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<!-- 1=selostus, 2=lausunto, 3=mielipide, 4=muistutus, 5=vastine, 6=paatos, 7=havainnekuva, 8=vaikutustenarviointi, 9=muu-->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/5"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/6"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/7"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/8"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentTypeCodeListValue/9"/>
+		  </xs:restriction>
+		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="FinnishInformativeFeatureTypeCodeListValue" Finnish="true">
-		<xs:sequence /><!-- sequencen sisään listat -->
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+			<!-- 1=rekisteri, 2=maaperä, 3=maasto, 4=luonto, 5=kulttuuriympäristö, 6=ympäristöterveys, 7=liikenne, 8=yhdyskuntarakenne, 9=energiahuolto, 10=kunnallistekniset verkostot-->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/3"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/4"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/5"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/6"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/7"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/8"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/9"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/10"/>
+		  </xs:restriction>
+		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="FinnishLanguageCodeListValue" Finnish="true">
+		<xs:sequence>
+		  <xs:restriction base="xs:string">
+		  <!-- 1=Suomi, 2=Ruotsi, 3=Suomi ja ruotsi -->
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLanguageCodeListValue/1"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLanguageCodeListValue/2"/>
+			<xs:enumeration value="http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLanguageCodeListValue/3"/>
+		  </xs:restriction>
+		</xs:sequence>
+	</xs:complexType>
+	
 </xs:schema>
