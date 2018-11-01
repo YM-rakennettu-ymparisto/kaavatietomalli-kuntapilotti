@@ -20,8 +20,8 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | liiteaineisto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
- 2       | lisätieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
- 3       | perustelu   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
- 4       | paatos   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
+ 1       | Liiteaineisto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
+ 2       | Kaavaselostus   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
+ 3       | Lisätieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
+ 4       | Päätös   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
  
