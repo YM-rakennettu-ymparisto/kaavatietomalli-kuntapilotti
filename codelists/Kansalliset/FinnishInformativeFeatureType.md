@@ -31,4 +31,4 @@ Koodi     | Nimike           | Tunniste
  9       | Energiahuolto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/9
  10       | Kunnallistekniset verkostot   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/10
  11       | Rakennukset   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/11
- 
+ 12       | Muu   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/12
