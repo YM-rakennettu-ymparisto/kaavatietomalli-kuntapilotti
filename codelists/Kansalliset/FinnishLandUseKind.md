@@ -91,7 +91,7 @@ Erityisalue    | EP       | Puolustusvoimienalue     | http://paikkatiedot.fi/re
 Erityisalue    | EH       | Hautausmaa     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/E9
 Suojelualue    | S       | Suojelualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/S0
 Suojelualue    | SL       | Luonnonsuojelualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/S1
-Suojelualue    | SM       | Muinaismuistoalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/A82
+Suojelualue    | SM       | Muinaismuistoalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/S2
 Suojelualue    | SR       | Rakennussuojelualue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/S3
 Maa- ja metsätalousalue    | M       | Maa- ja metsätalousalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/M0
 Maa- ja metsätalousalue    | MT       | Maatalousalue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/M1
