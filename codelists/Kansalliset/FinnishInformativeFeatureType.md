@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien paikkatietokohteiden tyyppi.
+**Käyttötarkoitus**: Kaavoitusprosessiin liittyvien taustakohteiden tyyppi.
 
 **Laajentaa koodilistaa**: AbstractInformativeFeatureType
 
@@ -20,14 +20,15 @@
 
 Koodi     | Nimike           | Tunniste
 -----------|------------------|------------
- 1       | rekisteri   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/1
- 2       | maaperä   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/2
- 3       | maasto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/3
- 4       | luonto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/4
- 5       | kulttuuriympäristö   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/5
- 6       | ympäristöterveys   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/6
- 7       | liikenne   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/7
- 8       | yhdyskuntarakenne   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/8
- 9       | energiahuolto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/9
- 10       | kunnallistekniset verkostot   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/10
+ 1       | Kiinteistöt   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/1
+ 2       | Maaperä   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/2
+ 3       | Maasto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/3
+ 4       | Luonto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/4
+ 5       | Kulttuuriympäristö   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/5
+ 6       | Ympäristöterveys   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/6
+ 7       | Liikenne   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/7
+ 8       | Yhdyskuntarakenne   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/8
+ 9       | Energiahuolto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/9
+ 10       | Kunnallistekniset verkostot   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/10
+ 11       | Rakennukset   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishInformativeFeatureTypeCodeListValue/11
  
