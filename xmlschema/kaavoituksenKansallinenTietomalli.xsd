@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://paikkatiedot.fi/kaavoituksenTietomalli" targetNamespace="http://paikkatiedot.fi/kaavoituksenTietomalli" elementFormDefault="qualified" version="1.1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://paikkatiedot.fi/kaavoituksenTietomalli" targetNamespace="http://paikkatiedot.fi/kaavoituksenTietomalli" elementFormDefault="qualified" version="1.1.1">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf/2.0" schemaLocation="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd"/>
@@ -32,14 +32,14 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:element name="AbstractRestrictedGML" type="kt:AbstractRestrictedGMLType" abstract="true" substitutionGroup="gml:AbstractGML" />
-	<xs:complexType name="AbstractRestrictedGMLType" abstract="true">
+	<xs:complexType name="AbstractGMLWithMandatoryIdentifierType">
 		<xs:complexContent>
 			<xs:restriction base="gml:AbstractGMLType">
 				<xs:sequence>
 					<xs:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="gml:description" minOccurs="0"/>
 					<xs:element ref="gml:descriptionReference" minOccurs="0"/>
+					<xs:element ref="gml:identifier" minOccurs="1"/>
 					<xs:element ref="gml:name" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute ref="gml:id" use="required" />
@@ -47,41 +47,30 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:element name="AbstractRestrictedFeature" type="kt:AbstractRestrictedFeatureType" abstract="true" substitutionGroup="gml:AbstractFeature" />
-	<xs:complexType name="AbstractRestrictedFeatureType" abstract="true">
+	<xs:complexType name="AbstractFeatureWithMandatoryIdentifierType">
 		<xs:complexContent>
 			<xs:restriction base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="gml:description" minOccurs="0"/>
 					<xs:element ref="gml:descriptionReference" minOccurs="0"/>
+					<xs:element ref="gml:identifier" minOccurs="1"/>
+					<xs:element ref="gml:name" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="gml:boundedBy" minOccurs="0"/>
+					<xs:element ref="gml:location" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="gml:id" use="required" />
 			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:element name="identifier" type="gml:CodeWithAuthorityType">
-		<xs:annotation>
-			<xs:documentation>Uudelleenmääritetty identifier-ominaisuus. CodeWithAuthorityType on sama kuin ScopeName</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	
-	<xs:element name="name" type="kt:LanguageStringType">
-	<xs:annotation>
-			<xs:documentation>Uudelleenmääritetty name-ominaisuus, kieliriippuvainen merkkijono.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	
 	<!-- Kaavatietojen abstrakti kuvaus -->
-	<xs:element name="AbstractPlanningObject" type="kt:AbstractPlanningObjectType" abstract="true" substitutionGroup="kt:AbstractRestrictedFeature"/>
+	<xs:element name="AbstractPlanningObject" type="kt:AbstractPlanningObjectType" abstract="true" substitutionGroup="gml:AbstractFeature"/>
 	<xs:complexType name="AbstractPlanningObjectType" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="kt:AbstractRestrictedFeatureType">
+			<xs:extension base="kt:AbstractFeatureWithMandatoryIdentifierType">
 				<xs:sequence>
 					<xs:element name="created" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
-					<xs:element ref="kt:identifier"/>
 					<!-- Kaavatunnus, joka säilyy versiosta toiseen -->					
 					<xs:element name="planningObjectIdentifier" type="xs:anyURI">
 						<xs:annotation>
@@ -114,9 +103,19 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="LanguageStringType">
+	<xs:element name="localizedName" type="kt:LocalizedNameType"/>
+	<xs:complexType name="LocalizedNameType">
 		<xs:simpleContent>
-			<xs:extension base="xs:string">
+			<xs:extension base="gml:CodeType">
+				<xs:attribute ref="xml:lang" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:element name="localizedDescription" type="kt:LocalizedDescriptionType" />
+	<xs:complexType name="LocalizedDescriptionType">
+		<xs:simpleContent>
+			<xs:extension base="gml:StringOrRefType">
 				<xs:attribute ref="xml:lang" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
@@ -131,7 +130,7 @@
 					<xs:element name="extent" type="gml:MultiSurfacePropertyType"/>
 					<xs:element name="landAdminstrationAuthority" type="xs:anyURI"/>
 					<xs:element name="language" type="kt:FinnishLanguageCodeListValue"/>
-					<xs:element ref="kt:name" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded"/>
 					<xs:element name="planningLevel" type="kt:FinnishSpatialPlanLevelCodeListValue"/>
 					<xs:element name="planType" type="kt:FinnishSpatialPlanTypeCodeListValue"/>
 					<xs:element name="status" type="kt:FinnishSpatialPlanStatusCodeListValue"/>
@@ -159,7 +158,13 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="affectingIncludedFeature" type="kt:InformativeFeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="affectingIncludedFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:InformativeFeature</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="backgroundData" type="kt:ReferencedDatasetPropertyType" minOccurs="0" maxOccurs="unbounded" />
 					<xs:element name="affectingReferencedFeature" type="kt:ReferencedFeaturePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
@@ -179,7 +184,7 @@
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiSurfacePropertyType"/>
-					<xs:element ref="kt:name" minOccurs="1" maxOccurs="unbounded" />
+					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded" />
 					<xs:element name="type" type="kt:FinnishZoningElementTypeCodeListValue"/>
 					<xs:element name="planningElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
@@ -212,13 +217,7 @@
 					</xs:element>
 					<xs:element name="landUse" type="kt:PlannedLandUsePropertyType" minOccurs="0" maxOccurs="unbounded" />	
 					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" /> 
-					<xs:element name="affectingFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:ReferencedFeature</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
+					<xs:element name="affectingReferencedFeature" type="kt:ReferencedFeaturePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -283,7 +282,7 @@
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
-					<xs:element ref="kt:name" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
 				</xs:sequence>
 			</xs:extension>
@@ -296,13 +295,12 @@
 	</xs:complexType>
 	
 	<!-- Kaavadokumenttien abstrakti kuvaus -->
-	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="kt:AbstractRestrictedGML"/>
+	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="gml:AbstractGML" />
 	<xs:complexType name="AbstractReferencedResourceType" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="kt:AbstractRestrictedGMLType">
+			<xs:extension base="kt:AbstractGMLWithMandatoryIdentifierType">
 				<xs:sequence>
 					<xs:element name="referencedOn" type="xs:date"/>
-					<xs:element ref="kt:identifier" />
 					<xs:element name="reference" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>Unique element identifier</xs:documentation>
@@ -399,7 +397,7 @@
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
-					<xs:element name="description" type="kt:LanguageStringType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="type" type="kt:FinnishRegulativeTextTypeCodeListValue" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -417,7 +415,7 @@
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
-					<xs:element name="description" type="kt:LanguageStringType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="obligatory" type="xs:boolean"/>
 					<xs:element name="propertyName" type="kt:FinnishNumericValueTypeCodeListValue"/>
 					<xs:element name="value" type="gml:MeasureType"/>
@@ -432,15 +430,15 @@
 	</xs:complexType>
 	
 	<!-- Tapahtumatieto -->
-	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="kt:AbstractRestrictedFeature"/>
+	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="gml:AbstractFeature"/>
 	<xs:complexType name="OrdinanceProcessEventType">
 		<xs:complexContent>
-			<xs:extension base="kt:AbstractRestrictedFeatureType">
+			<xs:extension base="kt:AbstractFeatureWithMandatoryIdentifierType">
 				<xs:sequence>
 					<xs:element name="actor" type="xs:string" minOccurs="0"/>
 					<xs:element name="date" type="xs:date"/>
 					<xs:element name="documentReference" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="name" type="kt:LanguageStringType" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedName" maxOccurs="unbounded"/>
 					<xs:element name="process" type="kt:FinnishOrdinanceProcessCodeListValue" minOccurs="0"/>
 					<xs:element name="processingAuthority" type="xs:anyURI" minOccurs="0"/>
 					<xs:element name="processStep" type="kt:FinnishOrdinanceProcessStepCodeListValue" minOccurs="0"/>
