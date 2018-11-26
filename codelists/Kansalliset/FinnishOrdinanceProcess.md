@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue
 
-**Käyttötarkoitus**: Kaavoitusprosessin tyyppi, käytetään kuvaamaan prosessin luonnetta.
+**Käyttötarkoitus**: Kaavoitusprosessin tyyppi. Koodilistan avulla nimetään tunnetut asemakaavoitusprosessit, jotka voivat erota toisistaan (monivaiheiseen) prosessiin sisältyvien tapahtumien suhteen.
 
 **Laajentaa koodilistaa**: AbstractOrdinanceProcessCodeListValue
 
@@ -18,7 +18,7 @@
 
 ## Koodilistan arvot
 
-Koodi     | Nimike           | Tunniste
+Koodi     | Nimike           |  Tunniste
 -----------|------------------|------------
  1       | uusi asemakaava  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue/1
  2       | asemakaavan muutos   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishOrdinanceProcessCodeListValue/2
