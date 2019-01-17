@@ -2,8 +2,9 @@
 <xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 			xmlns:gml="http://www.opengis.net/gml/3.2"
 			xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
-			targetNamespace="http://paikkatiedot.fi/kaavoituksenTietomalli" 
-			xmlns:kt="http://paikkatiedot.fi/kaavoituksenTietomalli" elementFormDefault="qualified" version="1.0.0" >
+			targetNamespace="http://louhi.sitowise.com/Kuntapilotti/" 
+			xmlns:kt="http://louhi.sitowise.com/Kuntapilotti/" elementFormDefault="qualified" version="1.0.0" >
+	<!-- temporary address for schema: http://louhi.sitowise.com/Kuntapilotti/kaavoituksenKansallinenTietomalli.xsd -->
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf/2.0" schemaLocation="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
