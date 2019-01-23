@@ -100,7 +100,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="numericGuidance" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="guidanceValue" type="kt:AbstractGuidanceValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 					<xs:element name="affectingIncludedFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
@@ -141,7 +141,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="numericGuidance" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="guidanceValue" type="kt:AbstractGuidanceValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 					<xs:element name="landUse" type="kt:PlannedLandUsePropertyType" minOccurs="0" maxOccurs="unbounded" />
 					<xs:element name="affectingIncludedFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
@@ -180,7 +180,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="binding" type="xs:boolean"/>
-					<xs:element name="numericGuidance" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="guidanceValue" type="kt:AbstractGuidanceValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -351,8 +351,8 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="NumericValue" type="kt:NumericValueType" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="NumericValueType">
+	<xs:element name="AbstractGuidanceValue" type="kt:AbstractGuidanceValueType" abstract="true" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="AbstractGuidanceValueType" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
@@ -363,6 +363,21 @@
 							<xs:documentation>Code list value AbstractNumericValueTypeCodeListValue</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AbstractGuidanceValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:AbstractGuidanceValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="NumericGuidanceValue" type="kt:NumericGuidanceValueType" substitutionGroup="kt:AbstractGuidanceValue"/>
+	<xs:complexType name="NumericGuidanceValueType">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractGuidanceValueType">
+				<xs:sequence>
 					<xs:element name="value">
 						<xs:complexType>
 								<xs:simpleContent>
@@ -376,9 +391,49 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="NumericValuePropertyType">
+	<xs:complexType name="NumericGuidanceValuePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:NumericValue"/>
+			<xs:element ref="kt:NumericGuidanceValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="FractionalGuidanceValue" type="kt:FractionalGuidanceValueType" substitutionGroup="kt:AbstractGuidanceValue"/>
+	<xs:complexType name="FractionalGuidanceValueType">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractGuidanceValueType">
+				<xs:sequence>
+					<xs:element name="value">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="nominator" type="xs:int"/>
+								<xs:element name="denominator" type="xs:int"/>
+								<xs:element name="uom" type="gml:UomIdentifier" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FractionalGuidanceValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:FractionalGuidanceValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="CategoryGuidanceValue" type="kt:CategoryGuidanceValueType" substitutionGroup="kt:AbstractGuidanceValue"/>
+	<xs:complexType name="CategoryGuidanceValueType">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractGuidanceValueType">
+				<xs:sequence>
+					<xs:element name="value" type="gml:ReferenceType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CategoryGuidanceValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:CategoryGuidanceValue"/>
 		</xs:sequence>
 	</xs:complexType>
 
