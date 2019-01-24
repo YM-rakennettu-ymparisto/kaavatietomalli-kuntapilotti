@@ -125,7 +125,7 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
 					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded" />
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
@@ -173,7 +173,7 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
 							<xs:documentation>Code list value AbstractPlanningDetailTypeCodeListValue</xs:documentation>
