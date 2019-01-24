@@ -133,7 +133,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="binding" type="xs:boolean"/>
-					<xs:element name="restrictiveFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="detail" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
 								<gml:targetElement>kt:PlanningDetail</gml:targetElement>
@@ -373,8 +373,8 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="NumericGuidanceValue" type="kt:NumericGuidanceValueType" substitutionGroup="kt:AbstractGuidanceValue"/>
-	<xs:complexType name="NumericGuidanceValueType">
+	<xs:element name="MeasureGuidanceValue" type="kt:MeasureGuidanceValueType" substitutionGroup="kt:AbstractGuidanceValue"/>
+	<xs:complexType name="MeasureGuidanceValueType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractGuidanceValueType">
 				<xs:sequence>
@@ -391,9 +391,9 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="NumericGuidanceValuePropertyType">
+	<xs:complexType name="MeasureGuidanceValuePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:NumericGuidanceValue"/>
+			<xs:element ref="kt:MeasureGuidanceValue"/>
 		</xs:sequence>
 	</xs:complexType>
 	
