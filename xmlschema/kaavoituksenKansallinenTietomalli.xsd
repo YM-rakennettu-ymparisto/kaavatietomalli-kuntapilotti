@@ -40,6 +40,13 @@
 							<xs:documentation>Unique element identifier</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="partOf" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:AbstractPlanningObject</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="obsoletes" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
@@ -64,7 +71,7 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="extent" type="gml:MultiSurfacePropertyType"/>
+					<xs:element name="extent" type="gml:GeometryPropertyType"/>
 					<xs:element name="landAdminstrationAuthority" type="xs:anyURI"/>
 					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded"/>
 					<xs:element name="planningLevel" type="gml:ReferenceType">
@@ -84,18 +91,25 @@
 					</xs:element>
 					<xs:element name="validFrom" type="xs:date" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="validTo" type="xs:date" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="implements" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="implementsPlan" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>A reference to a externally defined SpatialPlan that this plan implements, typically a higher-level, more abstract plan</xs:documentation>
+							<xs:documentation>A reference to a SpatialPlan that this plan implements, typically a higher-level, more abstract plan</xs:documentation>
 							<xs:appinfo>
 								<gml:targetElement>kt:SpatialPlan</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="planningElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="zoningDivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:PlanningElement</gml:targetElement>
+								<gml:targetElement>kt:ZoningElement</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="otherElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:PlannedSpace</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
@@ -120,8 +134,9 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="PlanningElement" type="kt:PlanningElementType" substitutionGroup="kt:AbstractPlanningObject"/>
-	<xs:complexType name="PlanningElementType">
+
+	<xs:element name="PlannedSpace" type="kt:PlannedSpaceType" substitutionGroup="kt:AbstractPlanningObject"/>
+	<xs:complexType name="PlannedSpaceType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
@@ -132,8 +147,8 @@
 							<xs:documentation>Code list value AbstractPlanningElementTypeCodeListValue</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="binding" type="xs:boolean"/>
-					<xs:element name="detail" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="legalStatus" type="gml:ReferenceType" minOccurs="0"/>
+					<xs:element name="includedDetail" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
 								<gml:targetElement>kt:PlanningDetail</gml:targetElement>
@@ -154,7 +169,7 @@
 					<xs:element name="subdivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:PlanningElement</gml:targetElement>
+								<gml:targetElement>kt:PlanningSpace</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
@@ -162,12 +177,24 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="PlanningElementPropertyType">
+	<xs:complexType name="PlannedSpacePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:PlanningElement"/>
+			<xs:element ref="kt:PlannedSpace"/>
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:element name="ZoningElement" type="kt:ZoningElementType" substitutionGroup="kt:AbstractPlanningObject">
+		<xs:annotation>
+			<xs:documentation>ZoningElements must fill the entire extent of the SpatialPlan they are part of so that any point
+			within the extent falls withing geometry of exactly one ZoningElement.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ZoningElementType">
+		<xs:complexContent>
+			<xs:extension base="kt:PlannedSpaceType" />
+		</xs:complexContent>
+	</xs:complexType>
+	
 	<xs:element name="PlanningDetail" type="kt:PlanningDetailType" substitutionGroup="kt:AbstractPlanningObject"/>
 	<xs:complexType name="PlanningDetailType">
 		<xs:complexContent>
@@ -179,7 +206,7 @@
 							<xs:documentation>Code list value AbstractPlanningDetailTypeCodeListValue</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="binding" type="xs:boolean"/>
+					<xs:element name="legalStatus" type="gml:ReferenceType" minOccurs="0"/>
 					<xs:element name="guidanceValue" type="kt:AbstractGuidanceValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
@@ -196,7 +223,7 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
 					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
@@ -210,94 +237,6 @@
 	<xs:complexType name="InformativeFeaturePropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="kt:InformativeFeature"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="gml:AbstractGML" />
-	<xs:complexType name="AbstractReferencedResourceType" abstract="true">
-		<xs:complexContent>
-			<xs:extension base="kt:AbstractGMLWithMandatoryIdentifierType">
-				<xs:sequence>
-					<xs:element name="referencedOn" type="xs:date"/>
-					<xs:element name="reference" type="xs:anyURI"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="AbstractReferencedResourcePropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:AbstractReferencedResource"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:element name="ReferencedDocument" type="kt:ReferencedDocumentType" substitutionGroup="kt:AbstractReferencedResource"/>
-	<xs:complexType name="ReferencedDocumentType">
-		<xs:complexContent>
-			<xs:extension base="kt:AbstractReferencedResourceType">
-				<xs:sequence>
-					<xs:element name="language" type="xs:language" minOccurs="0"/>
-					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Code list value DocumentRoleCodeListValue</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="type" type="gml:ReferenceType">
-						<xs:annotation>
-							<xs:documentation>Code list value DocumentTypeCodeListValue</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="ReferencedDocumentPropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:ReferencedDocument"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:element name="ReferencedDataset" type="kt:ReferencedDatasetType" substitutionGroup="kt:AbstractReferencedResource"/>
-	<xs:complexType name="ReferencedDatasetType">
-		<xs:complexContent>
-			<xs:extension base="kt:AbstractReferencedResourceType">
-				<xs:sequence>
-					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Code list value DatasetRoleCodeListValue</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="type" type="gml:ReferenceType">
-						<xs:annotation>
-							<xs:documentation>Code list value DatastTypeCodeListValue</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="ReferencedDatasetPropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:ReferencedDataset"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:element name="ReferencedFeature" type="kt:ReferencedFeatureType" substitutionGroup="kt:AbstractReferencedResource"/>
-	<xs:complexType name="ReferencedFeatureType">
-		<xs:complexContent>
-			<xs:extension base="kt:AbstractReferencedResourceType">
-				<xs:sequence>
-					<xs:element name="type" type="gml:ReferenceType">
-						<xs:annotation>
-							<xs:documentation>Code list value InformativeFeatureTypeCodeListValue</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="ReferencedFeaturePropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:ReferencedFeature"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -338,9 +277,10 @@
 					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="type" type="gml:ReferenceType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Code list value AbstractREgulativeTextTypeCodeListValue</xs:documentation>
+							<xs:documentation>Code list value AbstractRegulativeTextTypeCodeListValue</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="legalStatus" type="gml:ReferenceType" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -357,7 +297,7 @@
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
 					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="binding" type="xs:boolean"/>
+					<xs:element name="legalStatus" type="gml:ReferenceType" minOccurs="0"/>
 					<xs:element name="propertyName" type="gml:ReferenceType">
 						<xs:annotation>
 							<xs:documentation>Code list value AbstractNumericValueTypeCodeListValue</xs:documentation>
@@ -437,6 +377,94 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="gml:AbstractGML" />
+	<xs:complexType name="AbstractReferencedResourceType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractGMLWithMandatoryIdentifierType">
+				<xs:sequence>
+					<xs:element name="referencedOn" type="xs:date"/>
+					<xs:element name="reference" type="xs:anyURI"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AbstractReferencedResourcePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:AbstractReferencedResource"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ReferencedDocument" type="kt:ReferencedDocumentType" substitutionGroup="kt:AbstractReferencedResource"/>
+	<xs:complexType name="ReferencedDocumentType">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractReferencedResourceType">
+				<xs:sequence>
+					<xs:element name="language" type="xs:language" minOccurs="0"/>
+					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value DocumentRoleCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Code list value DocumentTypeCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReferencedDocumentPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:ReferencedDocument"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ReferencedDataset" type="kt:ReferencedDatasetType" substitutionGroup="kt:AbstractReferencedResource"/>
+	<xs:complexType name="ReferencedDatasetType">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractReferencedResourceType">
+				<xs:sequence>
+					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value DatasetRoleCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Code list value DatastTypeCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReferencedDatasetPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:ReferencedDataset"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ReferencedFeature" type="kt:ReferencedFeatureType" substitutionGroup="kt:AbstractReferencedResource"/>
+	<xs:complexType name="ReferencedFeatureType">
+		<xs:complexContent>
+			<xs:extension base="kt:AbstractReferencedResourceType">
+				<xs:sequence>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Code list value InformativeFeatureTypeCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReferencedFeaturePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:ReferencedFeature"/>
+		</xs:sequence>
+	</xs:complexType>
+	
 	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="gml:AbstractFeature"/>
 	<xs:complexType name="OrdinanceProcessEventType">
 		<xs:complexContent>

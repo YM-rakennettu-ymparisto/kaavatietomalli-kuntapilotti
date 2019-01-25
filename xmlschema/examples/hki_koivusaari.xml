@@ -6,8 +6,8 @@
     xsi:schemaLocation="http://ym.fi/skeemat/kaavatietomalli/0.5 ../kaavoituksenKansallinenTietomalli.xsd">
     <kt:featureMember>
         <kt:SpatialPlan gml:id="sp-ff2715ce-0ce1-4cca-b9ac-51ece9f1c04e">
-            <gml:identifier codeSpace="hki_korttelialue_gid">26</gml:identifier>
-            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/﻿ff2715ce-0ce1-4cca-b9ac-51ece9f1c04e</kt:planningObjectIdentifier>
+            <gml:identifier codeSpace="hki_asemakaava_uuid">ff2715ce-0ce1-4cca-b9ac-51ece9f1c04e</gml:identifier>
+            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/﻿1234</kt:planningObjectIdentifier>
             <kt:extent>
                 <gml:MultiSurface srsName="http://www.opengis.net/def/crs/EPSG/0/3879" srsDimension="2">
                     <gml:surfaceMember>
@@ -31,15 +31,16 @@
             <kt:planningLevel xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanLevel/4" xlink:title="Asemakaava (ohjeellinen tonttijako)"/>
             <kt:planType xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanType/1" xlink:title="Asemakaava"/>
             <kt:status xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanStatus/4" xlink:title="Kaavaehdotus"/>
-            <kt:planningElement xlink:href="#pe-08c2e788-0592-4d73-94d3-e0392405ca14" xlink:title="Korttelialue"/>
-            <kt:planningElement xlink:href="#pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813" xlink:title="Ympäristöalue"/>
+            <kt:zoningDivision xlink:href="#pe-08c2e788-0592-4d73-94d3-e0392405ca14" xlink:title="Korttelialue"/>
+            <kt:otherElement xlink:href="#pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813" xlink:title="Ympäristöalue"/>
         </kt:SpatialPlan>
     </kt:featureMember>
     <kt:featureMember>
-        <kt:PlanningElement gml:id="pe-08c2e788-0592-4d73-94d3-e0392405ca14">
-            <gml:identifier codeSpace="hki_korttelialue_gid">866</gml:identifier>
+        <kt:ZoningElement gml:id="pe-08c2e788-0592-4d73-94d3-e0392405ca14">
+            <gml:identifier codeSpace="hki_korttelialue_uuid">08c2e788-0592-4d73-94d3-e0392405ca14</gml:identifier>
             <gml:name codeSpace="korttelinumero">31168</gml:name>
-            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/korttelialue/08c2e788-0592-4d73-94d3-e0392405ca14</kt:planningObjectIdentifier>
+            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/korttelialue/1234</kt:planningObjectIdentifier>
+            <kt:partOf xlink:href="#sp-ff2715ce-0ce1-4cca-b9ac-51ece9f1c04e" xlink:title="Asemakaava"/>
             <kt:geometry>
                 <gml:Polygon srsName="http://www.opengis.net/def/crs/EPSG/0/3879" srsDimension="2">
                     <gml:exterior>
@@ -369,10 +370,8 @@
                 </gml:Polygon>
             </kt:geometry>
             <kt:type xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishPlanningElementType/3" xlink:title="Korttelialue"/>
-            <kt:binding>true</kt:binding>
             <kt:guidanceValue>
                 <kt:MeasureGuidanceValue>
-                    <kt:binding>true</kt:binding>
                     <kt:propertyName xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishNumericValueType/1" xlink:title="Rakennusoikeus kerrosalaneliömetreinä"/>
                     <kt:value uom="m2">16700.0</kt:value>
                 </kt:MeasureGuidanceValue>
@@ -385,12 +384,13 @@
                 </kt:PlannedLandUse>
             </kt:landUse>
             <kt:subdivision xlink:href="#pe-fb481d4-e7db-49bc-8f02-65d252a09e30" xlink:title="Rakennusala"/>
-        </kt:PlanningElement>
+        </kt:ZoningElement>
     </kt:featureMember>
     <kt:featureMember>
-        <kt:PlanningElement gml:id="pe-fb481d4-e7db-49bc-8f02-65d252a09e30">
-            <gml:identifier codeSpace="hki_rakennusala_gid">1335</gml:identifier>
-            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/rakennusala/fb481d4-e7db-49bc-8f02-65d252a09e30</kt:planningObjectIdentifier>
+        <kt:PlannedSpace gml:id="pe-fb481d4-e7db-49bc-8f02-65d252a09e30">
+            <gml:identifier codeSpace="hki_rakennusala_uuid">fb481d4-e7db-49bc-8f02-65d252a09e30</gml:identifier>
+            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/rakennusala/1234</kt:planningObjectIdentifier>
+            <kt:partOf xlink:href="#pe-08c2e788-0592-4d73-94d3-e0392405ca14" xlink:title="Korttelialue"/>
             <kt:geometry>
                 <gml:Polygon srsName="http://www.opengis.net/def/crs/EPSG/0/3879" srsDimension="2">
                     <gml:exterior>
@@ -403,17 +403,15 @@
                 </gml:Polygon>
             </kt:geometry>
             <kt:type xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishPlanningElementType/4" xlink:title="Rakennusala"/>
-            <kt:binding>true</kt:binding>
+            <kt:legalStatus xlink:href="???" xlink:title="Legally binding"/>
             <kt:guidanceValue>
                 <kt:MeasureGuidanceValue>
-                    <kt:binding>true</kt:binding>
                     <kt:propertyName xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishNumericValueType/4" xlink:title="Kerrosluku"/>
                     <kt:value>5</kt:value>
                 </kt:MeasureGuidanceValue>
             </kt:guidanceValue>
             <kt:guidanceValue>
                 <kt:FractionalGuidanceValue>
-                    <kt:binding>true</kt:binding>
                     <kt:propertyName xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishNumericValueType/9" xlink:title="Osuus, jonka rakennuksen suurimman kerroksen alasta saa käyttää ullakon tasolla kerrosalaan luettavaksi tilaksi."/>
                     <kt:value>
                         <kt:nominator>2</kt:nominator>
@@ -421,12 +419,13 @@
                     </kt:value>
                 </kt:FractionalGuidanceValue>
             </kt:guidanceValue>
-        </kt:PlanningElement>
+        </kt:PlannedSpace>
     </kt:featureMember>
     <kt:featureMember>
-        <kt:PlanningElement gml:id="pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813">
-            <gml:identifier codeSpace="hki_ymparistoalue_gid">1182</gml:identifier>
-            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/ymparistoalue/8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813</kt:planningObjectIdentifier>
+        <kt:PlannedSpace gml:id="pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813">
+            <gml:identifier codeSpace="hki_ymparistoalue_uuid">8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813</gml:identifier>
+            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/ymparistoalue/1234</kt:planningObjectIdentifier>
+            <kt:partOf xlink:href="#sp-ff2715ce-0ce1-4cca-b9ac-51ece9f1c04e" xlink:title="Asemakaava"/>
             <kt:geometry>
                 <gml:Polygon srsName="http://www.opengis.net/def/crs/EPSG/0/3879" srsDimension="2">
                     <gml:exterior>
@@ -439,26 +438,26 @@
                 </gml:Polygon>
             </kt:geometry>
             <kt:type xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishPlanningElementType/5" xlink:title="Istutettava alue"/>
-            <kt:binding>true</kt:binding>
-            <kt:detail xlink:href="#pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca" xlink:title="Istutettava puu"/>
+            <kt:includedDetail xlink:href="#pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca" xlink:title="Istutettava puu"/>
             <kt:landUse>
                 <kt:PlannedLandUse>
                     <kt:landUseKind xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishLandUseKind/VP" xlink:title="Puisto"/>
                 </kt:PlannedLandUse>
             </kt:landUse>
-        </kt:PlanningElement>
+        </kt:PlannedSpace>
     </kt:featureMember>
     <kt:featureMember>
         <kt:PlanningDetail gml:id="pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca">
-            <gml:identifier codeSpace="hki_kaavamaarays_gid">83703</gml:identifier>
-            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/kaavamaarays/0ed9c44f-b554-4aaf-bb16-df049713c6ca</kt:planningObjectIdentifier>
+            <gml:identifier codeSpace="hki_kaavamaarays_uuid">0ed9c44f-b554-4aaf-bb16-df049713c6ca</gml:identifier>
+            <kt:planningObjectIdentifier>http://ksv.helsinki.fi/asemakaava/koivusaari/2016/kaavamaarays/1234</kt:planningObjectIdentifier>
+            <kt:partOf xlink:href="#pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813" xlink:title="Ympäristöalue"/>
             <kt:geometry>
                 <gml:Point>
                     <gml:pos>25491697.98906436 6672259.81875851</gml:pos>
                 </gml:Point>
             </kt:geometry>
             <kt:type xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishPlanningDetailType/11" xlink:title="Istutettava puu"/>
-            <kt:binding>false</kt:binding>
+            <kt:legalStatus xlink:href="???" xlink:title="Leaglly non-binding" />
         </kt:PlanningDetail>
     </kt:featureMember>
 </kt:SpatialPlanElementSet>
