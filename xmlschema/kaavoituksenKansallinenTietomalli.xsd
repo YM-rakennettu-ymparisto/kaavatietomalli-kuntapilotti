@@ -99,18 +99,15 @@
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="zoningDivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:ZoningElement</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="otherElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="planningElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
 								<gml:targetElement>kt:PlannedSpace</gml:targetElement>
 							</xs:appinfo>
+							<xs:documentation>Note: ZoningElements at any level of the PlannedSpace 
+								subdivision hierarchy together, shall always fill the entire extent of the SpatialPlan they are part of
+								so that any point within the extent always falls withing geometry of exactly one ZoningElement.
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
@@ -169,8 +166,11 @@
 					<xs:element name="subdivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:PlanningSpace</gml:targetElement>
+								<gml:targetElement>kt:PlannedSpace</gml:targetElement>
 							</xs:appinfo>
+							<xs:documentation>
+								This may be a ZoningElement or another PlannedSpace. 
+							</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -184,10 +184,7 @@
 	</xs:complexType>
 
 	<xs:element name="ZoningElement" type="kt:ZoningElementType" substitutionGroup="kt:AbstractPlanningObject">
-		<xs:annotation>
-			<xs:documentation>ZoningElements must fill the entire extent of the SpatialPlan they are part of so that any point
-			within the extent falls withing geometry of exactly one ZoningElement.</xs:documentation>
-		</xs:annotation>
+		
 	</xs:element>
 	<xs:complexType name="ZoningElementType">
 		<xs:complexContent>
