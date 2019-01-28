@@ -71,7 +71,15 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="extent" type="gml:GeometryPropertyType"/>
+					<xs:element name="extent" type="gml:GeometryPropertyType">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="landAdminstrationAuthority" type="xs:anyURI"/>
 					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded"/>
 					<xs:element name="planningLevel" type="gml:ReferenceType">
@@ -137,7 +145,15 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded" />
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
@@ -197,7 +213,15 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
 							<xs:documentation>Code list value AbstractPlanningDetailTypeCodeListValue</xs:documentation>
@@ -220,7 +244,15 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
