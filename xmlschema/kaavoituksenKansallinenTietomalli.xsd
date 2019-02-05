@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://louhi.sitowise.com/Kuntapilotti/" targetNamespace="http://louhi.sitowise.com/Kuntapilotti/" elementFormDefault="qualified" version="1.1.2">
-	<!-- temporary address for schema: http://louhi.sitowise.com/Kuntapilotti/kaavoituksenKansallinenTietomalli.xsd -->
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://louhi.sitowise.com/Kuntapilotti/" targetNamespace="http://louhi.sitowise.com/Kuntapilotti/" elementFormDefault="qualified" version="1.1.3">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf/2.0" schemaLocation="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd"/>
@@ -9,7 +8,6 @@
 			<gmlsf:ComplianceLevel>1</gmlsf:ComplianceLevel>
 		</xs:appinfo>
 	</xs:annotation>
-	<xs:include schemaLocation="kaavoituksenKansallinenTietomalli_Tyypit.xsd"/>
 
 	<!-- Abstrakti juurielementti -->
 	<xs:element name="SpatialPlanElementSet" type="kt:SpatialPlanElementSetType" substitutionGroup="gml:AbstractGML"/>
@@ -130,11 +128,27 @@
 				<xs:sequence>
 					<xs:element name="extent" type="gml:MultiSurfacePropertyType"/>
 					<xs:element name="landAdminstrationAuthority" type="xs:anyURI"/>
-					<xs:element name="language" type="kt:FinnishLanguageCodeListValue"/>
+					<xs:element name="language" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLanguage" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded"/>
-					<xs:element name="planningLevel" type="kt:FinnishSpatialPlanLevelCodeListValue"/>
-					<xs:element name="planType" type="kt:FinnishSpatialPlanTypeCodeListValue"/>
-					<xs:element name="status" type="kt:FinnishSpatialPlanStatusCodeListValue"/>
+					<xs:element name="planningLevel" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentRole" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="planType" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanType" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="status" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanStatus" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="validFrom" type="xs:date" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="validTo" type="xs:date" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="conformedBy" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
@@ -186,7 +200,11 @@
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiSurfacePropertyType"/>
 					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded" />
-					<xs:element name="type" type="kt:FinnishZoningElementTypeCodeListValue"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishZoningElementType" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="planningElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
@@ -236,7 +254,11 @@
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiSurfacePropertyType"/>
-					<xs:element name="type" type="kt:FinnishPlanningElementTypeCodeListValue"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishPlanningElementType" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="obligatory" type="xs:boolean"/>
 					<xs:element name="restrictiveFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
@@ -264,7 +286,11 @@
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
-					<xs:element name="type" type="kt:FinnishPlanningDetailTypeCodeListValue"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishPlanningDetailType" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
@@ -284,7 +310,11 @@
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
 					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishInformativeFeatureType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -319,9 +349,21 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractReferencedResourceType">
 				<xs:sequence>
-					<xs:element name="language" type="kt:FinnishLanguageCodeListValue" minOccurs="0"/>
-					<xs:element name="role" type="kt:FinnishDocumentRoleCodeListValue" minOccurs="0"/>
-					<xs:element name="type" type="kt:FinnishDocumentTypeCodeListValue"/>
+					<xs:element name="language" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLanguage" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentRole" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -338,8 +380,16 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractReferencedResourceType">
 				<xs:sequence>
-					<xs:element name="role" type="kt:FinnishDocumentRoleCodeListValue" minOccurs="0"/>
-					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
+					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentRole" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishInformativeFeatureType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -356,7 +406,11 @@
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractReferencedResourceType">
 				<xs:sequence>
-					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishInformativeFeatureType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -374,8 +428,16 @@
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
 					<xs:element name="fractionOfTotalSpace" type="xs:double" minOccurs="0"/>
-					<xs:element name="landUseKind" type="kt:FinnishLandUseKindCodeListValue"/>
-					<xs:element name="previousLandUseKind" type="kt:FinnishLandUseKindCodeListValue" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="landUseKind" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLandUseKind" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="previousLandUseKind" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLandUseKind" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="verticallyConstrainedAbove" type="gml:MeasureType" minOccurs="0"/>
 					<xs:element name="verticallyConstrainedBelow" type="gml:MeasureType" minOccurs="0"/>
 				</xs:sequence>
@@ -395,7 +457,11 @@
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
 					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="type" type="kt:FinnishRegulativeTextTypeCodeListValue" minOccurs="0"/>
+					<xs:element name="type" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishRegulativeTextType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -414,7 +480,11 @@
 				<xs:sequence>
 					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="obligatory" type="xs:boolean"/>
-					<xs:element name="propertyName" type="kt:FinnishNumericValueTypeCodeListValue"/>
+					<xs:element name="propertyName" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishNumericValueType" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="value" type="gml:MeasureType"/>
 				</xs:sequence>
 			</xs:extension>
@@ -436,9 +506,17 @@
 					<xs:element name="date" type="xs:date"/>
 					<xs:element name="documentReference" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="kt:localizedName" maxOccurs="unbounded"/>
-					<xs:element name="process" type="kt:FinnishOrdinanceProcessCodeListValue" minOccurs="0"/>
+					<xs:element name="process" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishOrdinanceProcess" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="processingAuthority" type="xs:anyURI" minOccurs="0"/>
-					<xs:element name="processStep" type="kt:FinnishOrdinanceProcessStepCodeListValue" minOccurs="0"/>
+					<xs:element name="processStep" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishOrdinanceProcessStep" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="subject" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:appinfo>
