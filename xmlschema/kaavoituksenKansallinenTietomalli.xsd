@@ -54,6 +54,13 @@
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="obsoletedBy" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:AbstractPlanningObject</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="informativeDocumentation" type="kt:ReferencedDocumentPropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
