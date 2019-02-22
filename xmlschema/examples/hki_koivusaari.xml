@@ -364,13 +364,13 @@
                     </gml:surfaceMember>
                 </gml:MultiSurface>
             </kt:extent>
-            <kt:landAdminstrationAuthority>091</kt:landAdminstrationAuthority>
+            <kt:authority>091</kt:authority>
             <kt:localizedName xml:lang="fi-FI">Koivusaari</kt:localizedName>
             <kt:localizedName xml:lang="sv-FI">Björkholmen</kt:localizedName>
             <kt:planningLevel
                 xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanLevel/4"
                 xlink:title="Asemakaava (ohjeellinen tonttijako)"/>
-            <kt:planType
+            <kt:decisionType
                 xlink:href="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanType/1"
                 xlink:title="Asemakaava"/>
             <kt:status
