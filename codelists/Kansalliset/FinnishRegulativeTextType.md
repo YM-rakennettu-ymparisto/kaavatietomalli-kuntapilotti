@@ -38,9 +38,9 @@ Koodi     | Nimike           | Tunniste
  16       | Uloke.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/16
  17       | Valokatteinen tila.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/17
  18       | Leikki- ja oleskelualueeksi varattu alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/18
- 19       | Jalankululle ja polkupyöräilylle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/19
- 20       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla huoltoajo on sallittu.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/20
- 21       | Jalankululle ja polkupyöräilylle varattu katu/tie, jolla tontille/rakennuspaikalle ajo on sallittu.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21
+ 19       | Jalankululle ja polkupyöräilylle varattu alueen osa.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/19
+ 20       | Jalankululle ja polkupyöräilylle varattu alueen osa, jolla huoltoajo on sallittu.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/20
+ 21       | Jalankululle ja polkupyöräilylle varattu alueen osa, jolla tontille/rakennuspaikalle ajo on sallittu.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/21
  22       | Yleiseen tiehen kuuluva jalankulku- ja polkupyörätie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/22
  23       | Joukkoliikenteelle varattu katu/tie.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/23
  24       | Ajoyhteys.  | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishRegulativeTextTypeCodeListValue/24
