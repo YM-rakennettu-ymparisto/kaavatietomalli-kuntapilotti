@@ -20,7 +20,7 @@
 
 Koodi     | Nimike           | Kuvaus          | Tunniste
 -----------|------------------|------------|------------
- 1       | Täydellinen   | Tietomallin mukaisesti tuotettu aineisto. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/1
- 2       | Osittainen   | Digitoitu vanha kaava-aineisto soveltuvin osin. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/2
- 3       | Rajaus   | Digitoitu kaavan rajaus, johon liitetty muut tiedot rasterimuodossa linkitettynä. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/3
- 
+ 1       | Juridinen   | Tietomallin mukaisesti tuotettu aineisto. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/1
+ 2       | Täydellinen   | Digitoitu vanha kaava-aineisto tietomallin mukaiseksi. Juridisuus tarkistettava alkuperäisistä dokumenteista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/2
+ 3       | Osittainen   | Digitoitu vanha kaava-aineisto osittain esim. rajauksen lisäksi aluevaraukset. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/3
+ 4       | Rajaus   | Digitoitu kaavan rajaus, johon liitetty muut tiedot rasterimuodossa linkitettynä. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanOriginCodeListValue/4 
