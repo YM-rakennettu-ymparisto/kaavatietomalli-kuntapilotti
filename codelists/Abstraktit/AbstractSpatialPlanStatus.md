@@ -1,4 +1,4 @@
-# AbstractSpatialPlanStatusCodeListValue
+# AbstractSpatialPlanStatus
 
 **Nimi**: Abstract Spatial Plan Status Code List Value
 
