@@ -1,6 +1,6 @@
-# AbstractPlanDocument
+# AbstractPlanDescription
 
-**Nimi**: Abstract Plan Document
+**Nimi**: Abstract Plan Description
 
 **Abstrakti**: Kyllä
 
