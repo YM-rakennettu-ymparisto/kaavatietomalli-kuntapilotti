@@ -31,6 +31,12 @@ Koodi     | Nimike           | Kuvaus          | Tunniste
  3D       | Kaavan tavoitteet   | Kuvaus kaavan tavoitteista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3D
  3E       | Kaavaratkaisun vaihtoehdot   | Kuvaus kaavaratkaisun vaihtoehdoista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3E
  4       | Kaavan kuvaus   | Kuvataan kaavan sisältö sanallisesti. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4
+ 4A       | Kaavan rakenne   | Kuvataan kaavan rakenne. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4A
+ 4B       | Aluevaraukset   | Kuvataan aluevaraukset. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4B
+ 4C       | Nimistö   | Kuvaus kaavan nimistöstä. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4C
  5       | Kaavan vaikutukset   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5
+ 5A       | Vaikutukset rakennettuun ympäristöön   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5A
+ 5B       | Vaikutukset luontoon ja luonnon ympäristöön   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5B
+ 5C       | Muut vaikutukset   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5C
  6       | Kaavan toteutus   | Suunnitelma kaavan toteutumisesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
  
