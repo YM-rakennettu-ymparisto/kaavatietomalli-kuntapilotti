@@ -1,6 +1,6 @@
-# AbstractPlanningElementType
+# AbstractPlannedSpaceType
 
-**Nimi**: Abstract Planning Element Type
+**Nimi**: Abstract Planned Space Type
 
 **Abstrakti**: Kyllä
 
