@@ -35,8 +35,12 @@ Koodi     | Nimike           | Kuvaus          | Tunniste
  4B       | Aluevaraukset   | Kuvataan aluevaraukset. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4B
  4C       | Nimistö   | Kuvaus kaavan nimistöstä. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4C
  5       | Kaavan vaikutukset   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5
- 5A       | Vaikutukset rakennettuun ympäristöön   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5A
- 5B       | Vaikutukset luontoon ja luonnon ympäristöön   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5B
- 5C       | Muut vaikutukset   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5C
- 6       | Kaavan toteutus   | Suunnitelma kaavan toteutumisesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
+ 5A       | Vaikutukset rakennettuun ympäristöön   | Kaavan vaikutusten kuvaus rakennetun ympäristön osalta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5A
+ 5B       | Vaikutukset luontoon ja luonnon ympäristöön   | Kaavan luontovaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5B
+ 5C       | Muut vaikutukset   | Kuvaus kaavan muista vaikutuksista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5C
+ 5D       | Ympäristön häiriötekijät   | Erottelu ympäristön häiriötekijöistä. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5D
+ 6       | Kaavan toteutus   | Kuvaus kaavan suunnitellusta toteutumisesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
+ 6A       | Toteutusta ohjaavat ja havainnollistavat suunnitelmat   | Kaavan toteuttamiseen liittyvät muut suunnitelmat. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
+ 6B       | Toteuttaminen ja ajoitus   | Suunniteltu toteutumiskuvaus ja toteutumisen ajoittuminen. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
+ 6C       | Toteutuksen seuranta   | Toteutumisen seurannan kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
  
