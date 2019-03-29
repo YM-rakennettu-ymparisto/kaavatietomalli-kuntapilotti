@@ -20,8 +20,17 @@
 
 Koodi     | Nimike           | Kuvaus          | Tunniste
 -----------|------------------|------------|------------
- 1       | Lähtökohdat   | Kuvataan kaavoituksen lähtötilanne. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/1
- 2       | Suunnittelun vaiheet   | Kuvataan suunnitteluprosessin vaiheet. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/2
- 3       | Kaavan kuvaus   | Kuvataan kaavan sisältö sanallisesti. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3
- 4       | Kaavan toteutus   | Suunnitelma kaavan toteutumisesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4
+ 1       | Tiivistelmä   | Tiivistelmä kavaselostuksesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/1
+ 2       | Lähtökohdat   | Kuvataan kaavoituksen lähtötilanne. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/2
+ 2A       | Selvitys suunnittelualueen oloista   | Kuvaus suunnittelualueen oloista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/2A
+ 2B       | Suunnittelutilanne   | Kuvaus suunnittelutilanteesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/2B
+ 3       | Suunnittelun vaiheet   | Kuvataan suunnitteluprosessin vaiheet. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3
+ 3A       | Kaavan suunnittelun tarve   | Kuvataan suunnittelun tarve. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3A
+ 3B       | Suunnittelun käynnistäminen ja sitä koskevat päätökset   | Kuvataan suunnitteluprosessin käynnistäminen. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3B
+ 3C       | Osallistuminen ja yhteistyö   | Suunnitteluprosessiin osallistumisen kuvaus ja suunnittelun aikainen yhteistyö. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3C
+ 3D       | Kaavan tavoitteet   | Kuvaus kaavan tavoitteista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3D
+ 3E       | Kaavaratkaisun vaihtoehdot   | Kuvaus kaavaratkaisun vaihtoehdoista. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/3E
+ 4       | Kaavan kuvaus   | Kuvataan kaavan sisältö sanallisesti. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/4
+ 5       | Kaavan vaikutukset   | Kaavan vaikutusten kuvaus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/5
+ 6       | Kaavan toteutus   | Suunnitelma kaavan toteutumisesta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanDocumentCodeListValue/6
  
