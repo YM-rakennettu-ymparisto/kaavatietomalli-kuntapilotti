@@ -39,3 +39,4 @@ Koodi     | Nimike           | Tunniste
  17       | Kerrosalaneliömetrimäärä, jota kohti on rakennettava yksi autopaikka. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/17
  18       | Autopaikkojen lukumäärä asuntoa kohti. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/18
  19       | Desibeliraja. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/19
+ 20       | Muu lisärakennusoikeus kerrosalaneliömetreinä.   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishNumericValueTypeCodeListValue/20

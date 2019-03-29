@@ -1,32 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://paikkatiedot.fi/kaavoituksenTietomalli" targetNamespace="http://paikkatiedot.fi/kaavoituksenTietomalli" elementFormDefault="qualified" version="1.0.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://louhi.sitowise.com/Kuntapilotti/" targetNamespace="http://louhi.sitowise.com/Kuntapilotti/" elementFormDefault="qualified" version="1.1.4">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf/2.0" schemaLocation="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
-		<xs:appinfo>
+		<xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>1</gmlsf:ComplianceLevel>
 		</xs:appinfo>
 	</xs:annotation>
-	<xs:include schemaLocation="kaavoituksenKansallinenTietomalli_Tyypit.xsd"/>
+
 	<!-- Abstrakti juurielementti -->
-	<xs:element name="SpatialPlanCollection" type="kt:SpatialPlanCollectionType" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="SpatialPlanCollectionType">
+	<xs:element name="SpatialPlanElementSet" type="kt:SpatialPlanElementSetType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="SpatialPlanElementSetType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<!-- Luetellaan kaikki mahdollisesti mukana olevat taulukkomuotoiset tiedot -->
-					<xs:element name="plannedLandUse" type="kt:PlannedLandUsePropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Kaikki mahdollisesti mukana olevat käyttötarkoitusobjektit -->
-					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Kaikki mahdollisesti mukana olevat numeeriset merkinnät -->
-					<xs:element name="ordinanceProcessEvent" type="kt:OrdinanceProcessEventPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Kaikki mahdollisesti mukana olevat tapahtumatiedot -->
-					<xs:element name="referenceDocument" type="kt:ReferencedDocumentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Kaikki mahdollisesti mukana olevat liiteaineistot -->
-					<xs:element name="referencedFeature" type="kt:ReferencedFeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Kaikki mahdollisesti mukana olevat kohdeviittaukset -->
-					<xs:element name="referencedDataset" type="kt:ReferencedDatasetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Kaikki mahdollisesti mukana olevat viittaukset -->
 					<xs:element name="featureMember">
 						<xs:complexType>
 							<xs:complexContent>
@@ -43,41 +31,67 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
+	<xs:complexType name="AbstractGMLWithMandatoryIdentifierType">
+		<xs:complexContent>
+			<xs:restriction base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="gml:description" minOccurs="0"/>
+					<xs:element ref="gml:descriptionReference" minOccurs="0"/>
+					<xs:element ref="gml:identifier" minOccurs="1"/>
+					<xs:element ref="gml:name" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute ref="gml:id" use="required" />
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="AbstractFeatureWithMandatoryIdentifierType">
+		<xs:complexContent>
+			<xs:restriction base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="gml:description" minOccurs="0"/>
+					<xs:element ref="gml:descriptionReference" minOccurs="0"/>
+					<xs:element ref="gml:identifier" minOccurs="1"/>
+					<xs:element ref="gml:name" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="gml:boundedBy" minOccurs="0"/>
+					<xs:element ref="gml:location" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="gml:id" use="required" />
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
 	<!-- Kaavatietojen abstrakti kuvaus -->
 	<xs:element name="AbstractPlanningObject" type="kt:AbstractPlanningObjectType" abstract="true" substitutionGroup="gml:AbstractFeature"/>
 	<xs:complexType name="AbstractPlanningObjectType" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="gml:AbstractFeatureType">
+			<xs:extension base="kt:AbstractFeatureWithMandatoryIdentifierType">
 				<xs:sequence>
 					<xs:element name="created" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="identifier" type="xs:string"/>
-					<xs:element name="planningObjectIdentifier" type="xs:string">
+					<!-- Kaavatunnus, joka säilyy versiosta toiseen -->					
+					<xs:element name="planningObjectIdentifier" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>Unique element identifier</xs:documentation>
 						</xs:annotation>
-						<!-- MRa: UML-kaaviossa tässä on URI, mutta pilotissa on toivottu järjestelmistä UUID -->
+						<!-- Pilotissa tunnisteena UUID, mutta jatkossa JHS-suosituksen mukainen tunniste. -->
 					</xs:element>
 					<xs:element name="obsoletes" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:AbstractPlanningObjectPropertyType</gml:targetElement>
+								<gml:targetElement>kt:AbstractPlanningObject</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="obsoletedBy" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:AbstractPlanningObjectPropertyType</gml:targetElement>
+								<gml:targetElement>kt:AbstractPlanningObject</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="informativeDocumentation" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:ReferencedDocumentPropertyType</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
+					<xs:element name="informativeDocumentation" type="kt:ReferencedDocumentPropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -88,41 +102,103 @@
 		</xs:sequence>
 	</xs:complexType>
 	
+	<xs:element name="localizedName" type="kt:LocalizedNameType"/>
+	<xs:complexType name="LocalizedNameType">
+		<xs:simpleContent>
+			<xs:extension base="gml:CodeType">
+				<xs:attribute ref="xml:lang" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:element name="localizedObjective" type="kt:LocalizedObjectiveType"/>
+	<xs:complexType name="LocalizedObjectiveType">
+		<xs:simpleContent>
+			<xs:extension base="gml:CodeType">
+				<xs:attribute ref="xml:lang" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:element name="localizedDescription" type="kt:LocalizedDescriptionType" />
+	<xs:complexType name="LocalizedDescriptionType">
+		<xs:simpleContent>
+			<xs:extension base="gml:StringOrRefType">
+				<xs:attribute ref="xml:lang" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<!-- Kaava -->
 	<xs:element name="SpatialPlan" type="kt:SpatialPlanType" substitutionGroup="kt:AbstractPlanningObject"/>
 	<xs:complexType name="SpatialPlanType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="extent" type="gml:MultiSurfacePropertyType"/>
-					<xs:element name="landAdminstrationAuthority" type="xs:string"/>
-					<!-- AMa: UML-kaaviossa tässä on URI. Pilotoinnissa voidaan käyttää merkkijonoa yksinkertaisuuden vuoksi. -->
-					<xs:element name="language" type="kt:FinnishLanguageCodeListValue"/>
-					<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
-					<xs:element name="planningLevel" type="kt:FinnishSpatialPlanLevelCodeListValue"/>
-					<xs:element name="planType" type="kt:FinnishSpatialPlanTypeCodeListValue"/>
-					<xs:element name="status" type="kt:FinnishSpatialPlanStatusCodeListValue"/>
+					<xs:element name="contact" type="xs:string" maxOccurs="unbounded"/>
+					<xs:element name="extent" type="gml:AbstractObjectPropertyType"/>
+					<xs:element name="landAdminstrationAuthority" type="xs:anyURI"/>
+					<xs:element name="language" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLanguage" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="kt:localizedObjective" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="planningLevel" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentRole" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="planType" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanType" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="status" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanStatus" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="origin" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishSpatialPlanOrigin" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="validFrom" type="xs:date" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="validTo" type="xs:date" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="conformedBy" type="kt:SpatialPlanPropertyType" minOccurs="0" maxOccurs="1"/>
-					<xs:element name="conformsTo" type="kt:SpatialPlanPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="zoningElement" type="kt:ZoningElementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="conformedBy" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:SpatialPlan</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="conformsTo" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:SpatialPlan</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="zoningElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:ZoningElement</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="affectingIncludedFeature" type="kt:InformativeFeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="backgroundData" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="affectingIncludedFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:ReferencedDatasetPropertyType</gml:targetElement>
+								<gml:targetElement>kt:InformativeFeature</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="affectingReferencedFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:ReferencedFeaturePropertyType</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
+					<xs:element name="planDescription" type="kt:PlanDescriptionPropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="backgroundData" type="kt:ReferencedDatasetPropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="affectingReferencedFeature" type="kt:ReferencedFeaturePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -132,48 +208,58 @@
 			<xs:element ref="kt:SpatialPlan"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+			
 	<!-- Kaavayksikkö -->
 	<xs:element name="ZoningElement" type="kt:ZoningElementType" substitutionGroup="kt:AbstractPlanningObject"/>
 	<xs:complexType name="ZoningElementType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:MultiSurfacePropertyType"/>
-					<xs:element name="name" type="xs:string" minOccurs="0"/>
-					<xs:element name="type" type="kt:FinnishZoningElementTypeCodeListValue"/>
-					<xs:element name="planningElement" type="kt:PlanningElementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="planningDetail" type="kt:PlanningDetailPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="geometry" type="gml:AbstractObjectPropertyType"/>
+					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded" />
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishZoningElementType" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="upToDateness" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishUpToDateness" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="plannedSpace" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:plannedSpace</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="planningDetail" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:PlanningDetail</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="affectingIncludedFeature" type="kt:InformativeFeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="affectingIncludedFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>kt:InformativeFeature</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="subdivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:ZoningElementPropertyType</gml:targetElement>
+								<gml:targetElement>kt:ZoningElement</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="landUse" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:PlannedLandUsePropertyType</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="numericValue" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:NumericValuePropertyType</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="affectingFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:ReferencedFeaturePropertyType</gml:targetElement>
-							</xs:appinfo>
-						</xs:annotation>
-					</xs:element>
+					<xs:element name="landUse" type="kt:PlannedLandUsePropertyType" minOccurs="0" maxOccurs="unbounded" />	
+					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" /> 
+					<xs:element name="affectingReferencedFeature" type="kt:ReferencedFeaturePropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="planDescription" type="kt:PlanDescriptionPropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -185,30 +271,34 @@
 	</xs:complexType>
 	
 	<!-- Osa-alue -->
-	<xs:element name="PlanningElement" type="kt:PlanningElementType" substitutionGroup="kt:AbstractPlanningObject"/>
-	<xs:complexType name="PlanningElementType">
+	<xs:element name="plannedSpace" type="kt:plannedSpaceType" substitutionGroup="kt:AbstractPlanningObject"/>
+	<xs:complexType name="plannedSpaceType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:MultiSurfacePropertyType"/>
-					<xs:element name="type" type="kt:FinnishPlanningElementTypeCodeListValue"/>
+					<xs:element name="geometry" type="gml:AbstractObjectPropertyType"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishplannedSpaceType" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="obligatory" type="xs:boolean"/>
-					<xs:element name="restrictiveFeature" type="kt:PlanningDetailPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="numericValue" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="restrictiveFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:NumericValuePropertyType</gml:targetElement>
+								<gml:targetElement>kt:PlanningDetail</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="PlanningElementPropertyType">
+	<xs:complexType name="plannedSpacePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:PlanningElement"/>
+			<xs:element ref="kt:plannedSpace"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -219,14 +309,12 @@
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
-					<xs:element name="type" type="kt:FinnishPlanningDetailTypeCodeListValue"/>
-					<xs:element name="buildingGuidance" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>kt:NumericValuePropertyType</gml:targetElement>
-							</xs:appinfo>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishPlanningDetailType" />
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -244,8 +332,12 @@
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="geometry" type="gml:MultiGeometryPropertyType"/>
-					<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
+					<xs:element ref="kt:localizedName" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishInformativeFeatureType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -257,38 +349,44 @@
 	</xs:complexType>
 	
 	<!-- Kaavadokumenttien abstrakti kuvaus -->
-	<xs:element name="AbstractReferenceResource" type="kt:AbstractReferenceResourceType" abstract="true" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="AbstractReferenceResourceType" abstract="true">
+	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="gml:AbstractGML" />
+	<xs:complexType name="AbstractReferencedResourceType" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="gml:AbstractGMLType">
+			<xs:extension base="kt:AbstractGMLWithMandatoryIdentifierType">
 				<xs:sequence>
 					<xs:element name="referencedOn" type="xs:date"/>
-					<xs:element name="identifier" type="xs:string"/>
-					<xs:element name="reference" type="xs:string">
-						<xs:annotation>
-							<xs:documentation>Unique element identifier</xs:documentation>
-						</xs:annotation>
-						<!-- MRa: UML-kaaviossa tässä on URI, mutta pilotissa on toivottu järjestelmistä UUID -->
-					</xs:element>
+					<xs:element name="reference" type="xs:anyURI"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="AbstractReferenceResourcePropertyType">
+	<xs:complexType name="AbstractReferencedResourcePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:AbstractReferenceResource"/>
+			<xs:element ref="kt:AbstractReferencedResource"/>
 		</xs:sequence>
 	</xs:complexType>
 	
 	<!-- Liiteaineisto -->
-	<xs:element name="ReferencedDocument" type="kt:ReferencedDocumentType" substitutionGroup="kt:AbstractReferenceResource"/>
+	<xs:element name="ReferencedDocument" type="kt:ReferencedDocumentType" substitutionGroup="kt:AbstractReferencedResource"/>
 	<xs:complexType name="ReferencedDocumentType">
 		<xs:complexContent>
-			<xs:extension base="kt:AbstractReferenceResourceType">
+			<xs:extension base="kt:AbstractReferencedResourceType">
 				<xs:sequence>
-					<xs:element name="language" type="kt:FinnishLanguageCodeListValue" minOccurs="0"/>
-					<xs:element name="role" type="kt:FinnishDocumentRoleCodeListValue" minOccurs="0"/>
-					<xs:element name="type" type="kt:FinnishDocumentTypeCodeListValue"/>
+					<xs:element name="language" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLanguage" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentRole" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -300,13 +398,21 @@
 	</xs:complexType>
 	
 	<!-- Viittaus -->
-	<xs:element name="ReferencedDataset" type="kt:ReferencedDatasetType" substitutionGroup="kt:AbstractReferenceResource"/>
+	<xs:element name="ReferencedDataset" type="kt:ReferencedDatasetType" substitutionGroup="kt:AbstractReferencedResource"/>
 	<xs:complexType name="ReferencedDatasetType">
 		<xs:complexContent>
-			<xs:extension base="kt:AbstractReferenceResourceType">
+			<xs:extension base="kt:AbstractReferencedResourceType">
 				<xs:sequence>
-					<xs:element name="role" type="kt:FinnishDocumentRoleCodeListValue" minOccurs="0"/>
-					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
+					<xs:element name="role" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishDocumentRole" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishInformativeFeatureType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -318,12 +424,16 @@
 	</xs:complexType>
 	
 	<!-- Kohdeviittaus -->
-	<xs:element name="ReferencedFeature" type="kt:ReferencedFeatureType" substitutionGroup="kt:AbstractReferenceResource"/>
+	<xs:element name="ReferencedFeature" type="kt:ReferencedFeatureType" substitutionGroup="kt:AbstractReferencedResource"/>
 	<xs:complexType name="ReferencedFeatureType">
 		<xs:complexContent>
-			<xs:extension base="kt:AbstractReferenceResourceType">
+			<xs:extension base="kt:AbstractReferencedResourceType">
 				<xs:sequence>
-					<xs:element name="type" type="kt:FinnishInformativeFeatureTypeCodeListValue"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishInformativeFeatureType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -334,6 +444,29 @@
 		</xs:sequence>
 	</xs:complexType>
 	
+	<!-- Kaavaselostus -->
+	<xs:element name="PlanDescription" type="kt:PlanDescriptionType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="PlanDescriptionType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element ref="kt:localizedDescription" maxOccurs="unbounded"/>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishPlanDescriptionType" />
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PlanDescriptionType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="kt:PlanDescription"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	
 	<!-- Pääkäyttötarkoitus -->
 	<xs:element name="PlannedLandUse" type="kt:PlannedLandUseType" substitutionGroup="gml:AbstractGML"/>
 	<xs:complexType name="PlannedLandUseType">
@@ -341,8 +474,16 @@
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
 					<xs:element name="fractionOfTotalSpace" type="xs:double" minOccurs="0"/>
-					<xs:element name="landUseKind" type="kt:FinnishLandUseKindCodeListValue"/>
-					<xs:element name="previousLandUseKind" type="kt:FinnishLandUseKindCodeListValue" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="landUseKind" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLandUseKind" />
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="previousLandUseKind" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishLandUseKind" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="verticallyConstrainedAbove" type="gml:MeasureType" minOccurs="0"/>
 					<xs:element name="verticallyConstrainedBelow" type="gml:MeasureType" minOccurs="0"/>
 				</xs:sequence>
@@ -361,8 +502,12 @@
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
-					<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="type" type="kt:FinnishRegulativeTextTypeCodeListValue" minOccurs="0"/>
+					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="type" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishRegulativeTextType" />
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -379,9 +524,13 @@
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
-					<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="kt:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="obligatory" type="xs:boolean"/>
-					<xs:element name="propertyName" type="kt:FinnishNumericValueTypeCodeListValue"/>
+					<xs:element name="propertyName" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishNumericValueType" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="value" type="gml:MeasureType"/>
 				</xs:sequence>
 			</xs:extension>
@@ -394,22 +543,30 @@
 	</xs:complexType>
 	
 	<!-- Tapahtumatieto -->
-	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="gml:AbstractGML"/>
+	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="gml:AbstractFeature"/>
 	<xs:complexType name="OrdinanceProcessEventType">
 		<xs:complexContent>
-			<xs:extension base="gml:AbstractGMLType">
+			<xs:extension base="kt:AbstractFeatureWithMandatoryIdentifierType">
 				<xs:sequence>
 					<xs:element name="actor" type="xs:string" minOccurs="0"/>
 					<xs:element name="date" type="xs:date"/>
 					<xs:element name="documentReference" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="name" type="xs:string" maxOccurs="unbounded"/>
-					<xs:element name="process" type="kt:FinnishOrdinanceProcessCodeListValue" minOccurs="0"/>
+					<xs:element ref="kt:localizedName" maxOccurs="unbounded"/>
+					<xs:element name="process" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishOrdinanceProcess" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="processingAuthority" type="xs:anyURI" minOccurs="0"/>
-					<xs:element name="processStep" type="kt:FinnishOrdinanceProcessStepCodeListValue" minOccurs="0"/>
+					<xs:element name="processStep" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishOrdinanceProcessStep" />
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="subject" type="gml:ReferenceType" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:AbstractPlanningObjectPropertyType</gml:targetElement>
+								<gml:targetElement>kt:AbstractPlanningObject</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
@@ -422,5 +579,4 @@
 			<xs:element ref="kt:OrdinanceProcessEvent"/>
 		</xs:sequence>
 	</xs:complexType>
-	
 </xs:schema>

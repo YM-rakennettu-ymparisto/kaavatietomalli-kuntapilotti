@@ -18,10 +18,10 @@
 
 ## Koodilistan arvot
 
-Koodi     | Nimike           | Tunniste
------------|------------------|------------
- 1       | Liiteaineisto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
- 2       | Kaavaselostus   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
- 3       | Lisätieto   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
- 4       | Päätös   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
+Koodi     | Nimike           | Kuvaus          | Tunniste
+-----------|------------------|------------|------------
+ 1       | Liiteaineisto   | Kaikki kaavaa tarkentavat tai selventävät dokumentit. Kaavan laatimisen aikana syntyvä aineisto pl. kaavaselostus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/1
+ 2       | Kaavaselostus   | Määrämuotoinen kaavan selostus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/2
+ 3       | Lisätieto   | Kaavaan liittyvät lisätietodokumentit. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/3
+ 4       | Päätös   | Kaavan päätösasiakirjat. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishDocumentRoleCodeListValue/4
  
