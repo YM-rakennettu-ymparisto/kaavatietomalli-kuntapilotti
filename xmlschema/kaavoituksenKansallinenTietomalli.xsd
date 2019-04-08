@@ -550,6 +550,7 @@
 				<xs:sequence>
 					<xs:element name="actor" type="xs:string" minOccurs="0"/>
 					<xs:element name="date" type="xs:date"/>
+					<xs:element name="documentNumber" type="xs:string" minOccurs="0"/>
 					<xs:element name="documentReference" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element ref="kt:localizedName" maxOccurs="unbounded"/>
 					<xs:element name="process" type="gml:ReferenceType" minOccurs="0">
