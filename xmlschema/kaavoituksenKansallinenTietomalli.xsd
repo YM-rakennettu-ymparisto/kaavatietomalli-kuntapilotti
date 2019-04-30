@@ -209,7 +209,7 @@
 		</xs:sequence>
 	</xs:complexType>
 			
-	<!-- Kaavayksikkö -->
+	<!-- Maankäyttöalue -->
 	<xs:element name="ZoningElement" type="kt:ZoningElementType" substitutionGroup="kt:AbstractPlanningObject"/>
 	<xs:complexType name="ZoningElementType">
 		<xs:complexContent>
@@ -292,6 +292,7 @@
 					</xs:element>
 					<xs:element name="regulativeNote" type="kt:RegulativeTextPropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="planDescription" type="kt:PlanDescriptionPropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -315,6 +316,7 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="numericValue" type="kt:NumericValuePropertyType" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="planDescription" type="kt:PlanDescriptionPropertyType" minOccurs="0" maxOccurs="unbounded" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -460,14 +462,14 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="PlanDescriptionType">
+	<xs:complexType name="PlanDescriptionPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="kt:PlanDescription"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	
-	<!-- Pääkäyttötarkoitus -->
+	<!-- Käyttötarkoitus -->
 	<xs:element name="PlannedLandUse" type="kt:PlannedLandUseType" substitutionGroup="gml:AbstractGML"/>
 	<xs:complexType name="PlannedLandUseType">
 		<xs:complexContent>
