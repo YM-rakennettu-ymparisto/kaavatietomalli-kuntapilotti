@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://louhi.sitowise.com/Kuntapilotti/" targetNamespace="http://louhi.sitowise.com/Kuntapilotti/" elementFormDefault="qualified" version="1.1.4">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" xmlns:kt="http://louhi.sitowise.com/Kuntapilotti/" targetNamespace="http://louhi.sitowise.com/Kuntapilotti/" elementFormDefault="qualified" version="1.1.5">
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf/2.0" schemaLocation="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd"/>
@@ -10,7 +10,11 @@
 	</xs:annotation>
 
 	<!-- Abstrakti juurielementti -->
-	<xs:element name="SpatialPlanElementSet" type="kt:SpatialPlanElementSetType" substitutionGroup="gml:AbstractGML"/>
+	<xs:element name="SpatialPlanElementSet" type="kt:SpatialPlanElementSetType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>Abstract root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="SpatialPlanElementSetType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
@@ -35,7 +39,11 @@
 		<xs:complexContent>
 			<xs:restriction base="gml:AbstractGMLType">
 				<xs:sequence>
-					<xs:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Metadata describes the data</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="gml:description" minOccurs="0"/>
 					<xs:element ref="gml:descriptionReference" minOccurs="0"/>
 					<xs:element ref="gml:identifier" minOccurs="1"/>
@@ -64,7 +72,11 @@
 	</xs:complexType>
 	
 	<!-- Kaavatietojen abstrakti kuvaus -->
-	<xs:element name="AbstractPlanningObject" type="kt:AbstractPlanningObjectType" abstract="true" substitutionGroup="gml:AbstractFeature"/>
+	<xs:element name="AbstractPlanningObject" type="kt:AbstractPlanningObjectType" abstract="true" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>Abstract object to describe the planning data</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="AbstractPlanningObjectType" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractFeatureWithMandatoryIdentifierType">
@@ -102,7 +114,11 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="localizedName" type="kt:LocalizedNameType"/>
+	<xs:element name="localizedName" type="kt:LocalizedNameType">
+		<xs:annotation>
+			<xs:documentation>Localized name is used for saving name attribute in different languages</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="LocalizedNameType">
 		<xs:simpleContent>
 			<xs:extension base="gml:CodeType">
@@ -111,7 +127,11 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	
-	<xs:element name="localizedObjective" type="kt:LocalizedObjectiveType"/>
+	<xs:element name="localizedObjective" type="kt:LocalizedObjectiveType">
+		<xs:annotation>
+			<xs:documentation>Localized objective is used for saving feature objective in different languages</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="LocalizedObjectiveType">
 		<xs:simpleContent>
 			<xs:extension base="gml:CodeType">
@@ -120,7 +140,11 @@
 		</xs:simpleContent>
 	</xs:complexType>
 
-	<xs:element name="localizedDescription" type="kt:LocalizedDescriptionType" />
+	<xs:element name="localizedDescription" type="kt:LocalizedDescriptionType">
+		<xs:annotation>
+			<xs:documentation>Localized description is used for saving the description of feature in different languages</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="LocalizedDescriptionType">
 		<xs:simpleContent>
 			<xs:extension base="gml:StringOrRefType">
@@ -130,13 +154,17 @@
 	</xs:complexType>
 	
 	<!-- Kaava -->
-	<xs:element name="SpatialPlan" type="kt:SpatialPlanType" substitutionGroup="kt:AbstractPlanningObject"/>
+	<xs:element name="SpatialPlan" type="kt:SpatialPlanType" substitutionGroup="kt:AbstractPlanningObject">
+		<xs:annotation>
+			<xs:documentation>The plan defines an object for ongoing planning project. This may be very uncertain yet or already accepted one depending on the status.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="SpatialPlanType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
 					<xs:element name="contact" type="xs:string" maxOccurs="unbounded"/>
-					<xs:element name="extent" type="gml:AbstractObjectPropertyType"/>
+					<xs:element name="extent" type="gml:GeometryPropertyType"/>
 					<xs:element name="landAdminstrationAuthority" type="xs:anyURI"/>
 					<xs:element name="language" type="gml:ReferenceType">
 						<xs:annotation>
@@ -210,12 +238,16 @@
 	</xs:complexType>
 			
 	<!-- Maankäyttöalue -->
-	<xs:element name="ZoningElement" type="kt:ZoningElementType" substitutionGroup="kt:AbstractPlanningObject"/>
+	<xs:element name="ZoningElement" type="kt:ZoningElementType" substitutionGroup="kt:AbstractPlanningObject">
+		<xs:annotation>
+			<xs:documentation>The area assigned for a specific landuse. If plots are created, they are linked for the landusekind but also bigger areas may be used when needed.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="ZoningElementType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:AbstractObjectPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
 					<xs:element ref="kt:localizedName" minOccurs="1" maxOccurs="unbounded" />
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
@@ -230,7 +262,7 @@
 					<xs:element name="plannedSpace" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>kt:plannedSpace</gml:targetElement>
+								<gml:targetElement>kt:PlannedSpace</gml:targetElement>
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
@@ -271,12 +303,16 @@
 	</xs:complexType>
 	
 	<!-- Osa-alue -->
-	<xs:element name="plannedSpace" type="kt:plannedSpaceType" substitutionGroup="kt:AbstractPlanningObject"/>
-	<xs:complexType name="plannedSpaceType">
+	<xs:element name="PlannedSpace" type="kt:PlannedSpaceType" substitutionGroup="kt:AbstractPlanningObject">
+		<xs:annotation>
+			<xs:documentation>Area with restrictions.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="PlannedSpaceType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
 				<xs:sequence>
-					<xs:element name="geometry" type="gml:AbstractObjectPropertyType"/>
+					<xs:element name="geometry" type="gml:GeometryPropertyType"/>
 					<xs:element name="type" type="gml:ReferenceType">
 						<xs:annotation>
 							<xs:appinfo source="http://www.luettelopalvelu.fi/codelist/FinnishplannedSpaceType" />
@@ -297,14 +333,18 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="plannedSpacePropertyType">
+	<xs:complexType name="PlannedSpacePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="kt:plannedSpace"/>
+			<xs:element ref="kt:PlannedSpace"/>
 		</xs:sequence>
 	</xs:complexType>
 	
 	<!-- Kohdemerkintä -->
-	<xs:element name="PlanningDetail" type="kt:PlanningDetailType" substitutionGroup="kt:AbstractPlanningObject"/>
+	<xs:element name="PlanningDetail" type="kt:PlanningDetailType" substitutionGroup="kt:AbstractPlanningObject">
+		<xs:annotation>
+			<xs:documentation>Feature marking some defined guidance or restriction on map</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="PlanningDetailType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
@@ -328,7 +368,11 @@
 	</xs:complexType>
 	
 	<!-- Paikkatietokohde -->
-	<xs:element name="InformativeFeature" type="kt:InformativeFeatureType" substitutionGroup="kt:AbstractPlanningObject"/>
+	<xs:element name="InformativeFeature" type="kt:InformativeFeatureType" substitutionGroup="kt:AbstractPlanningObject">
+		<xs:annotation>
+			<xs:documentation>Geometric feature that guides or limits the decisions of plan</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="InformativeFeatureType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractPlanningObjectType">
@@ -351,7 +395,11 @@
 	</xs:complexType>
 	
 	<!-- Kaavadokumenttien abstrakti kuvaus -->
-	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="gml:AbstractGML" />
+	<xs:element name="AbstractReferencedResource" type="kt:AbstractReferencedResourceType" abstract="true" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>Abstract object for details of plan references</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="AbstractReferencedResourceType" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractGMLWithMandatoryIdentifierType">
@@ -369,7 +417,11 @@
 	</xs:complexType>
 	
 	<!-- Liiteaineisto -->
-	<xs:element name="ReferencedDocument" type="kt:ReferencedDocumentType" substitutionGroup="kt:AbstractReferencedResource"/>
+	<xs:element name="ReferencedDocument" type="kt:ReferencedDocumentType" substitutionGroup="kt:AbstractReferencedResource">
+		<xs:annotation>
+			<xs:documentation>Document that is related to the plan</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="ReferencedDocumentType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractReferencedResourceType">
@@ -400,7 +452,11 @@
 	</xs:complexType>
 	
 	<!-- Viittaus -->
-	<xs:element name="ReferencedDataset" type="kt:ReferencedDatasetType" substitutionGroup="kt:AbstractReferencedResource"/>
+	<xs:element name="ReferencedDataset" type="kt:ReferencedDatasetType" substitutionGroup="kt:AbstractReferencedResource">
+		<xs:annotation>
+			<xs:documentation>Dataset that is related to the plan</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="ReferencedDatasetType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractReferencedResourceType">
@@ -426,7 +482,11 @@
 	</xs:complexType>
 	
 	<!-- Kohdeviittaus -->
-	<xs:element name="ReferencedFeature" type="kt:ReferencedFeatureType" substitutionGroup="kt:AbstractReferencedResource"/>
+	<xs:element name="ReferencedFeature" type="kt:ReferencedFeatureType" substitutionGroup="kt:AbstractReferencedResource">
+		<xs:annotation>
+			<xs:documentation>Feature from outer source that is related to the plan. Should be linked as detailed object of the plan as possible</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="ReferencedFeatureType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractReferencedResourceType">
@@ -447,7 +507,11 @@
 	</xs:complexType>
 	
 	<!-- Kaavaselostus -->
-	<xs:element name="PlanDescription" type="kt:PlanDescriptionType" substitutionGroup="gml:AbstractGML"/>
+	<xs:element name="PlanDescription" type="kt:PlanDescriptionType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>A (part of) planning document that describes the decisions of the plan and the reasons for them</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="PlanDescriptionType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
@@ -470,7 +534,11 @@
 
 	
 	<!-- Käyttötarkoitus -->
-	<xs:element name="PlannedLandUse" type="kt:PlannedLandUseType" substitutionGroup="gml:AbstractGML"/>
+	<xs:element name="PlannedLandUse" type="kt:PlannedLandUseType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>The description of land use kind. This object has the information of the type and dimension and it is always linked to some zoning element of the plan</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="PlannedLandUseType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
@@ -499,7 +567,11 @@
 	</xs:complexType>
 	
 	<!-- Kaavamääräys -->
-	<xs:element name="RegulativeText" type="kt:RegulativeTextType" substitutionGroup="gml:AbstractGML"/>
+	<xs:element name="RegulativeText" type="kt:RegulativeTextType" substitutionGroup="gml:AbstractGML">
+			<xs:annotation>
+			<xs:documentation>Regulations assigned on the plan that are only in text format</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="RegulativeTextType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
@@ -521,7 +593,11 @@
 	</xs:complexType>
 	
 	<!-- Numeerinen merkintä -->
-	<xs:element name="NumericValue" type="kt:NumericValueType" substitutionGroup="gml:AbstractGML"/>
+	<xs:element name="NumericValue" type="kt:NumericValueType" substitutionGroup="gml:AbstractGML">
+		<xs:annotation>
+			<xs:documentation>All numeric values of the plan should be saved as numeric value object with the code that describes the meaning of the value</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="NumericValueType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
@@ -545,7 +621,11 @@
 	</xs:complexType>
 	
 	<!-- Tapahtumatieto -->
-	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:element name="OrdinanceProcessEvent" type="kt:OrdinanceProcessEventType" substitutionGroup="gml:AbstractFeature">
+		<xs:annotation>
+			<xs:documentation>Details of some event that relates to the planning process</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="OrdinanceProcessEventType">
 		<xs:complexContent>
 			<xs:extension base="kt:AbstractFeatureWithMandatoryIdentifierType">
