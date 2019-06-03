@@ -55,7 +55,7 @@ Loma- ja matkailualue    | R       | Loma- ja matkailualue    | http://paikkatie
 Loma- ja matkailualue    | RA       | Lomarakennusten alue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R1
 Loma- ja matkailualue    | RM       | Matkailua palvelevien rakennusten alue   | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R2
 Loma- ja matkailualue    | RL       | Leirintäalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R3
-Loma- ja matkailualue    | RP       | Siirtolapuutarha- ja palstaviljelyalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R5
+Loma- ja matkailualue    | RP       | Siirtolapuutarha- ja palstaviljelyalue    | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/R4
 Liikenteen alue    | L       | Liikennealue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L0
 Liikenteen alue    | KATU       | Katu     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L1
 Liikenteen alue    | LT       | Yleisen tien alue     | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishLandUseKindCodeListValue/L2
