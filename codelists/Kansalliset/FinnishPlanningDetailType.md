@@ -6,7 +6,7 @@
 
 **Yksilöivä tunniste**: http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishPlanningDetailTypeCodeListValue
 
-**Käyttötarkoitus**: Kohdemerkinnän tyyppi. Kohdemerkintä kuvaa yksityiskohtaiset ohjeistukset kaavassa. Kansallinen koodilista mahdollistaa tietojen koneluettavuuden.
+**Käyttötarkoitus**: Kaavan tarkennemerkinnän tyyppi. Kaavan tarkennemerkintä kuvaa yksityiskohtaiset ohjeistukset kaavassa. Kansallinen koodilista mahdollistaa tietojen koneluettavuuden.
 
 **Laajentaa koodilistaa**: AbstractPlanningDetailType
 
