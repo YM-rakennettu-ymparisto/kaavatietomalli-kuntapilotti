@@ -20,7 +20,7 @@
 
 Koodi     | Nimike           | Kuvaus           | Tunniste
 -----------|------------------|---------------|------------
- 1       | ohjelmoitu kaavamuutos   | Kaavatarve tiedossa, voi olla hyvin suurpiirteinen aluerajaus (hankelalue). | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/1
+ 1       | ohjelmoitu kaavamuutos   | Kaavatarve tiedossa, voi olla hyvin suurpiirteinen aluerajaus (kaava). | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/1
  2       | muutoksen alla   | Uusi kaava vireillä, vanha (rakennuskiellossa oleva) alue merkitään uuden hankealueen osalta. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/2
  3       | vireillä   | Uusi kaava tai muutos vireille. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/3
  4       | kaavaehdotus   | Nähtäville asetettu kaavaehdotus. | http://paikkatiedot.fi/registry/codelist/fin_lu/FinnishSpatialPlanStatusCodeListValue/4
