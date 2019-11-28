@@ -1,2 +1,0 @@
-# Tietomallin XML-skeema
-
