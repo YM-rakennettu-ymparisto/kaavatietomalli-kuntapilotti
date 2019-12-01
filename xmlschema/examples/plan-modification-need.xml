@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rak:SpatialObjectSet
+    xmlns:rak="http://uri.suomi.fi/schema/built-environment/common/0.5"
+    xmlns:plan="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7 ../spatial-planning.xsd">
+    <rak:featureMember>
+        <plan:SpatialPlanDevelopmentNeed>
+            <rak:localizedDescription xml:lang="fi">Suunnittelun tavoitteena on mahdollistaa uuden asunto- ja työpaikkaalueen rakentaminen Koivusaareen (n. 5 000 asukasta ja n. 3 800–
+                4 500 työpaikkaa) uuden metroaseman ympärille. Kaikista suunnitelluista asunnoista ja työpaikoista on kävelyetäisyys asemalle ja uusi
+                asunto- ja työpaikka-alue asettuu myös Länsiväylän ja nopean pyöräilyreitin varrelle.
+                
+                Kaupunkirakenteen lähtökohtana on uuden tehokkaan joukkoliikenneyhteyden ohella ympäröivä saaristomaisema ja meri. Suunnittelun
+                tavoitteena on hyödyntää merellistä ympäristöä ja maisemaa mahdollisimman monipuolisesti asuinympäristön, julkisen ulkotilan ja työ- ja liiketilojen suunnittelussa. Asunnot, työtilat ja tärkeimmät julkiset ulkotilat
+                aukeavat erilaisiin vaihteleviin merellisiin ympäristöihin. Merelliset toiminnot, kuten veneily ovat osa Koivusaaren suunniteltua identiteettiä ja
+                tärkeimmät julkiset ulkotilat sijoittuvat rannoille.
+                
+                Suunnittelualue sijaitsee Lauttasaaren länsipuolella noin viiden kilometrin päässä Helsingin ydinkeskustasta. Espoon ja Helsingin välinen kaupungin raja sijaitsee Koivusaaren ja Hanasaaren välissä.
+                Asemakaavan muutos koskee Koivusaaren maa-aluetta, ympäröivää
+                merialuetta, Länsiväylää ja maapenkereitä Koivusaaren itä- ja länsipuolella. Lisäksi alueeseen kuuluvat Länsiväylän reunustat tien ja korttelialueiden välissä Katajaharjun sillalle asti.</rak:localizedDescription>
+            <rak:targetArea>
+                <gml:Polygon srsName="http://www.opengis.net/def/crs/EPSG/0/3879" srsDimension="2">
+                    <gml:exterior>
+                        <gml:LinearRing>
+                            <gml:posList>6671659.4 25491126.6 6673107 25493788 6673138 25491127 6673162.1 25493791.4 6671659.4 25491126.6</gml:posList>
+                        </gml:LinearRing>
+                    </gml:exterior>
+                </gml:Polygon>
+            </rak:targetArea>
+            <rak:responsibleOrganisation xlink:href="https://uri.suomi.fi/administrativeAuthority/helsinki" xlink:title="Helsinki"/>
+            <plan:participationPlan>
+                <rak:ReferencedDocument>
+                    <rak:referencedOn>2019-11-28</rak:referencedOn>
+                    <rak:reference>https://www.hel.fi/hel2/ksv/liitteet/oas/1237.pdf</rak:reference>
+                    <rak:status xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/documentStatus/final"/>
+                    <rak:type xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/documentType/osallistumisJaArviointisuunnitelma"/>
+                </rak:ReferencedDocument>
+            </plan:participationPlan>
+        </plan:SpatialPlanDevelopmentNeed>
+    </rak:featureMember>   
+</rak:SpatialObjectSet>

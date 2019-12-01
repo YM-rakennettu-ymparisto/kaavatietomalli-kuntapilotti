@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
+	xmlns:rak="http://uri.suomi.fi/schema/built-environment/common/0.5"
+	xmlns:plan="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7" 
+	targetNamespace="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gmlsf/2.0" schemaLocation="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd"/>
+	<xs:import namespace="http://uri.suomi.fi/schema/built-environment/common/0.5" schemaLocation="./built-environment-common.xsd"/>
+	
+	<xs:annotation>
+		<xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
+			<gmlsf:ComplianceLevel>1</gmlsf:ComplianceLevel>
+		</xs:appinfo>
+	</xs:annotation>
+
+	<xs:element name="SpatialPlanDevelopmentNeed" type="plan:SpatialPlanDevelopmentNeedType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="SpatialPlanDevelopmentNeedType">
+		<xs:complexContent>
+			<xs:extension base="rak:PlanDevelopmentNeedType">
+				<xs:sequence>
+					<xs:element name="requiredSupplementaryStudy" type="rak:StudyOrSurveyPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="participationPlan" type="rak:ReferencedDocumentPropertyType" minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SpatialPlanDevelopmentNeedPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:SpatialPlanDevelopmentNeed"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="SpatialPlanModification" type="plan:SpatialPlanModificationType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="SpatialPlanModificationType">
+		<xs:complexContent>
+			<xs:extension base="rak:AreaChangeSetType">
+				<xs:sequence>
+					<xs:element name="basedOnReferenceDatasetState" type="rak:ReferencedDatasetStatePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="commentary" type="rak:ReferencedDocumentPropertyType" minOccurs="0"/>
+					<xs:element name="newInfluencingFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>plan:InfluencingFeature</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="removedInfluencingFeature" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>plan:InfluencingFeature</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SpatialPlanModificationPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:SpatialPlanModification"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ZoningElement" type="plan:ZoningElementType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="ZoningElementType">
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractPlanningAreaType">
+				<xs:sequence>
+					<xs:element name="levelOfDetail" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Code list value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="floorAreaRatio" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Floor area ratio to be applied in this ZoningElement</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="landUse" type="plan:LandUsePropertyType" minOccurs="1" maxOccurs="unbounded" />
+					<xs:element name="planningDetail" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>plan:PlanningDetail</gml:targetElement>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subdivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>plan:ZoningElement</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="verticalConstraint" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="referencePoint" type="gml:PointPropertyType" minOccurs="0"/>
+								<xs:element name="range" type="rak:ValueRangeType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ZoningElementPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:ZoningElement"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="BuildingAreaBoundary" type="plan:BuildingAreaBoundaryType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="BuildingAreaBoundaryType">
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractPlanningAreaType">
+				<xs:sequence>
+					<xs:element name="permittedBuildingAmount" type="rak:ValueRangeType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BuildingAreaBoundaryPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:BuildingAreaBoundary"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="PlannedParcel" type="plan:PlannedParcelType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="PlannedParcelType">
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractPlanningAreaType">
+				<xs:sequence>
+					<xs:element name="permittedBuildingAmount" type="rak:ValueRangeType" minOccurs="0"/>
+					<xs:element name="registeredParcelIdentifier" type="xs:anyURI" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PlannedParcelPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:PlannedParcel"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:element name="PlanningDetail" type="plan:PlanningDetailType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="PlanningDetailType">
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractHierarchicalObjectType">
+				<xs:sequence>
+					<xs:element name="processPhase" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="geometry" type="gml:GeometryPropertyType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Code list value AbstractPlanningDetailTypeCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="parameter" type="rak:AbstractParameterValuePropertyType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Guidance or restriction applied to the detail</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="legalStatus" type="gml:ReferenceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PlanningDetailPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:PlanningDetail"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="LandUse" type="plan:LandUseType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="LandUseType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element name="fractionOfTotalSpace" type="xs:double" minOccurs="0"/>
+					<xs:element name="landUseKind" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Code list value AbstractLandUseKindCodeListValue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandUsePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:LandUse"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- FIXME: find a better term! -->
+	<xs:element name="ParticipatoryOpinionOrProtest" type="plan:ParticipatoryOpinionOrProtestType" substitutionGroup="gml:AbstractFeature" />
+	<xs:complexType name="ParticipatoryOpinionOrProtestType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="kind" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>opinion, protest,.. Code list value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="geometry" type="gml:GeometryPropertyType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="submissionDate" type="xs:date" minOccurs="0"/>
+					<xs:element name="submittingParty" type="gml:ReferenceType" minOccurs="0"/>
+					<xs:element ref="rak:localizedDescription" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="targetElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:PlanningElement</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="targetModificationSet" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:PlanningAreaModificationSet</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ParticipatoryOpinionOrProtestPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:ParticipatoryOpinionOrProtest"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ExternalFeature" type="plan:ExternalFeatureType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="ExternalFeatureType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="boundary" type="gml:GeometryPropertyType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="type" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>Type of the feature, code list value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reference" type="xs:anyURI"/>
+					<xs:element name="origin" type="rak:ReferencedDatasetPropertyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ExternalFeaturePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="plan:ExternalFeature"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+
+</xs:schema>
