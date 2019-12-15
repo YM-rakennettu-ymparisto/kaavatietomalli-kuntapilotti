@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rak:SpatialObjectSet
+    xmlns:rak="http://uri.suomi.fi/schema/built-environment/common/0.5"
+    xmlns:plan="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7 ../spatial-planning.xsd">
+    <rak:featureMember>
+        <plan:SpatialPlanModification gml:id="mf-85rtw34t8ytwehgehrgehiugre">
+            <!-- No gml:identifier on submission, will be generated when saving -->
+            <rak:localizedDescription xml:lang="fi">Kuvitteellinen rantaaosayleiskaavamuutos, jossa lisätään kaksi rakennuspaikkaa</rak:localizedDescription>
+            <rak:implementsNeed
+                xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/need/88dfgh9urt9u5b"/>
+            <rak:usedProcess
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/process/digitation-non-authoritative"
+                xlink:title="Digitointi"/> 
+            <rak:basedOnDatasetState>
+                <rak:LandUseDatasetState>
+                    <rak:timestamp>2019-12-15T23:43:00+03:00</rak:timestamp>
+                    <rak:stateIdentifier>https://uri.suomi.fi/dataset/kaavatietovaranto/suomi/d908df5-e5y-w5890w5b0w4</rak:stateIdentifier>
+                    <rak:dataset 
+                        xlink:href="https://uri.suomi.fi/dataset/kaavatietovaranto/suomi"
+                        xlink:title="Koko Suomen kaavatietovaranto"/>
+                </rak:LandUseDatasetState>
+            </rak:basedOnDatasetState>
+            <rak:newObject xlink:href="#pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca"/>
+            <rak:newObject xlink:href="#pd-0ed9c44f-b554-4aaf-bb16-df03hj-sdkjfhs"/>
+            <rak:modifiedObject xlink:href="#pe-08c2e788-0592-4d73-94d3-e0392405ca14"/>
+            <rak:modifiedObject xlink:href="#pe-fb481d4-e7db-49bc-8f02-65d252a09e30"/>
+            <plan:basedOnReferenceDatasetState>
+                <rak:LandUseDatasetState>
+                    <rak:timestamp>2019-11-28T10:43:00+03:00</rak:timestamp>
+                    <rak:stateIdentifier>https://uri.suomi.fi/dataset/kiinteistot/suomi/fb481d4-e7db-49bc-8f02-65d252a09e30</rak:stateIdentifier>
+                    <rak:dataset 
+                        xlink:href="https://uri.suomi.fi/dataset/kiinteistot/suomi"
+                        xlink:title="Koko Suomen kiinteistötietovaranto"/>
+                </rak:LandUseDatasetState>
+            </plan:basedOnReferenceDatasetState>
+            <plan:commentary>
+                <rak:ReferencedDocument gml:id="ap-3hajsdfoiuy8w9">
+                    <gml:name codeSpace="http://kangasala.fi/hanke/32">1510025676</gml:name>
+                    <rak:referencedOn>2019-12-15</rak:referencedOn>
+                    <rak:reference>https://www.kangasala.fi/wp-content/uploads/2018/04/32_Kaavaluonnosten-selostus.pdf</rak:reference>
+                    <rak:status xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/documentStatus/luonnos"/>
+                    <rak:type xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/documentType/kaavaselostus"/>
+                </rak:ReferencedDocument>
+            </plan:commentary>
+        </plan:SpatialPlanModification>
+    </rak:featureMember>
+    <rak:featureMember>
+        <plan:PlanningArea gml:id="pe-08c2e788-0592-4d73-94d3-e0392405ca14">
+            <!-- No gml:identifier on submission, will be generated when saving -->
+            <rak:objectIdentifier>https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/95736368</rak:objectIdentifier>
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningArea/rantarakentamisalue"
+                xlink:title="Rantarakentamisalue"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/yleiskaavataso"
+                xlink:title="Yleiskaavataso"/>
+            <rak:geometry>
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3067" gml:id="kuhmalahti_kayttotarkoitusalueet.geom.0.0"><gml:exterior><gml:LinearRing><gml:posList>366229.548016706 6824350.68809415 366198.506664408 6824386.23306739 366155.991781208 6824399.52119064 366159.708685811 6824450.8158839 366165.214000044 6824447.13199419 366172.174000046 6824450.85899419 366179.357000045 6824447.97399419 366183.967000043 6824445.98699419 366193.600000043 6824442.66299419 366199.805000044 6824441.03399419 366211.508000044 6824439.83999419 366217.615000044 6824439.11599419 366224.243000043 6824434.3889942 366230.629000045 6824425.40299419 366237.560000044 6824418.10999419 366239.36409993 6824417.46216461 366229.548016706 6824350.68809415</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+            </rak:geometry>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind"
+                        xlink:title="Käyttötarkoitus"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind/loma-asuntoalue"
+                                xlink:title="Loma-asuntoalue"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind"
+                        xlink:title="Käyttötarkoitus"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind/pientaloalue"
+                                xlink:title="Pientaloalue"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+        </plan:PlanningArea>
+    </rak:featureMember>
+    <rak:featureMember>
+        <plan:PlanningArea gml:id="pe-fb481d4-e7db-49bc-8f02-65d252a09e30">
+            <!-- No gml:identifier on submission, will be generated when saving -->
+            <rak:objectIdentifier>https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/88883474</rak:objectIdentifier>
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningArea/rantarakentamisalue"
+                xlink:title="Rantarakentamisalue"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/yleiskaavataso"
+                xlink:title="Yleiskaavataso"/>
+            <rak:geometry>
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3067" gml:id="kuhmalahti_kayttotarkoitusalueet.geom.1.0"><gml:exterior><gml:LinearRing><gml:posList>365988.229089384 6824405.45814451 365987.600000044 6824407.86299417 365986.570000044 6824408.69099417 365982.629000047 6824410.09599417 365982.132000045 6824410.57299417 365980.011000045 6824414.14399417 365976.095000045 6824416.46699417 365972.883000044 6824420.62399417 365975.159000045 6824426.34199417 365975.242000046 6824431.73599417 365975.501000046 6824437.56999417 365975.203000044 6824446.80899417 365973.345000047 6824453.66199417 365975.633000046 6824459.60599417 365980.558000045 6824463.14699417 365988.827000047 6824463.49999417 365997.875000046 6824464.40899417 366003.327000044 6824466.64699417 366009.299000045 6824467.50599417 366021.974000046 6824466.25699417 366030.566000046 6824461.79199417 366036.475000044 6824456.28099418 366039.847000045 6824450.99099417 366057.287418018 6824443.59614192 366041.914679878 6824388.31176666 365988.229089384 6824405.45814451</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+            </rak:geometry>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind"
+                        xlink:title="Käyttötarkoitus"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind/loma-asuntoalue"
+                                xlink:title="Loma-asuntoalue"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind"
+                        xlink:title="Käyttötarkoitus"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind/pientaloalue"
+                                xlink:title="Pientaloalue"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+        </plan:PlanningArea>
+    </rak:featureMember>
+    <rak:featureMember>
+        <plan:PlanningDetail gml:id="pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca">
+            <!-- No gml:identifier on submission, will be generated when saving -->
+            <!-- New object, no rak:objectIdentifier on submission -->
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningDetail/rakennuspaikka"
+                xlink:title="Rakennuspaikka"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/yleiskaavataso"
+                xlink:title="Yleiskaavataso"/>
+            
+            <rak:geometry>
+                <gml:Point srsName="urn:ogc:def:crs:EPSG::3067" gml:id="kuhmalahti_rakennuspaikat.geom.0"><gml:pos>366200.355353808 6824411.59028944</gml:pos></gml:Point>
+            </rak:geometry>
+            <rak:partOf xlink:href="#pe-08c2e788-0592-4d73-94d3-e0392405ca14" />
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/buildingKind"
+                        xlink:title="Rakennuksen tyyppi"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/buildingKind/loma-asunto"
+                                xlink:title="Loma-asunto"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+        </plan:PlanningDetail>
+    </rak:featureMember>
+    <rak:featureMember>
+        <plan:PlanningDetail gml:id="pd-0ed9c44f-b554-4aaf-bb16-df03hj-sdkjfhs">
+            <!-- No gml:identifier on submission, will be generated when saving -->
+            <!-- New object, no rak:objectIdentifier on submission -->
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningDetail/rakennuspaikka"
+                xlink:title="Istutettava puu"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/yleiskaavataso"
+                xlink:title="Yleiskaavataso"/>
+           
+            <rak:geometry>
+                <gml:Point srsName="urn:ogc:def:crs:EPSG::3067" gml:id="kuhmalahti_rakennuspaikat.geom.1"><gml:pos>366012.852899682 6824433.54523108</gml:pos></gml:Point>
+            </rak:geometry>
+            <rak:partOf xlink:href="#pe-fb481d4-e7db-49bc-8f02-65d252a09e30" />
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/buildingKind"
+                        xlink:title="Rakennuksen tyyppi"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/buildingKind/loma-asunto"
+                                xlink:title="Loma-asunto"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+        </plan:PlanningDetail>
+    </rak:featureMember>
+</rak:SpatialObjectSet>

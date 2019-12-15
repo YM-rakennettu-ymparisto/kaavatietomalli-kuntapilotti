@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rak:SpatialObjectSet
+    xmlns:rak="http://uri.suomi.fi/schema/built-environment/common/0.5"
+    xmlns:plan="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7 ../spatial-planning.xsd">
+    <rak:featureMember>
+        <plan:SpatialPlanDevelopmentNeed>
+            <rak:localizedDescription xml:lang="fi">Kuhmalahden rantaosayleiskaava</rak:localizedDescription>
+            <rak:targetArea>
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3067" gml:id="kuhmalahti_rajaus.geom.0"><gml:exterior><gml:LinearRing><gml:posList>365967.567841143 6824478.60046103 366125.228567562 6824472.18159483 366265.065126938 6824450.78727181 366253.510292256 6824357.21667822 366226.90728995 6824339.09047393 365983.853088831 6824349.18327744 365946.423598101 6824406.89809774 365960.766797344 6824498.26452526 365960.766797344 6824498.26452526 365960.766797344 6824498.26452526 365982.084666332 6824498.57860705 365967.567841143 6824478.60046103</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+            </rak:targetArea>
+            <rak:responsibleOrganisation xlink:href="https://uri.suomi.fi/administrativeAuthority/kangasala" xlink:title="Kangasala"/>
+            <plan:participationPlan>
+                <rak:ReferencedDocument>
+                    <rak:referencedOn>2019-11-28</rak:referencedOn>
+                    <rak:reference>https://www.kangasala.fi/wp-content/uploads/2018/04/32_Osallistumis-ja-arviointisuunnitelma.pdf</rak:reference>
+                    <rak:status xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/documentStatus/final"/>
+                    <rak:type xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/documentType/osallistumisJaArviointisuunnitelma"/>
+                </rak:ReferencedDocument>
+            </plan:participationPlan>
+        </plan:SpatialPlanDevelopmentNeed>
+    </rak:featureMember>   
+</rak:SpatialObjectSet>
