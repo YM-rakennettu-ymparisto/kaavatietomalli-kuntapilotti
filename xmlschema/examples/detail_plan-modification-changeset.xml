@@ -27,6 +27,7 @@
             </rak:basedOnDatasetState>
             <rak:newObject xlink:href="#pe-08c2e788-0592-4d73-94d3-e0392405ca14"/>
             <rak:newObject xlink:href="#pe-fb481d4-e7db-49bc-8f02-65d252a09e30"/>
+            <rak:newObject xlink:href="#pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca"/>
             <rak:modifiedObject xlink:href="#pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813"/>
             <rak:removedObject xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/planningArea/3289/revisio/1234456"/>
             <plan:basedOnReferenceDatasetState>
