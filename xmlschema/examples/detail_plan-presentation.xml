@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection
+    xmlns:wfs="http://www.opengis.net/wfs/2.0"
+    xmlns:rak="http://uri.suomi.fi/schema/built-environment/common/0.5"
+    xmlns:plan="http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+    http://uri.suomi.fi/schema/built-environment/spatial-planning/0.7 ../spatial-planning.xsd"
+    numberMatched="4" numberReturned="4" timeStamp="2019-11-28T21:37:00+03:00">
+    <wfs:member>
+        <plan:PlanningArea gml:id="pe-08c2e788-0592-4d73-94d3-e0392405ca14">
+            <gml:identifier codeSpace="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/31168/revisio">1234456</gml:identifier>
+            <gml:name codeSpace="korttelinumero">31168</gml:name>
+            <rak:objectIdentifier>https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/31168</rak:objectIdentifier>
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningArea/korttelialue"
+                xlink:title="Korttelialue"/>
+            <rak:localizedName>Kortteli 31168</rak:localizedName>
+            <rak:processPhase xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/processPhase/asemakaava/luonnos"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/asemakaavataso"
+                xlink:title="Asemakaavataso"/>            
+            <rak:geometry>
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3879" gml:id="koivusaari_akaava_kortteli_31168.geom.0">
+                    <gml:exterior>
+                        <gml:Ring>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672212.7273 25491437.9176 6672213.95121887 25491426.479721 6672218.1885 25491415.7854</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672218.1885 25491415.7854 6672227.8987 25491398.8733 6672252.0838 25491356.7571</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672252.0838 25491356.7571 6672250.16201076 25491327.6884764 6672224.0591 25491314.7534</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672224.0591 25491314.7534 6672184.7931 25491314.3324 6672171.774 25491315.4882</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672171.774 25491315.4882 6672152.28575994 25491326.2742773 6672147.1779 25491347.9547</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672147.1779 25491347.9547 6672156.3739 25491397.9297 6672156.5888 25491416.8414 6672179.0028 25491430.5128 6672181.218 25491431.6422 6672189.4247 25491447.1956 6672196.263 25491446.2801 6672195.8028 25491439.0774 6672196.263 25491446.2801 6672213.4512 25491443.9792 6672212.7273 25491437.9176</gml:posList></gml:LineString></gml:curveMember>
+                        </gml:Ring>
+                    </gml:exterior>
+                </gml:Polygon>
+            </rak:geometry>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind"
+                        xlink:title="Käyttötarkoitus"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind/kerrostaloalue"
+                                xlink:title="Kerrostaloalue"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/ullakko-osuus"
+                        xlink:title="Osuus, jonka rakennuksen suurimman kerroksen alasta saa käyttää ullakon tasolla kerrosalaan luettavaksi tilaksi"/>
+                    <rak:value>
+                        <rak:MeasurablePropertyValue>
+                            <rak:value uom="%">66.67</rak:value>
+                        </rak:MeasurablePropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:includedInChangeSet xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/spatialPlanModification/123345"/>
+            <rak:lineage>
+                <rak:LandUseObjectLineage/>
+            </rak:lineage>
+            <rak:verticalConstraint>
+                <rak:VerticalRangePropertyValue>
+                    <rak:value>
+                        <rak:minimumValue>0.0</rak:minimumValue>
+                        <rak:uom>m</rak:uom>
+                    </rak:value>
+                    <rak:referencePoint>
+                        <gml:Point srsName="http://www.opengis.net/def/crs/EPSG/0/3900" srsDimension="1">
+                            <gml:pos>5.0</gml:pos>
+                        </gml:Point>
+                    </rak:referencePoint>
+                </rak:VerticalRangePropertyValue>
+            </rak:verticalConstraint>
+        </plan:PlanningArea>
+    </wfs:member>
+    <wfs:member>
+        <plan:PlanningArea gml:id="pe-fb481d4-e7db-49bc-8f02-65d252a09e30">
+            <gml:identifier codeSpace="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/1234/revisio">1234456</gml:identifier>
+            <rak:objectIdentifier>https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/1234</rak:objectIdentifier> 
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningArea/buildingArea"
+                xlink:title="Rakentamisalue"/>
+            <rak:processPhase xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/processPhase/asemakaava/luonnos"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/asemakaavataso"
+                xlink:title="Asemakaavataso"/>
+            <rak:geometry>
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3879" gml:id="koivusaari_akaava_rakennusala.geom.0">
+                    <gml:exterior>
+                        <gml:Ring>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672247.1213 25491359.2159 6672248.78687476 25491331.19229 6672224.1389 25491317.7545</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672224.1389 25491317.7545 6672185.2345 25491317.305 6672172.0392 25491318.4764</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672172.0392 25491318.4764 6672154.72703504 25491328.0200884 6672150.0965 25491347.2386</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672150.0965 25491347.2386 6672158.715 25491393.9887 6672172.2709 25491391.3968 6672163.8732 25491344.7483</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672163.8732 25491344.7483 6672165.85769029 25491336.5117705 6672173.2772 25491332.4216</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672173.2772 25491332.4216 6672185.774 25491331.3122 6672223.9772 25491331.7535 6672226.1732 25491331.7789</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672226.1732 25491331.7789 6672236.48249192 25491337.875396 6672236.3839 25491349.852</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672236.3839 25491349.852 6672233.0998 25491355.4477 6672213.1536 25491390.3387 6672202.7259 25491408.5793</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672202.7259 25491408.5793 6672197.25129802 25491423.3713851 6672195.8028 25491439.0774</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672195.8028 25491439.0774 6672196.263 25491446.2801 6672210.3772 25491444.3907 6672209.7393 25491438.0043</gml:posList></gml:LineString></gml:curveMember>
+                            <gml:curveMember><gml:Curve><gml:segments><gml:ArcString><gml:posList>6672209.7393 25491438.0043 6672211.12200675 25491425.4492157 6672215.8939 25491413.7543</gml:posList></gml:ArcString></gml:segments></gml:Curve></gml:curveMember>
+                            <gml:curveMember><gml:LineString><gml:posList>6672215.8939 25491413.7543 6672225.2653 25491397.3611 6672247.1213 25491359.2159</gml:posList></gml:LineString></gml:curveMember>
+                        </gml:Ring>
+                    </gml:exterior>
+                </gml:Polygon>
+            </rak:geometry>
+            <rak:partOf
+                xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/31168/revisio/1234456"
+                xlink:title="Kortteli 31168"/>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/kerrosluku"
+                        xlink:title="Kerrosluku"/>
+                    <rak:value>
+                        <rak:MeasurableRangePropertyValue>
+                            <rak:value>
+                                <rak:minimumValue>4</rak:minimumValue>
+                                <rak:maximumValue>5</rak:maximumValue>
+                            </rak:value>
+                        </rak:MeasurableRangePropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/permittedBuildingAmount"
+                        xlink:title="Sallittu rakentamismäärä"/>
+                    <rak:value>
+                        <rak:MeasurableRangePropertyValue>
+                            <rak:value>
+                                <rak:maximumValue>16700.0</rak:maximumValue>
+                                <rak:uom>k-m2</rak:uom>
+                            </rak:value>
+                        </rak:MeasurableRangePropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:includedInChangeSet xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/spatialPlanModification/123345"/>
+            <rak:lineage>
+                <rak:LandUseObjectLineage/>
+            </rak:lineage>
+        </plan:PlanningArea>
+    </wfs:member>
+    <wfs:member>
+        <plan:PlanningArea gml:id="pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813">
+            <gml:identifier codeSpace="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/4556/revisio">1234456</gml:identifier>
+            <rak:objectIdentifier>https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/4556</rak:objectIdentifier>
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningArea/istutettavaAlue"
+                xlink:title="Istutettava alue"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/asemakaavataso"
+                xlink:title="Asemakaavataso"/>
+            <rak:geometry>
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3879" gml:id="koivusaari_akaava_istutettava_alue.geom.0"><gml:exterior><gml:LinearRing><gml:posList>6672182.9785 25491349.2811 6672190.8606 25491393.0663 6672215.6755 25491349.6588 6672182.9785 25491349.2811</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
+            </rak:geometry>
+            <rak:partOf
+                xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/31168/revisio/1234456"
+                xlink:title="Kortteli 31168"/>
+            <rak:property>
+                <plan:PlanningRegulation>
+                    <rak:parameterName
+                        xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind"
+                        xlink:title="Käyttötarkoitus"/>
+                    <rak:value>
+                        <rak:CategoryPropertyValue>
+                            <rak:value
+                                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseKind/virkistys"
+                                xlink:title="Virkistysalue"/>
+                        </rak:CategoryPropertyValue>
+                    </rak:value>
+                </plan:PlanningRegulation>
+            </rak:property>
+            <rak:includedInChangeSet xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/spatialPlanModification/123345"/>
+            <rak:lineage>
+                <rak:LandUseObjectLineage>
+                    <rak:changeEvent>
+                        <rak:LandUseObjectChangeEvent>
+                            <rak:timestamp>2019-11-20T12:00:05+03:00</rak:timestamp>
+                            <rak:featureVersion xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/4556/revisio/1234455"/>
+                        </rak:LandUseObjectChangeEvent>
+                    </rak:changeEvent>
+                    <rak:changeEvent>
+                        <rak:LandUseObjectChangeEvent>
+                            <rak:timestamp>2019-10-15T13:45:05+03:00</rak:timestamp>
+                            <rak:featureVersion xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/4556/revisio/1234454"/>
+                        </rak:LandUseObjectChangeEvent>
+                    </rak:changeEvent>
+                </rak:LandUseObjectLineage>
+            </rak:lineage>
+            <rak:detail
+                xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningDetail/1234/revisio/1234456"
+                xlink:title="Istutettava puu"/>
+            
+        </plan:PlanningArea>
+    </wfs:member>
+    <wfs:member>
+        <plan:PlanningDetail gml:id="pd-0ed9c44f-b554-4aaf-bb16-df049713c6ca">
+            <gml:identifier codeSpace="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningDetail/1234/revisio">1234456</gml:identifier>
+            <rak:objectIdentifier>https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningDetail/1234</rak:objectIdentifier>
+            <rak:objectType
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/landUseObjectType/planningDetail/istutettavaPuu"
+                xlink:title="Istutettava puu"/>
+            <rak:processPhase xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/processPhase/asemakaava/luonnos"/>
+            <rak:levelOfDetail 
+                xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/levelOfDetail/asemakaavataso"
+                xlink:title="Asemakaavataso"/>
+            
+            <rak:geometry>
+                <gml:Point srsName="urn:ogc:def:crs:EPSG::3879" gml:id="koivusaari_akaava_istutettava_puu.geom.0"><gml:pos>6672194.10348866 25491362.016797</gml:pos></gml:Point>
+            </rak:geometry>
+            <rak:partOf xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/planningArea/4556/revisio/1234456"/>
+            <rak:includedInChangeSet xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/spatialPlanModification/123345"/>
+            <rak:lineage>
+                <rak:LandUseObjectLineage/>
+            </rak:lineage>
+            <plan:legalStatus xlink:href="http://www.luettelopalvelu.fi/codelist/spatialPlanning/legalStatus/ohjeellinen"
+                xlink:title="Ohjeellinen"/>
+        </plan:PlanningDetail>
+    </wfs:member>
+</wfs:FeatureCollection>

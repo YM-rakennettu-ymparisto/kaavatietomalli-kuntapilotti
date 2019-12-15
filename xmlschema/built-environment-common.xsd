@@ -37,38 +37,100 @@
 		</xs:complexContent>
 	</xs:complexType>
 	
-	<xs:element name="AbstractHierarchicalObject" type="rak:AbstractHierarchicalObjectType" abstract="true" substitutionGroup="gml:AbstractFeature"/>
-	<xs:complexType name="AbstractHierarchicalObjectType" abstract="true">
+	<xs:element name="LandUseDataset" type="rak:LandUseDatasetType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="LandUseDatasetType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Ajantasainen maankäyttöaineisto
+				https://tietomallit.suomi.fi/model/rak/AjantasainenMaankayttoaineisto/</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
-					<xs:element name="partOf" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+					<xs:element ref="rak:localizedName" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="datasetType" type="gml:ReferenceType" minOccurs="0">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>gml:AbstractFeature</gml:targetElement>
-							</xs:appinfo>
+							<xs:documentation>Code list value, implements property Aineistolaji</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="levelOfDetail" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value, implements property Yksityiskohtaisuuden taso</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="targetArea" type="gml:GeometryPropertyType">
+						<xs:annotation>
+							<xs:documentation>
+								Implements property Aluerajaus.
+								
+								Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="responsibleOrganisation" type="gml:ReferenceType" minOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Implements property Vastuullinen organisaatio</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="AbstractHiearachicalObjectPropertyType">
+	<xs:complexType name="LandUseDatasetPropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AbstractHierarchicalObject"/>
+			<xs:element ref="rak:LandUseDataset"/>
 		</xs:sequence>
 	</xs:complexType>
-
-	<xs:element name="PlanDevelopmentNeed" type="rak:PlanDevelopmentNeedType" substitutionGroup="gml:AbstractFeature"/>
-	<xs:complexType name="PlanDevelopmentNeedType">
+	
+	<xs:element name="LandUseDatasetState" type="rak:LandUseDatasetStateType" substitutionGroup="gml:AbstractGML" />
+	<xs:complexType name="LandUseDatasetStateType">
 		<xs:annotation>
-			<xs:documentation>Implements concept rak:Maa-alueaineiston muutostarve
-				https://tietomallit.suomi.fi/model/rak/Maa-alueaineistonMuutostarve/</xs:documentation>
+			<xs:documentation>Implements concept Aineiston tila https://tietomallit.suomi.fi/model/rak/AineistonTila/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence>
+					<xs:element name="timestamp" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="stateIdentifier" type="xs:anyURI" minOccurs="0"/>
+					<xs:element name="dataset" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:LandUseDataset</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Aineisto</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandUseDatasetStatePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:LandUseDatasetState"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:element name="LandUseDatasetDevelopmentNeed" type="rak:LandUseDatasetDevelopmentNeedType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="LandUseDatasetDevelopmentNeedType">
+		<xs:annotation>
+			<xs:documentation>Implements concept rak:Maankäyttöaineiston muutostarve
+				https://tietomallit.suomi.fi/model/rak/MaankayttoaineistonMuutostarve/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element ref="rak:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="targetDataset" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:LandUseDataset</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Kohdistuu aineistoon</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="targetArea" type="gml:GeometryPropertyType">
 						<xs:annotation>
 							<xs:documentation>
@@ -84,7 +146,7 @@
 					<xs:element name="solutionOption" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>rak:PlanningAreaModificationSet</gml:targetElement>
+								<gml:targetElement>rak:LandUseObjectChangeSet</gml:targetElement>
 							</xs:appinfo>
 							<xs:documentation>Implements property Ratkaisuvaihtoehto</xs:documentation>
 						</xs:annotation>
@@ -98,36 +160,62 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="PlanDevelopmentNeedPropertyType">
+	<xs:complexType name="LandUseDatasetDevelopmentNeedPropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:PlanDevelopmentNeed"/>
+			<xs:element ref="rak:LandUseDatasetDevelopmentNeed"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="AreaChangeSet" type="rak:AreaChangeSetType" substitutionGroup="gml:AbstractFeature"/>
-	<xs:complexType name="AreaChangeSetType">
+	<xs:element name="LandUseObjectChangeSet" type="rak:LandUseObjectChangeSetType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="LandUseObjectChangeSetType">
 		<xs:annotation>
-			<xs:documentation>Implements concept rak:Aluemuutoskokonaisuus
-				https://tietomallit.suomi.fi/model/rak/Aluemuutoskokonaisuus/</xs:documentation>
+			<xs:documentation>Implements concept rak:Kohdemuutoskokonaisuus
+				https://tietomallit.suomi.fi/model/rak/Kohdemuutoskokonaisuus/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element ref="rak:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="solutionForNeed" type="gml:ReferenceType" maxOccurs="unbounded"/>
+					<xs:element name="implementsNeed" type="gml:ReferenceType" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:LandUseDatasetDevelopmentNeed</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Touteuttaa tarpeen</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="usedProcess" type="gml:ReferenceType" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Code list value, implements property Käytetty prosessi</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="operation" type="rak:AreaModificationOperationPropertyType" minOccurs="1" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Implements property Operaatio</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="basedOnPlanningDatasetState" type="rak:ReferencedDatasetStatePropertyType">
+					<xs:element name="basedOnDatasetState" type="rak:LandUseDatasetStatePropertyType">
 						<xs:annotation>
 							<xs:documentation>Implements property Perustuu aineiston tilaan</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="newObject" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:AbstractLandUseObject</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Uusi kohde</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="modifiedObject" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:AbstractLandUseObject</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Muuttuva kohde</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="removedObject" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:AbstractLandUseObject</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Poistuva kohde</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="approvalDecision" type="gml:ReferenceType" minOccurs="0">
@@ -138,7 +226,7 @@
 					<xs:element name="replaces" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>rak:AreaModificationSet</gml:targetElement>
+								<gml:targetElement>rak:LandUseFeatureChangeSet</gml:targetElement>
 							</xs:appinfo>
 							<xs:documentation>Implements property Korvaa muutoksen</xs:documentation>
 						</xs:annotation>
@@ -146,7 +234,7 @@
 					<xs:element name="replacedBy" type="gml:ReferenceType" minOccurs="0">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>rak:AreaModificationSet</gml:targetElement>
+								<gml:targetElement>rak:LandUseFeatureChangeSet</gml:targetElement>
 							</xs:appinfo>
 							<xs:documentation>Implements property Korvattu muutoksella.</xs:documentation>
 						</xs:annotation>
@@ -155,92 +243,180 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="AreaChangeSetPropertyType">
+	<xs:complexType name="LandUseObjectChangeSetPropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AreaChangeSet"/>
+			<xs:element ref="rak:LandUseObjectChangeSet"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="AreaModificationOperation" type="rak:AreaModificationOperationType" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="AreaModificationOperationType">
+	
+	<xs:element name="AbstractLandUseObject" type="rak:AbstractLandUseObjectType" substitutionGroup="gml:AbstractFeature" abstract="true"/>
+	<xs:complexType name="AbstractLandUseObjectType" abstract="true">
 		<xs:annotation>
-			<xs:documentation>Implements concept Aluemuutosoperaatio
-				https://tietomallit.suomi.fi/model/rak/Aluemuutosoperaatio/</xs:documentation>
+			<xs:documentation>Implements concept Maankäyttökohde
+				https://tietomallit.suomi.fi/model/rak/Maankayttokohde/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="gml:AbstractGMLType">
+			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
-					<xs:element ref="rak:localizedDescription" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="objectIdentifier" type="xs:anyURI" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Implements property Identiteettitunnus.
+								
+								Unique element identifier, remains the same if the identity of the object remains with the updated version. 
+								Use gml:identifier for the version specific permanent identifier.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="objectType" type="gml:ReferenceType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Code list value, implements property Kohteen laji</xs:documentation>
+					</xs:annotation>
+					</xs:element>
+					<xs:element ref="rak:localizedName" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Implements property Nimi</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="responsibleOrganisation" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Implements property Vastuullinen organisaatio</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="processPhase" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value, implements property Prosessin vaihe</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="levelOfDetail" type="gml:ReferenceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Code list value, implements property Yksityiskohtaisuuden taso</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="geometry" type="gml:GeometryPropertyType">
+						<xs:annotation>
+							<xs:documentation>
+								Implements property Kohteen sijainti.
+								
+								Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="partOf" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:appinfo>
-								<gml:targetElement>rak:AreaModificationSet</gml:targetElement>
+								<gml:targetElement>gml:AbstractLandUseObject</gml:targetElement>
 							</xs:appinfo>
-							<xs:documentation>Link to parent</xs:documentation>
+							<xs:documentation>Implements property Sijoittuu alueelle</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="type" type="gml:ReferenceType">
+					<xs:element name="property" type="rak:NamedPropertyPropertyType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>Code list value, immplements property Operaatiolaji</xs:documentation>
+							<xs:documentation>Implements property Ominaisuus, guidance or restriction applied to the object</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="newArea" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="includedInChangeSet" type="gml:ReferenceType" minOccurs="0">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>rak:AbstractLandOrWaterArea</gml:targetElement>
-							</xs:appinfo>
-							<xs:documentation>Implements property Uusi alue</xs:documentation>
+							<xs:documentation>Implements property Muutoskokonaisuus</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="modifiedArea" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="lineage" type="rak:LandUseObjectLineagePropertyType" minOccurs="0">
 						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>rak:AbstractLandOrWaterArea</gml:targetElement>
-							</xs:appinfo>
-							<xs:documentation>Implements property Muuttuva alue</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="removedArea" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:appinfo>
-								<gml:targetElement>rak:AbstractLandOrWaterArea</gml:targetElement>
-							</xs:appinfo>
-							<xs:documentation>Implements property Poistuva alue</xs:documentation>
+							<xs:documentation>Implements property Muutoshistoria</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="AreaModificationOperationPropertyType">
+	<xs:complexType name="AbstractLandUseObjectPropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AreaModificationOperation"/>
+			<xs:element ref="rak:AbstractLandUseObject"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="AreaLineage" type="rak:AreaLineageType" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="AreaLineageType">
+	<xs:element name="LandUseArea" type="rak:LandUseAreaType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="LandUseAreaType">
 		<xs:annotation>
-			<xs:documentation>Implements concept Alueen muutoshistoria https://tietomallit.suomi.fi/model/rak/AlueenMuutoshistoria/</xs:documentation>
+			<xs:documentation>Implements concept Maankäyttöalue
+				https://tietomallit.suomi.fi/model/rak/Maankayttoalue/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractLandUseObjectType">
+				<xs:sequence>
+					<xs:element name="detail" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:LandUseDetail</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Yksityiskohta</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="subdivision" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:LandUseArea</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation>Implements property Osa-alue</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="verticalConstraint" type="rak:VerticalRangePropertyValuePropertyType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Implements property Pystysuuntainen rajaus</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandUseAreaPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:LandUseArea"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="LandUseDetail" type="rak:LandUseDetailType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="LandUseDetailType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Maankäyttöyksityiskohta
+				https://tietomallit.suomi.fi/model/rak/Maankayttoyksityiskohta/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractLandUseObjectType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LandUseDetailPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:LandUseDetail"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="LandUseObjectLineage" type="rak:LandUseObjectLineageType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="LandUseObjectLineageType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Kohteen muutoshistoria https://tietomallit.suomi.fi/model/rak/KohteenMuutoshistoria/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
 				<xs:sequence>
-					<xs:element name="changeEvent" type="rak:AreaChangeEventPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="changeEvent" type="rak:LandUseObjectChangeEventPropertyType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="AreaLineagePropertyType">
+	<xs:complexType name="LandUseObjectLineagePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AreaLineage"/>
+			<xs:element ref="rak:LandUseObjectLineage"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="AreaChangeEvent" type="rak:AreaChangeEventType" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="AreaChangeEventType">
+	<xs:element name="LandUseObjectChangeEvent" type="rak:LandUseObjectChangeEventType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="LandUseObjectChangeEventType">
 		<xs:annotation>
-			<xs:documentation>Implements concept Alueen muutoshistoria https://tietomallit.suomi.fi/model/rak/AlueenMuutoshistoria/</xs:documentation>
+			<xs:documentation>Implements concept Kohteen muutostapahtuma https://tietomallit.suomi.fi/model/rak/KohteenMuutostapahtuma/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractGMLType">
@@ -263,84 +439,14 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="AreaChangeEventPropertyType">
+	<xs:complexType name="LandUseObjectChangeEventPropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AreaChangeEvent"/>
+			<xs:element ref="rak:LandUseObjectChangeEvent"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="AbstractPlanningArea" type="rak:AbstractPlanningAreaType" substitutionGroup="gml:AbstractFeature" abstract="true"/>
-	<xs:complexType name="AbstractPlanningAreaType" abstract="true">
-		<xs:annotation>
-			<xs:documentation>Implements concept Maa- tai vesialue
-				https://tietomallit.suomi.fi/model/rak/MaaTaiVesialue/</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="rak:AbstractHierarchicalObjectType">
-				<xs:sequence>
-					<xs:element name="planningObjectIdentifier" type="xs:anyURI" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>
-								Implements property Identiteettitunnus.
-								
-								Unique element identifier, remains the same if the identity of the object remains with the updated version. 
-								Use gml:identifier for the version specific permanent identifier.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element ref="rak:localizedName" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Implements property Nimi</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="responsibleOrganisation" type="gml:ReferenceType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Implements property Vastuullinen organisaatio</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="processPhase" type="gml:ReferenceType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Code list value</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="geometry" type="gml:GeometryPropertyType">
-						<xs:annotation>
-							<xs:documentation>
-								Implements property Kohteen sijainti.
-								
-								Note that for GML Simple Features profile the only supported property values are 
-								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
-								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
-								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
-							</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="parameter" type="rak:AbstractParameterValuePropertyType" minOccurs="0" maxOccurs="unbounded">
-						<xs:annotation>
-							<xs:documentation>Implements property Ominaisuus, guidance or restriction applied to the entire area</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="changeSet" type="gml:ReferenceType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Implements property Muutoskokonaisuus</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="lineage" type="rak:AreaLineagePropertyType" minOccurs="0">
-						<xs:annotation>
-							<xs:documentation>Implements property Muutoshistoria</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="AbstractPlanningAreaPropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AbstractPlanningArea"/>
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:element name="AbstractParameterValue" type="rak:AbstractParameterValueType" abstract="true" substitutionGroup="gml:AbstractGML"/>
-	<xs:complexType name="AbstractParameterValueType" abstract="true">
+	<xs:element name="NamedProperty" type="rak:NamedPropertyType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="NamedPropertyType">
 		<xs:annotation>
 			<xs:documentation>Implements concept Nimetty ominaisuus https://tietomallit.suomi.fi/model/rak/NimettyOminaisuus/</xs:documentation>
 		</xs:annotation>
@@ -354,86 +460,159 @@
 					</xs:element>
 					<xs:element name="parameterName" type="gml:ReferenceType">
 						<xs:annotation>
-							<xs:documentation>Code list value, implements property Nimi</xs:documentation>
+							<xs:documentation>Code list value, implements property Lajinimi</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="AbstractParameterValuePropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:AbstractParameterValue"/>
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:element name="MeasureParameterValue" type="rak:MeasureParameterValueType" substitutionGroup="rak:AbstractParameterValue"/>
-	<xs:complexType name="MeasureParameterValueType">
-		<xs:annotation>
-			<xs:documentation>Implements concept Numeerinen ominaisuus https://tietomallit.suomi.fi/model/rak/NumeerinenYksityiskohta/</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="rak:AbstractParameterValueType">
-				<xs:sequence>
-					<xs:element name="value">
+					<xs:element name="value" type="rak:AbstractPropertyValuePropertyType" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Implements property Arvo and Mittayksikkö</xs:documentation>
+							<xs:documentation>Implements property Tarkentava arvo</xs:documentation>
 						</xs:annotation>
-						<xs:complexType>
-								<xs:simpleContent>
-									<xs:extension base="xs:double">
-										<xs:attribute name="uom" type="gml:UomIdentifier" use="optional"/>
-									</xs:extension>
-							</xs:simpleContent>
-						</xs:complexType>
 					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="MeasureParameterValuePropertyType">
+	<xs:complexType name="NamedPropertyPropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:MeasureParameterValue"/>
+			<xs:element ref="rak:NamedProperty"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="RangeParameterValue" type="rak:RangeParameterValueType" substitutionGroup="rak:AbstractParameterValue"/>
-	<xs:complexType name="RangeParameterValueType">
+	<xs:element name="AbstractPropertyValue" type="rak:AbstractPropertyValueType" abstract="true" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="AbstractPropertyValueType">
 		<xs:annotation>
-			<xs:documentation>Implements concept Arvoväliominaisuus https://tietomallit.suomi.fi/model/rak/Arvovaliominaisuus/</xs:documentation>
+			<xs:documentation>Implements concept Arvo https://tietomallit.suomi.fi/model/rak/Arvo/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="rak:AbstractParameterValueType">
+			<xs:extension base="gml:AbstractGMLType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AbstractPropertyValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:AbstractPropertyValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="MeasurablePropertyValue" type="rak:MeasurablePropertyValueType" substitutionGroup="rak:AbstractPropertyValue"/>
+	<xs:complexType name="MeasurablePropertyValueType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Mitattava arvo https://tietomallit.suomi.fi/model/rak/ MitattavaArvo/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractPropertyValueType">
+				<xs:sequence>
+					<xs:element name="value" type="gml:MeasureType">
+						<xs:annotation>
+							<xs:documentation>Implements property Numeroarvo and Mittayksikkö</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MeasurablePropertyValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:MeasurablePropertyValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="MeasurableRangePropertyValue" type="rak:MeasurableRangePropertyValueType" substitutionGroup="rak:AbstractPropertyValue"/>
+	<xs:complexType name="MeasurableRangePropertyValueType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Mitattava arvoväli https://tietomallit.suomi.fi/model/rak/MitattavaArvovali/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractPropertyValueType">
 				<xs:sequence>
 					<xs:element name="value" type="rak:ValueRangeType"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="RangeParameterValuePropertyType">
+	<xs:complexType name="MeasurableRangePropertyValuePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:RangeParameterValue"/>
+			<xs:element ref="rak:MeasurableRangePropertyValue"/>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="CategoryParameterValue" type="rak:CategoryParameterValueType" substitutionGroup="rak:AbstractParameterValue"/>
-	<xs:complexType name="CategoryParameterValueType">
+	<xs:element name="CategoryPropertyValue" type="rak:CategoryPropertyValueType" substitutionGroup="rak:AbstractPropertyValue"/>
+	<xs:complexType name="CategoryPropertyValueType">
 		<xs:annotation>
-			<xs:documentation>Implements concept Kategoriaominaisuus https://tietomallit.suomi.fi/model/rak/Kategoriaominaisuus/</xs:documentation>
+			<xs:documentation>Implements concept Kategoria-arvo https://tietomallit.suomi.fi/model/rak/Kategoria-arvo/</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="rak:AbstractParameterValueType">
+			<xs:extension base="rak:AbstractPropertyValueType">
 				<xs:sequence>
 					<xs:element name="value" type="gml:ReferenceType"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="CategoryGuidanceValuePropertyType">
+	<xs:complexType name="CategoryPropertyValuePropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:CategoryParameterValue"/>
+			<xs:element ref="rak:CategoryPropertyValue"/>
 		</xs:sequence>
 	</xs:complexType>
+	
+	<xs:element name="NamePropertyValue" type="rak:NamePropertyValueType" substitutionGroup="rak:AbstractPropertyValue"/>
+	<xs:complexType name="NamePropertyValueType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Nimekearvo https://tietomallit.suomi.fi/model/rak/Nimekearvo/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rak:AbstractPropertyValueType">
+				<xs:sequence>
+					<xs:element name="value" type="rak:LocalizedNameType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NamePropertyValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:NamePropertyValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ShareOfTotalCategoryPropertyValue" type="rak:ShareOfTotalCategoryPropertyValueType" substitutionGroup="rak:AbstractPropertyValue"/>
+	<xs:complexType name="ShareOfTotalCategoryPropertyValueType">
+		<xs:complexContent>
+			<xs:extension base="rak:CategoryPropertyValueType">
+				<xs:sequence>
+					<xs:element name="appliesToShareOfTotal" type="gml:MeasureType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Share of the total area or volume of the LandUseObject that this category property applies to. Given either as percentage or an absolute 
+								value of the area or volume</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShareOfTotalCategoryPropertyValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:ShareOfTotalCategoryPropertyValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="VerticalRangePropertyValue" type="rak:VerticalRangePropertyValueType" substitutionGroup="rak:AbstractPropertyValue"/>
+	<xs:complexType name="VerticalRangePropertyValueType">
+		<xs:annotation>
+			<xs:documentation>Implements concept Korkeusväli https://tietomallit.suomi.fi/model/rak/Korkeusvali/</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rak:MeasurableRangePropertyValueType">
+				<xs:sequence>
+					<xs:element name="referencePoint" type="gml:PointPropertyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VerticalRangePropertyValuePropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:VerticalRangePropertyValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	
 	
 	<!-- Name! -->
 	<xs:element name="StudyOrSurvey" type="rak:StudyOrSurveyType" substitutionGroup="gml:AbstractFeature"/>
@@ -483,6 +662,57 @@
 	<xs:complexType name="StudyOrSurveyPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="rak:StudyOrSurvey"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- FIXME: find a better term! -->
+	<xs:element name="ParticipatoryOpinionOrProtest" type="rak:ParticipatoryOpinionOrProtestType" substitutionGroup="gml:AbstractFeature" />
+	<xs:complexType name="ParticipatoryOpinionOrProtestType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="kind" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:documentation>opinion, protest,.. Code list value</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="geometry" type="gml:GeometryPropertyType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Note that for GML Simple Features profile the only supported property values are 
+								gml:Point,gml:LineString, gml:Curve, gml:Polygon, gml:Surface, 
+								gml:MultiPoint, gml:MultiCurve and gml:MultiSurface. Using solids (for 3D geometries) etc. is allowed 
+								by the XML Schema, but will make the GML non-compliant with the GML Simple Feature profile.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="submissionDate" type="xs:date" minOccurs="0"/>
+					<xs:element name="submittingParty" type="gml:ReferenceType" minOccurs="0"/>
+					<xs:element ref="rak:localizedDescription" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="targetElement" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:PlanningElement</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="targetModificationSet" type="gml:ReferenceType">
+						<xs:annotation>
+							<xs:appinfo>
+								<gml:targetElement>rak:PlanningAreaModificationSet</gml:targetElement>
+							</xs:appinfo>
+							<xs:documentation> 
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ParticipatoryOpinionOrProtestPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="rak:ParticipatoryOpinionOrProtest"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -559,22 +789,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:element name="ReferencedDatasetState" type="rak:ReferencedDatasetStateType" substitutionGroup="gml:AbstractGML" />
-	<xs:complexType name="ReferencedDatasetStateType">
-		<xs:complexContent>
-			<xs:extension base="gml:AbstractGMLType">
-				<xs:sequence>
-					<xs:element name="timestamp" type="xs:dateTime"/>
-					<xs:element name="datasetIdentifier" type="xs:anyURI"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="ReferencedDatasetStatePropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="rak:ReferencedDatasetState"/>
-		</xs:sequence>
-	</xs:complexType>
+	
 
 	
 	<xs:element name="Appeal" type="rak:AppealType" substitutionGroup="gml:AbstractGML" />

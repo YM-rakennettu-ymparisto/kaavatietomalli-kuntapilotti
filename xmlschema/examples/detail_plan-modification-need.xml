@@ -21,10 +21,10 @@
                 Asemakaavan muutos koskee Koivusaaren maa-aluetta, ympäröivää
                 merialuetta, Länsiväylää ja maapenkereitä Koivusaaren itä- ja länsipuolella. Lisäksi alueeseen kuuluvat Länsiväylän reunustat tien ja korttelialueiden välissä Katajaharjun sillalle asti.</rak:localizedDescription>
             <rak:targetArea>
-                <gml:Polygon srsName="http://www.opengis.net/def/crs/EPSG/0/3879" srsDimension="2">
+                <gml:Polygon srsName="urn:ogc:def:crs:EPSG::3879" srsDimension="2">
                     <gml:exterior>
                         <gml:LinearRing>
-                            <gml:posList>6671659.4 25491126.6 6673107 25493788 6673138 25491127 6673162.1 25493791.4 6671659.4 25491126.6</gml:posList>
+                            <gml:posList>6673121.05391732 25491101.0312795 6673113.96269685 25491982.7063583 6672345.74714567 25492105.6208465 6672357.56584646 25492419.9982874 6672428.47805118 25492968.3860039 6672586.84864173 25493259.1260433 6672697.94442913 25493604.2321063 6672539.57383858 25493892.6084055 6672215.74143701 25493807.5137598 6671896.63651575 25493457.6802165 6671896.63651575 25492781.6505315 6671837.54301181 25492287.6288386 6671698.08234252 25491921.2491142 6671674.44494095 25491805.4258465 6671676.8086811 25491117.5774606 6671676.8086811 25491117.5774606 6673121.05391732 25491101.0312795</gml:posList>
                         </gml:LinearRing>
                     </gml:exterior>
                 </gml:Polygon>
