@@ -102,6 +102,8 @@
                     </rak:value>
                 </plan:PlanningRegulation>
             </rak:property>
+            <rak:subdivision xlink:href="#pe-fb481d4-e7db-49bc-8f02-65d252a09e30" />
+            <rak:subdivision xlink:href="#pe-8a6ec3f3-7ee7-4ea4-bc4f-b748d5f3e813"/>
             <rak:verticalConstraint>
                 <rak:VerticalRangePropertyValue>
                     <rak:value>

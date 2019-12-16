@@ -66,6 +66,8 @@
             <rak:lineage>
                 <rak:LandUseObjectLineage/>
             </rak:lineage>
+            <rak:subdivision xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/1234/revisio/1234456" />
+            <rak:subdivision xlink:href="https://uri.suomi.fi/object/kaavatietovaranto/suomi/planningArea/4556/revisio/1234456"/>
             <rak:verticalConstraint>
                 <rak:VerticalRangePropertyValue>
                     <rak:value>
