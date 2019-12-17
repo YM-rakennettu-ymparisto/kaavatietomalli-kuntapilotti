@@ -105,7 +105,7 @@
 				<xs:sequence>
 					<xs:element name="floorAreaRatio" type="xs:double" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Floor area ratio to be applied in this ZoningElement</xs:documentation>
+							<xs:documentation>Floor area ratio to be applied in this PlanningArea</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="legalStatus" type="gml:ReferenceType" minOccurs="0">
